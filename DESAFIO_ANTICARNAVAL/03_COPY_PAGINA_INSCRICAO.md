@@ -309,13 +309,12 @@ PERGUNTAS FREQUENTES
 ```
 ❓ O evento é ao vivo ou gravado?
 
-✅ As aulas são ao vivo, mas ficam gravadas para você
-   assistir quando quiser durante o evento.
+✅ As aulas são ao vivo e não ficam gravadas.
 
 ❓ Preciso estar em todas as aulas?
 
-✅ Recomendamos fortemente, mas entendemos imprevistos.
-   As gravações ficam disponíveis.
+✅ Sim. As aulas são ao vivo e não ficam gravadas,
+   então recomenda-se assistir todas.
 
 ❓ Preciso ter Instagram grande?
 

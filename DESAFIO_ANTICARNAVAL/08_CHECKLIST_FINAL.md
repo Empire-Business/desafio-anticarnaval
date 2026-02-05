@@ -66,16 +66,14 @@ com os seguintes termos:
 ### Sobre o Evento
 
 **Q: O evento é ao vivo ou gravado?**
-A: As aulas são transmitidas ao vivo, mas ficam gravadas para você
-assistir quando quiser durante o evento.
+A: As aulas são ao vivo e não ficam gravadas.
 
 **Q: Preciso assistir tudo ao vivo?**
-A: Recomendamos, mas entendemos imprevistos. As gravações ficam
-disponíveis.
+A: Sim. As aulas não ficam gravadas, então recomenda-se
+assistir todas ao vivo.
 
 **Q: Vai ter replay depois do evento?**
-A: Não. As gravações ficam disponíveis apenas durante o evento
-(14-17/03).
+A: Não. As aulas são exclusivas ao vivo.
 
 ---
 
