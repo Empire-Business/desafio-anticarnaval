@@ -3,10 +3,7 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
-import rehypeRaw from 'rehype-raw';
 import { Copy, Search, Menu, X, Home, FileText, Video, Image, Mail, Phone, CheckCircle } from 'lucide-react';
-import 'highlight.js/styles/github-dark.css';
 
 // Conteúdo dos documentos (em produção, viria de arquivos ou API)
 const documents = {
@@ -332,7 +329,7 @@ A: Não. As gravações ficam disponíveis apenas durante o evento.`
   }
 };
 
-export default function Home() {
+export default function RetiroPage() {
   const [selectedDoc, setSelectedDoc] = useState('01');
   const [searchTerm, setSearchTerm] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -351,37 +348,6 @@ export default function Home() {
     navigator.clipboard.writeText(text);
     setCopiedSection(sectionId);
     setTimeout(() => setCopiedSection(null), 2000);
-  };
-
-  // Add copy buttons to markdown content
-  const addCopyButtons = (content: string) => {
-    // Split by headers
-    const sections = content.split(/(?=^#{1,3}\s)/m);
-    return sections.map((section, index) => {
-      const lines = section.split('\n');
-      const firstLine = lines[0];
-      const isHeader = firstLine.startsWith('#');
-
-      if (!isHeader || !firstLine.trim()) return section;
-
-      const sectionId = `section-${index}`;
-      return (
-        <div key={index} className="relative group">
-          <button
-            onClick={() => copySection(section.trim(), sectionId)}
-            className="absolute -right-12 top-0 opacity-0 group-hover:opacity-100 transition-opacity p-2 bg-gray-700 hover:bg-gray-600 rounded-lg"
-            title="Copiar seção"
-          >
-            {copiedSection === sectionId ? (
-              <CheckCircle className="w-4 h-4 text-green-400" />
-            ) : (
-              <Copy className="w-4 h-4 text-gray-300" />
-            )}
-          </button>
-          {section}
-        </div>
-      );
-    });
   };
 
   return (
@@ -409,12 +375,7 @@ export default function Home() {
 
       <div className="flex pt-16">
         {/* Sidebar */}
-        <aside className={`
-          fixed lg:sticky top-16 left-0 h-[calc(100vh-4rem)] w-72
-          bg-gray-950 border-r border-gray-800
-          transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0
-          transition-transform duration-200 z-40 overflow-y-auto
-        `}>
+        <aside className={`fixed lg:sticky top-16 left-0 h-[calc(100vh-4rem)] w-72 bg-gray-950 border-r border-gray-800 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-200 z-40 overflow-y-auto`}>
           <div className="p-4">
             {/* Search */}
             <div className="relative mb-6">
@@ -440,14 +401,7 @@ export default function Home() {
                       setSelectedDoc(doc.id);
                       setSidebarOpen(false);
                     }}
-                    className={\`
-                      w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left
-                      transition-colors
-                      \${isSelected
-                        ? 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/30'
-                        : 'text-gray-400 hover:bg-gray-900 hover:text-gray-200'
-                      }
-                    \`}
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors ${isSelected ? 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/30' : 'text-gray-400 hover:bg-gray-900 hover:text-gray-200'}`}
                   >
                     <Icon className="w-4 h-4 flex-shrink-0" />
                     <div className="min-w-0">
@@ -497,7 +451,6 @@ export default function Home() {
             <div className="prose prose-invert prose-yellow max-w-none">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight, rehypeRaw]}
                 components={{
                   h1: ({ children }) => <h1 className="text-3xl font-bold text-white mt-8 mb-4 pb-2 border-b border-gray-800">{children}</h1>,
                   h2: ({ children, id }) => (
@@ -519,12 +472,7 @@ export default function Home() {
                   code: ({ children, className }) => {
                     const isInline = !className;
                     return (
-                      <code className={\`
-                        \${isInline
-                          ? 'bg-gray-900 text-yellow-400 px-1.5 py-0.5 rounded text-sm font-mono'
-                          : 'block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono'
-                        }
-                      \`}>
+                      <code className={isInline ? 'bg-gray-900 text-yellow-400 px-1.5 py-0.5 rounded text-sm font-mono' : 'block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono'}>
                         {children}
                       </code>
                     );
