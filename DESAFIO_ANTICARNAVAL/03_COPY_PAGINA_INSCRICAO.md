@@ -1,8 +1,9 @@
 # 📝 COPY PÁGINA DE INSCRIÇÃO
 ## Retiro Anti-Carnaval Acelerador de Audiência
 
-> **Versão:** 1.0
+> **Versão:** 2.0
 > **Metodologia:** Epiphany Bridge + Direct Response
+> **Narrativa:** "Nós" + Cases (empresa como autoridade)
 
 ---
 
@@ -53,7 +54,7 @@ Vê pessoas com MENOS resultado que você, com MENOS experiência,
 com MENOS sucesso no mundo real... tendo MUITO mais destaque
 no digital?
 
-Pois é. Eu também sentia.
+Isso é mais comum do que você imagina.
 
 E o pior não é isso. O pior é saber que você tem algo valioso
 para oferecer. Tem experiência real. Tem resultado comprovado.
@@ -83,52 +84,54 @@ Se você se identifica com isso, continue lendo.
 
 ### Headline
 ```
-COMO DESCOBRI QUE O PROBLEMA NÃO ERA VOCÊ
+DESCOBRIMOS QUE O PROBLEMA NÃO É VOCÊ
 ```
 
 ### Corpo - A História
 ```
-Há alguns anos, eu estava exatamente onde você está.
+Há alguns anos, observávamos algo que se repetia...
 
-Tinha um negócio bem-sucedido no mundo real. Clientes felizes.
-Resultado comprovado. Autoridade no meu mercado.
+Médicos com consultório cheio. Empresários com empresas lucrativas.
+Mentores com dezenas de alunos satisfeitos.
+
+Todos com autoridade no mundo real. Todos com resultado comprovado.
 
 Mas no digital? Nada.
 
 E o mais confuso era ver pessoas - gente com muito menos
 resultado, menos experiência, menos tudo - tendo MUITO mais
-sucesso que eu no Instagram.
+sucesso no Instagram.
 
-Eu me perguntava: "O que eles tem que eu não tenho?"
+A pergunta que fizemos foi: "O que eles têm que esses profissionais não têm?"
 
-A resposta que eu encontrei mudou tudo.
+A resposta que encontramos mudou tudo.
 
 Não era sobre ser mais bonito. Mais carismático. Mais engraçado.
 Mais talentoso em vídeo.
 
 Era sobre **POSICIONAMENTO**.
 
-Eu estava tentando ser "mais um" no digital.
+Esses profissionais estavam tentando ser "mais um" no digital.
 Falando de tudo. Tentando agradar todo mundo.
 
-Enquanto isso, as pessoas que tinha sucesso?
+Enquanto isso, as pessoas que tinham sucesso?
 Elas falavam de UMA coisa. Para UM público.
 Com UMA posição clara.
 
-E foi aí que eu descobri: O digital não premia quem é "bom".
+E foi aí que descobrimos: O digital não premia quem é "bom".
 O digital premia quem é **CLARO**.
 
-Quando mudei minha abordagem e defini meu posicionamento...
+Quando ajudamos esses profissionais a definirem seu posicionamento...
 Tudo mudou.
 
 Seguidores passaram a vir. Qualificados começaram a aparecer.
-O mesmo resultado que eu tinha no mundo real, comecei a ter
+O mesmo resultado que tinham no mundo real, passaram a ter
 no digital também.
 
-E foi isso que levou a gente a gerar R$ 1 milhão em vendas
+Foi isso que levou a gente a gerar R$ 1 milhão em vendas
 orgânicas. Com +10 perfis próprios. Centenas de alunos atendidos.
 
-Hoje, quero te ensinar exatamente como fazer isso.
+Agora, queremos ensinar exatamente como fazer isso.
 ```
 
 ---
@@ -466,4 +469,6 @@ Botão Secundário: #FFFFFF (branco) com borda dourada
 ---
 
 *Esta copy foi criada seguindo a metodologia de Direct Response
-e Epiphany Bridge. Teste e otimize conforme dados reais.*
+e Epiphany Bridge. Versão 2.0 usa narrativa "Nós + Cases",
+posicionando a EMPRESA como autoridade (escalável).*
+*Teste e otimize conforme dados reais.*

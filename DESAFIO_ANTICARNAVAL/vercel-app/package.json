@@ -4,7 +4,7 @@
   "description": "Sistema de visualização de documentos do Retiro Anti-Carnaval",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-content.js && next build",
     "start": "next start",
     "lint": "next lint"
   },

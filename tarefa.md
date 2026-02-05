@@ -198,6 +198,51 @@ CRIATIVO ESTÁTICO 01 - Lançamento do Desafio
 
 ---
 
+## 🎨 IDENTIDADE VISUAL DEFINIDA
+
+> [!IMPORTANT]
+> **Identidade Visual "Anti-Carnaval Pro"** - Definida e aprovada
+
+### Conceito
+**"Enquanto o mundo carnavala, você constrói"**
+
+A narrativa visual: O carnaval está lá fora (distante, vago, indireto) - o foco é AQUI DENTRO: você estudando, planejando, crescendo.
+
+### Paleta de Cores Oficial
+
+| Cor | Hex | Uso |
+|-----|-----|-----|
+| **Preto** | #000000 | Fundo principal |
+| **Branco** | #FFFFFF | Texto base |
+| **Dourado** | #D4AF37 | Destaques, bordas, celebração |
+| **Carmesim** | #E74C3C | Urgência, CTAs |
+| **Roxo** | #6B46C1 | Mistério, contraste com carnaval |
+| **Verde** | #27AE60 | Crescimento, esperança |
+
+### Elementos Carnavalescos (Uso Estratégico)
+
+Usar elementos de carnaval de forma SUTIL e CONTRASTANTE - sempre em BACKGROUND:
+
+- ✅ **Máscaras venecianas** em preto/dourado (elegantes, não festivas)
+- ✅ **Confetes dourados** caindo sutilmente (celebração da conquista)
+- ✅ **Plumas** em dourado/preto (elegância)
+- ✅ **Luzes de carnaval** muito bluradas, through windows (distração evitada)
+- ✅ **Silhuetas fantasiadas** ao longe, bluradas ("o carnaval lá fora")
+
+### Logo Integration
+
+| Fundo | Logo | Posição | Opacidade | Tamanho |
+|-------|------|---------|-----------|---------|
+| **Preto** | Logotipo 02 | Top-right ou Bottom-right | 80-90% | 15-20% largura |
+| **Branco** | Logotipo 03 | Top-right ou Bottom-right | 80-90% | 15-20% largura |
+
+### Arquivos de Referência
+
+- `DESAFIO_ANTICARNAVAL/07_CRIATIVOS_ESTATICOS/30_prompts_com_pessoas.md` - 30 prompts com pessoas
+- `DESAFIO_ANTICARNAVAL/07_CRIATIVOS_ESTATICOS/prompts_paginas_inscricao_obrigado.md` - Prompts páginas
+
+---
+
 ## 📋 CHECKLIST ADICIONAL - TUDO QUE DEVE SER PENSADO
 
 > [!IMPORTANT]

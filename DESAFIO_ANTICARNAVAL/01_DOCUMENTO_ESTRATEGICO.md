@@ -69,26 +69,70 @@ O Carnaval é o momento perfeito para **recuperar o começo do ano**. Enquanto t
 
 ## 🎨 IDENTIDADE VISUAL E TEMÁTICA
 
-### Conceito Visual
+### Conceito Visual: "Anti-Carnaval Pro"
 
 **"Retiro"** = A pessoa se RETIRA do caos do carnaval para focar em si mesma e no seu negócio.
 
-### Paleta de Cores Sugerida
+A narrativa visual é: **O carnaval está lá fora (distante, vago, indireto) - o foco é AQUI DENTRO: você estudando, planejando, crescendo.**
+
+Usamos elementos de carnaval de forma **IRÔNICA/CONTRASTANTE** - mostrando que enquanto o mundo está no carnaval, você está no retiro trabalhando.
+
+### Paleta de Cores Oficial
 
 | Cor | Hex | Uso |
 |-----|-----|-----|
 | **Preto** | #000000 | Fundo principal |
 | **Branco** | #FFFFFF | Texto base |
-| **Dourado** | #D4AF37 | Destaques, bordas |
+| **Dourado** | #D4AF37 | Destaques, bordas, celebração |
+| **Carmesim** | #E74C3C | Urgência, CTAs |
+| **Roxo** | #6B46C1 | Mistério, contraste com carnaval |
+| **Verde** | #27AE60 | Crescimento, esperança |
 | **Cinza Escuro** | #1A1A1A | Fundo secundário |
 | **Cinza Claro** | #F5F5F5 | Fundos de seções |
 
-### Elementos Visuais
+### Elementos Carnavalescos (Uso Estratégico)
 
-- Contraste alto (fundo escuro, texto claro)
-- Tipografia moderna e limpa
-- Elementos que remetam a "foco", "concentração"
-- SEM elementos carnavalescos (não estamos competindo com o carnaval)
+Usamos elementos de carnaval de forma SUTIL e CONTRASTANTE - sempre em BACKGROUND, nunca em primeiro plano:
+
+| Elemento | Como Usar | Significado |
+|----------|-----------|-------------|
+| **Máscaras venecianas** | Em preto/dourado, elegantes, não festivas | Mistério, sofisticação |
+| **Confetes dourados** | Poucos, caindo sutilmente | Celebração da conquista |
+| **Plumas** | Poucas, em dourado/preto | Elegância |
+| **Serpentina/estandartes** | Em preto/dourado, não coloridos | Estrutura |
+| **Silhuetas fantasiadas** | AO LONGE, bluradas, indiretas | "O carnaval lá fora" |
+| **Luzes de carnaval** | Muito bluradas, through windows | Distração evitada |
+
+**Elementos de Foco (primeiro plano):**
+- Notebook, café, caderno
+- Expressões determinadas
+- Ambientes de home office
+- Luz cálida, profissional
+
+### Logo Integration
+
+| Fundo | Logo | Posição | Opacidade | Tamanho |
+|-------|------|---------|-----------|---------|
+| **Preto** | Logotipo 02 | Top-right ou Bottom-right | 80-90% | 15-20% largura |
+| **Branco** | Logotipo 03 | Top-right ou Bottom-right | 80-90% | 15-20% largura |
+
+**Regra:** Sempre manter o mesmo posicionamento em todos os criativos para consistência.
+
+### Estilo Visual
+
+- **Contraste alto** (fundo escuro, texto claro)
+- **Tipografia moderna e limpa**
+- **Elementos que remetam a "foco", "concentração"**
+- **Elementos carnavalescos como CONTRASTE**, não como competição
+
+### Aplicações
+
+| Aplicação | Fundo | Logo | Elementos |
+|-----------|-------|------|-----------|
+| **Criativos estáticos** | Preto ou Branco | 02 ou 03 | 1 pessoa + elementos sutis |
+| **Página de inscrição** | Seções alternadas | Conforme fundo | Hero com pessoa + fundo |
+| **Página obrigado** | Preto (celebração) | 02 | Confetes dourados |
+| **Reels** | Preto (vídeo) | 02 | Nenhum (vídeo dinâmico) |
 
 ### Tom de Voz
 
@@ -101,6 +145,11 @@ O Carnaval é o momento perfeito para **recuperar o começo do ano**. Enquanto t
 - Não dizemos que carnaval é ruim
 - Não criticamos quem vai curtir
 - Focamos em quem JÁ DECIDIU não ir
+
+**Posicionamento:**
+- "Enquanto o mundo carnavala, você constrói"
+- "4 dias. 0 carnaval. 100% crescimento."
+- "Retiro Anti-Carnaval: sua oportunidade de recuperar o ano"
 
 ---
 
