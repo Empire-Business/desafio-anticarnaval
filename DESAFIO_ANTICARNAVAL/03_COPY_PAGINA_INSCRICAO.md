@@ -335,8 +335,9 @@ PERGUNTAS FREQUENTES
 ❓ Vou vender algo durante o evento?
 
 ✅ Vamos apresentar o Acelerador de Audiência, nosso
-   programa completo, na última aula. Mas sem pressão.
-   Se fizer sentido para você, ótimo. Se não, sem problemas.
+   programa completo. Mas sem pressão.
+   Se fizer sentido para você, ótimo. Se não, ainda assim
+   o conteúdo do retiro pode transformar seu ano.
 
 ❓ Preciso saber usar IA?
 
