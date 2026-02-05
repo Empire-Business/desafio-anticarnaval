@@ -94,13 +94,16 @@ Criar um documento em **Markdown** com descrição extremamente detalhada:
 
 Criar todos os fluxos de mensagens necessários:
 
-#### A. **WhatsApp**
-- [ ] Mensagem de boas-vindas
-- [ ] Lembretes de aulas
-- [ ] Mensagens de engajamento diário
-- [ ] Mensagens de incentivo/motivação
-- [ ] Follow-ups pós-desafio
-- [ ] Mensagens de conversão para oferta (se aplicável)
+#### A. **WhatsApp Individual (DM)** - O MAIS SIMPLES POSSÍVEL
+> [!IMPORTANT]
+> **Regra:** DM é APENAS para links e comunicações essenciais 1:1.
+> Tarefas, discussões e engajamento acontecem NO GRUPO.
+
+- [ ] Boas-vindas + link do grupo (automático inscrição)
+- [ ] Link da aula - 1h antes (cada dia)
+- [ ] Link do retorno - 1h antes (cada dia)
+- [ ] Certificado (pós-evento)
+- [ ] Comunicado oferta final (simples, com link)
 
 #### B. **E-mail**
 - [ ] Sequência de e-mails pré-desafio
@@ -108,11 +111,20 @@ Criar todos os fluxos de mensagens necessários:
 - [ ] E-mails de acompanhamento
 - [ ] E-mail de conclusão/certificado
 
-#### C. **Grupo (WhatsApp/Telegram/Comunidade)**
-- [ ] Regras e boas-vindas do grupo (o grupo inicia fechado - abrimos depois em momentos estratégicos para interação)
-- [ ] Mensagens de moderação
-- [ ] Posts de engajamento
-- [ ] Desafios/tarefas diárias
+#### C. **Grupo de WhatsApp** - Onde a Complexidade Acontece
+> [!NOTE]
+> **Dinâmica:** O grupo INICIA FECHADO (apenas transmissão).
+> Abre-se em momentos estratégicos para interação.
+
+- [ ] Mensagem de boas-vindas (pinned)
+- [ ] Regras do grupo (pinned)
+- [ ] **Tarefas diárias DETALHADAS** (passo a passo completo)
+- [ ] Desafios de engajamento
+- [ ] Posts para incentivar compartilhamento
+- [ ] Hot seats (voluntários)
+- [ ] Mensagens de moderação (spam, desrespeito, off-topic)
+- [ ] Anúncios da oferta durante o evento
+- [ ] Posts de encerramento
 
 ---
 

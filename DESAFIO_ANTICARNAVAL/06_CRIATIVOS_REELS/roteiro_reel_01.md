@@ -5,11 +5,11 @@
 
 ## 📋 CONCEITO
 
-**Ideia Principal:** Mostrar a frustração de ter autoridade offline e ser invisível online
+**Ideia Principal:** Mostrar a frustração de ter autoridade no mundo real mas ser invisível no digital por falta de POSICIONAMENTO
 
 **Público-Alvo:** Empresários, médicos, profissionais com sucesso offline
 
-**Objetivo:** Identificar o problema e gerar curiosidade sobre a solução
+**Objetivo:** Identificar o problema (falta de posicionamento) e gerar curiosidade sobre a solução
 
 ---
 
@@ -17,7 +17,7 @@
 
 **Visual:**
 - Pessoa em escritório elegante, parecendo frustrada
-- Texto na tela: "TEM 300K SEGUIDORES..."
+- Texto na tela: "TEM AUTORIDADE NO MUNDO REAL..."
 
 **Áudio/Fala:**
 "Olha essa pessoa. Tem autoridade. Tem resultado. Mas no Instagram... parece que não existe."
@@ -29,12 +29,12 @@
 | Cena | Visual | Áudio/Fala | Duração |
 |------|--------|-------------|---------|
 | 1 | Pessoa em escritório, olhando celular com frustração | "Você já sentiu aquela frustração?" | 3s |
-| 2 | Cortes rápidos de pessoas com menos sucesso tendo mais likes | "De ver gente com MENOS resultado, MENOS experiência, tendo MUITO mais sucesso que você no digital?" | 5s |
-| 3 | Pessoa do início, mostrando seu Instagram com poucos likes | "Você tem autoridade no mundo real. Mas no digital... é como se não existisse." | 4s |
-| 4 | Texto na tela: "POSTS COM 30 LIKES" | "Posts com 30 likes. Zero qualificados chegando no seu DM." | 3s |
+| 2 | Cortes rápidos de pessoas com menos resultado tendo mais presença digital | "De ver gente com MENOS resultado, MENOS experiência, tendo MUITO mais presença que você no digital?" | 5s |
+| 3 | Pessoa do início, mostrando seu Instagram sem estratégia | "Você tem autoridade no mundo real. Mas no digital... é como se não existisse." | 4s |
+| 4 | Texto na tela: "CONTEÚDO SEM ESTRATÉGIA" | "Conteúdo solto. Zero qualificados chegando no seu DM." | 3s |
 | 5 | Pessoa em ação, atendendo cliente, mostrando autoridade real | "Mas no mundo real? Você manda. Tem resultado. Tem autoridade." | 4s |
 | 6 | Transição: texto "O PROBLEMA NÃO É VOCÊ" | "E o problema não é você. É apenas uma coisa que você não sabe." | 3s |
-| 7 | Texto na tela: "RETIRO ANTICARNAVAL - 14 a 17/03" | "No Retiro Anti-Carnaval, vou te ensinar o que é." | 3s |
+| 7 | Texto na tela: "RETIRO ANTICARNAVAL - 14 a 17/02" | "No Retiro Anti-Carnaval, vou te ensinar o que é." | 3s |
 | 8 | CTA final com link na bio | "Gratuito. 4 dias. Link na bio." | 3s |
 
 **Duração Total:** ~30 segundos
@@ -44,15 +44,15 @@
 ## 🎨 ELEMENTOS VISUAIS
 
 ### Textos na Tela
-- TEM 300K SEGUIDORES... (0-3s)
+- TEM AUTORIDADE NO MUNDO REAL... (0-3s)
 - MENOS RESULTADO (3-8s)
-- MAIS SUCESSO (3-8s)
-- 30 LIKES (8-11s)
+- MAIS PRESENÇA DIGITAL (3-8s)
+- CONTEÚDO SEM ESTRATÉGIA (8-11s)
 - ZERO QUALIFICADOS (8-11s)
 - VOCÊ MANDA (11-15s)
 - O PROBLEMA NÃO É VOCÊ (15-18s)
 - É SÓ UMA COISA QUE VOCÊ NÃO SABE (15-18s)
-- 14-17/03 (18-21s)
+- 14-17/02 (18-21s)
 - GRATUITO (21-24s)
 - LINK NA BIO (21-24s)
 
@@ -92,7 +92,7 @@
 **Visual:**
 - Pessoa olhando para câmera, confiante
 - Texto grande: "RETIRO ANTICARNAVAL"
-- Data abaixo: "14 a 17 de Março"
+- Data abaixo: "14 a 17 de Fevereiro"
 - Arrow apontando para baixo → "LINK NA BIO"
 
 **Áudio:**

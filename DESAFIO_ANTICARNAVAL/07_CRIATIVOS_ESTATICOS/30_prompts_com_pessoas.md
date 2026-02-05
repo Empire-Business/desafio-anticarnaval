@@ -55,7 +55,7 @@ A value proposition Instagram graphic with a professional entrepreneur man in hi
 ### 06. AUTORIDADE MAS NINGUÉM SABE
 
 ```
-A frustration-identification Instagram graphic with a professional man in his 30s-40s, beard, looking at his phone with a disappointed, frustrated expression in a modern office. His body language conveys "this isn't working." Background has blurred carnival celebration visible through a window - people in costumes, bright colors, suggesting the world outside is having fun while he struggles with digital invisibility. Bold headline text: "VOCÊ TEM AUTORIDADE NO MUNDO REAL" in white. Contrasting continuation: "MAS NO DIGITAL... PARECE QUE NÃO EXISTE." Supporting text in light gray: "Posts com 30 likes. Zero qualificados chegando." Bottom in golden: "No Retiro, vamos mudar esse jogo." Company logo small in bottom right. High contrast between frustrated professional inside and blurred carnival celebration outside.
+A frustration-identification Instagram graphic with a professional man in his 30s-40s, beard, looking at his phone with a disappointed, frustrated expression in a modern office. His body language conveys "this isn't working." Background has blurred carnival celebration visible through a window - people in costumes, bright colors, suggesting the world outside is having fun while he struggles with digital invisibility. Bold headline text: "VOCÊ TEM AUTORIDADE NO MUNDO REAL" in white. Contrasting continuation: "MAS NO DIGITAL... PARECE QUE NÃO EXISTE." Supporting text in light gray: "Conteúdo sem estratégia. Zero qualificados chegando." Bottom in golden: "No Retiro, vamos mudar esse jogo." Company logo small in bottom right. High contrast between frustrated professional inside and blurred carnival celebration outside.
 ```
 
 ---
@@ -135,7 +135,7 @@ A testimonial-style Instagram graphic featuring a professional man in his 30s, b
 ### 16. CASE HENRIQUE
 
 ```
-A testimonial Instagram graphic with a professional man in his late 30s, beard and glasses, nodding approvingly with a knowing smile, as if confirming someone else's success. His expression says "this works." Background has carnival elements visible through a window but he's positioned in foreground, clearly separate from and more focused than the blurred celebration outside. Text: "DE INVISÍVEL A AUTORIDADE" in white. Golden testimonial: "Eu não sabia o que queria. Tinha autoridade mas não sabia expressar. Hoje tenho +500k seguidores e vendo minha marca." Company logo bottom right. Social proof design with professional as confirmation of results, carnival as distant context.
+A testimonial Instagram graphic with a professional man in his late 30s, beard and glasses, nodding approvingly with a knowing smile, as if confirming someone else's success. His expression says "this works." Background has carnival elements visible through a window but he's positioned in foreground, clearly separate from and more focused than the blurred celebration outside. Text: "DE INVISÍVEL A AUTORIDADE" in white. Golden testimonial: "Eu não sabia o que queria. Tinha autoridade mas não sabia expressar. Hoje tenho posicionamento claro e vendo minha marca organicamente." Company logo bottom right. Social proof design with professional as confirmation of results, carnival as distant context.
 ```
 
 ---

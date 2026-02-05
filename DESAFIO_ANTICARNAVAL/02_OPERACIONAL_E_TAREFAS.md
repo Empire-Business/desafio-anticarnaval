@@ -241,9 +241,9 @@ Não inscrito                    WhatsApp + E-mail
 ```
 Participante no evento
     ↓
-Closer monitora engajamento
+Closer monitora participação ativa
     ↓
-Identifica participante ativo
+Identifica participante engajado
     ↓
 DM no Instagram + WhatsApp
     ↓
@@ -340,7 +340,7 @@ Colocar na fila e resolver em 24h
 - Aula 2 (assistiu/tarefa)
 - Aula 3 (assistiu/tarefa)
 - Aula 4 (assistiu/tarefa)
-- Engajamento (alto/médio/baixo)
+- Participação ativa (alto/médio/baixo)
 - Status vendas
 - Observações
 
@@ -400,7 +400,7 @@ TI: [Telefone]
 - Número de inscritos
 - Número de presentes
 - Número de tarefas entregues
-- Engajamento no grupo
+- Participação ativa no grupo
 - Reuniões de vendas agendadas
 - Vendas realizadas
 

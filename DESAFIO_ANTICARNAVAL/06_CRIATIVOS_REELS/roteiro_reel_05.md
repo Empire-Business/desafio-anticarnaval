@@ -32,7 +32,7 @@
 | 2 | Montagem rápida: aulas, tarefas, resultados | "Em 4 dias, você sai com posicionamento definido, plano de conteúdo, roadmap de 90 dias." | 6s |
 | 3 | Pessoa olhando direto, séria | "E é gratuito. Sem pegadinha. Sem carta de irmão." | 4s |
 | 4 | Texto: "DEPOIS DO CARNAVAL É TARDE" | "Mas depois do carnaval? Não tem mais essa oportunidade." | 4s |
-| 5 | Mostra calendário com data circulado | "Quarta-feira, 13/03, às 23h59. As portas fecham." | 4s |
+| 5 | Mostra calendário com data circulado | "Sexta-feira, 13/02, às 23h59. As portas fecham." | 4s |
 | 6 | Expressão de "vá agora" | "Não adia. Você já postergou bastante." | 3s |
 | 7 | CTA com energia | "Link na bio. Te vejo no Retiro." | 3s |
 
@@ -48,7 +48,7 @@
 - POSICIONAMENTO + PLANO + ROADMAP (3-9s)
 - GRATUITO. SEM PEGADINHA. (9-13s)
 - DEPOIS DO CARNAVAL É TARDE (13-17s)
-- 13/03 23h59 (17-21s)
+- 13/02 23h59 (17-21s)
 - NÃO ADIE (21-24s)
 - LINK NA BIO (24-27s)
 
@@ -82,7 +82,7 @@
 
 **Visual:**
 - Botão "INSCREVER-SE AGORA" pulsando
-- Data em destaque: 13/03
+- Data em destaque: 13/02
 - Countdown: X horas Y minutos
 
 **Áudio:**

@@ -1,5 +1,5 @@
 # 🎬 REEL 04 - OBJEÇÃO / EDUCAÇÃO
-## "Por que viralizar NÃO é o caminho (e o que fazer)"
+## "Por que viralizar NÃO é o caminho (e o que construir no lugar)"
 
 ---
 
@@ -56,7 +56,7 @@
 ### Gráficos/Elements
 - Bar chart mostrando alcance vs retenção
 - Icone de "olho" para views
-- Icone de "coração" para seguidores
+- Icone de "coração" para conexão real
 
 ---
 

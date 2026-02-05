@@ -6,7 +6,7 @@
 ## 01. PROBLEMA - FRUSTRAÇÃO
 
 ```
-A motivational but frustrated quote graphic for Instagram. Black background with bold white text in the center that reads "VOCÊ TEM AUTORIDADE NO MUNDO REAL. MAS NO DIGITAL... PARECE QUE NÃO EXISTE." Below, smaller golden text says "Posts com 30 likes. Zero qualificados chegando." The design uses elegant typography with the phrase "MUNDO REAL" and "MUNDO DIGITAL" highlighted in golden yellow color (#D4AF37). Clean, minimalist layout with plenty of negative space. Professional, premium aesthetic.
+A motivational but frustrated quote graphic for Instagram. Black background with bold white text in the center that reads "VOCÊ TEM AUTORIDADE NO MUNDO REAL. MAS NO DIGITAL... PARECE QUE NÃO EXISTE." Below, smaller golden text says "Conteúdo sem estratégia. Zero qualificados chegando." The design uses elegant typography with the phrase "MUNDO REAL" and "MUNDO DIGITAL" highlighted in golden yellow color (#D4AF37). Clean, minimalist layout with plenty of negative space. Professional, premium aesthetic.
 ```
 
 ---
@@ -94,7 +94,7 @@ An emotional pain-point graphic. Black background with centered white text that 
 ## 12. TRANSFORMAÇÃO - ANTES/DEPOIS
 
 ```
-A before/after transformation graphic. Black background split horizontally. Top section in gray text with label "ANTES:" and points like "Posts com 20 likes • Zero leads • Frustração". Bottom section in golden text with label "DEPOIS DO RETIRO:" and points like "Posicionamento claro • Conteúdo que converte • Autoridade digital". Center divider line. Clean comparison design.
+A before/after transformation graphic. Black background split horizontally. Top section in gray text with label "ANTES:" and points like "Conteúdo sem estratégia • Zero qualificados • Frustração". Bottom section in golden text with label "DEPOIS DO RETIRO:" and points like "Posicionamento claro • Conteúdo que converte • Autoridade digital". Center divider line. Clean comparison design.
 ```
 
 ---
@@ -222,7 +222,7 @@ A differentiation-focused motivational graphic. Black background with white text
 ## 28. PROVA - CASES
 
 ```
-A case study showcase graphic. Black background with golden text: "QUEM JÁ FEZ, TRANSFORMOU:" Three white testimonials/quotes: "De 30 likes a qualificados no DM" "De invisível a autoridade" "De confuso a posicionamento definido" Bottom: "No Retiro, você cria sua transformação" Social proof-focused design.
+A case study showcase graphic. Black background with golden text: "QUEM JÁ FEZ, TRANSFORMOU:" Three white testimonials/quotes: "De invisível a autoridade reconhecida" "De confuso a posicionamento definido" "Zero estratégia a qualificados no DM" Bottom: "No Retiro, você cria sua transformação" Social proof-focused design.
 ```
 
 ---

@@ -1,386 +1,628 @@
 # 📨 FLUXOS DE COMUNICAÇÃO
 ## Retiro Anti-Carnaval Acelerador de Audiência
 
-> **Versão:** 1.0
-> **Contém:** WhatsApp, E-mail, Grupo
+> **Versão:** 2.0
+> **Princípio:** DM = Simples | Grupo = Completo
+>
+> **DM:** Apenas links e comunicações essenciais 1:1
+> **Grupo:** Tarefas, discussões, participação ativa, hot seats
 
 ---
 
-## 📱 WHATSAPP
+## 📱 WHATSAPP INDIVIDUAL (DM)
+> Simplificado ao máximo - apenas comunicações essenciais 1:1
 
-### Mensagem 1: Boas-Vindas (Automático - Imediato)
+### Mensagem 1: Boas-Vindas + Link do Grupo (Automático - Imediato)
 
 ```
 👋 BEM-VINDO AO RETIRO ANTICARNAVAL!
 
 Olá, {{nome}}!
 
-Seja bem-vindo(a) ao Retiro Anti-Carnaval do
+Você está dentro do Retiro Anti-Carnaval do
 Acelerador de Audiência! 🚀
 
-Você tomou a decisão certa. Nesses 4 dias, vamos:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ Definir seu posicionamento digital
-✅ Criar seu plano de conteúdo
-✅ Usar IA para escalar produção
-✅ Sair com um roadmap de 90 dias
+📅 COMEÇA: Sábado, 14/03, às 10h
+
+🔗 ENTRAR NO GRUPO:
+{{link_grupo}}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📅 PRIMEIRA AULA: Sábado, 14/03, às 10h
+⚠️ IMPORTANTE:
 
-O link será enviado aqui 1h antes.
+Entre no grupo AGORA. É lá que vai rolar:
+→ Tarefas diárias
+→ Aulas (links enviados lá)
+→ Retornos (links enviados lá)
+→ Interação com outros participantes
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎁 O QUE VOCÊ VAI RECEBER:
-
-→ Planilha de Auditoria Digital
-→ Template de Posicionamento
-→ Grade de Conteúdo Semanal
-→ Planner de 90 Dias
-→ Certificado de Conclusão
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-💡 PREPARA-SE PARA O RETIRO:
-
-1️⃣ Reserve 1h pela manhã (aula)
-2️⃣ Reserve 1h à tarde (retorno)
-3️⃣ Tenha 30-45min para a tarefa do dia
-4️⃣ Prepare notebook e caneta
-
-Qualquer dúvida, é só responder aqui.
-
-Te vejo sábado!
+Nos vemos no grupo!
 
 Equipe Acelerador de Audiência
 ```
 
 ---
 
-### Mensagem 2: Lembrete Aula 1 - 24h antes
+### Mensagem 2-9: Links de Aula/Retorno (Padrão Repetitivo)
 
-```
-⏰ FALTA 24H PARA O RETIRO COMEÇAR!
-
-Olá, {{nome}}!
-
-Amanhã começa sua jornada de 4 dias para
-DEFINIR seu posicionamento digital.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📅 AMANHÃ: Sábado, 14/03
-⏰ Horário: 10h
-🎯 Tema: Por que você tem autoridade real mas
-            ninguém sabe no digital
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📋 PREPARA-SE:
-
-✅ Reserve uma hora tranquila pela manhã
-✅ Tenha café ☕ (opcional mas recomendado)
-✅ Notebook e caneta
-✅ Conexão estável
-
-O link da aula chega amanhã às 9h.
-
-Uma última coisa: você já sentiu que tem
-resultado no mundo real mas no digital
-parece invisível?
-
-Amanhã você vai entender POR QUE isso
-acontece e o que fazer.
-
-Boa noite e até amanhã! 🚀
-```
-
----
-
-### Mensagem 3: Link da Aula - 1h antes
-
+**DIA 1 - MANHÃ (1h antes da aula):**
 ```
 🔴 AULA COMEÇA EM 1 HORA!
 
 Olá, {{nome}}!
 
-Estamos começando em breve.
+O link da aula foi enviado no GRUPO.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🔗 LINK DA AULA:
-
-{{link_aula}}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⏰ Começamos pontualmente às 10h
-💬 A aula será gravada
-📋 Material de apoio será enviado depois
-
-Te vejo lá!
-
-Equipe Acelerador de Audiência
+Te vejo lá às 10h! 🚀
 ```
 
----
-
-### Mensagem 4: Entrega de Tarefa (após cada aula)
-
+**DIA 1 - TARDE (1h antes do retorno):**
 ```
-📋 TAREFA DO DIA DISPONÍVEL!
-
-Parabéns por concluir mais aula, {{nome}}! 🎉
-
-Agora é hora de colocar em prática.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📄 DOWNLOAD DA TAREFA:
-
-{{link_tarefa}}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⏰ PRAZO: Até o retorno de hoje/tarde
-⏱️ DEDICAÇÃO: 30-45 minutos
-
-💡 POR QUE IMPORTANTE:
-
-É na prática que o aprendizado se fixa.
-Não pule essa etapa!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Quando terminar, responda:
-"FEITO"
-
-Aí te passo o próximo passo.
-
-🔥 Continua firme!
-
-Equipe Acelerador de Audiência
-```
-
----
-
-### Mensagem 5: Despertar para Retorno Tarde
-
-```
-🔥 RETIRO CONTINUA ÀS 17H!
+🔥 RETORNO ÀS 17H!
 
 Olá, {{nome}}!
 
-Manhã de aula ✅
-Tarefa entregue ✅ (espero!)
+O link do retorno foi enviado no GRUPO.
 
-Agora é hora do RETORNO.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⏰: 17h
-🔗: {{link_retorno}}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-O que vamos fazer no retorno:
-
-✅ Tirar dúvidas da tarefa
-✅ Hot seats (quem quiser compartilhar)
-✅ Aprofundar pontos da manhã
-
-Até lá!
+Te vejo lá!
 ```
+
+*Repetir padrão para dias 2, 3, 4*
 
 ---
 
-### Mensagem 6: Engajamento Dia 2
-
-```
-💬 COMO ESTÁ SENDO SUA JORNADA?
-
-{{nome}}, segunda pergunta do retiro:
-
-Qual foi o MAIOR insight que você teve
-até agora?
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Responda aqui. Vamos ler cada resposta.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Lembre-se: você está construendo algo
-que vai impactar o resto do seu ano.
-
-Continue firme! 🚀
-```
-
----
-
-### Mensagem 7: Abertura de Grupo
-
-```
-🔓 GRUPO ABERTO PARA INTERAÇÃO!
-
-Pessoal!
-
-Agora vamos abrir o grupo para interação
-entre vocês.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-💬 PODEM:
-✅ Compartilhar suas tarefas
-✅ Pedir feedback construtivo
-✅ Fazer perguntas
-✅ Conectar com outros participantes
-✅ Celebrar vitórias
-
-🚫 NÃO PODEM:
-❌ Spam ou autopromoção
-❌ Desrespeito de qualquer tipo
-❌ Conteúdo externo não relacionado
-❌ Vendas cruzadas
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Vamos usar esse tempo para crescer JUNTOS.
-
-Comentem suas tarefas abaixo 👇
-```
-
----
-
-### Mensagem 8: Motivação Dia 3
-
-```
-🔥 TERCEIRO DIA! VOCÊ JÁ AVANÇOU 50%!
-
-{{nome}}, duas coisas:
-
-1️⃣ Parabéns por estar aqui. A maioria
-    das pessoas DESISTIRIA no dia 2.
-
-2️⃣ Hoje é o dia que muda tudo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Hoje vamos falar de ESCALA.
-
-Não é sobre fazer 1 conteúdo por semana.
-É sobre consistência. É sobre presença.
-
-A aula de hoje vai transformar sua
-relação com produção de conteúdo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Te vejo às 10h! 🚀
-
-🔗 Link chega 1h antes
-```
-
----
-
-### Mensagem 9: Anúncio Oferta (Dia 4)
-
-```
-🎁 ÚLTIMO DIA + CONVITE ESPECIAL
-
-{{nome}}, chega ao fim nossa jornada
-de 4 dias.
-
-Mas na verdade, é só o começo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Hoje, na aula, vou apresentar uma oportunidade
-para continuar essa jornada com a gente.
-
-É o ACelerador de Audiência.
-
-Nosso programa completo onde acompanhamos
-você por 1 ano na sua estratégia de conteúdo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Alguns detalhes:
-
-→ Posicionamento individual com consultor
-→ Brand book completo
-→ Pesquisa de formatos de conteúdo
-→ Conteudos roteirizados para você
-→ Grade semanal personalizada
-→ IA treinada com SUA marca
-→ Acompanhamento semanal por 8 semanas
-→ E muito mais...
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Vou apresentar no final da aula de hoje.
-
-Sem pressão. Sem enrolação.
-
-Você decide se faz sentido para você.
-
-Te vejo na última aula! 🚀
-```
-
----
-
-### Mensagem 10: Pós-Evento - Certificado
+### Mensagem 10: Certificado (Pós-Evento)
 
 ```
 🏆 PARABÉNS! VOCÊ CONCLUIU O RETIRO!
 
 {{nome}},
 
-É com grande orgulho que entregamos seu
-certificado de conclusão!
+Seu certificado está disponível!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📄 DOWNLOAD DO CERTIFICADO:
-
 {{link_certificado}}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Você completou:
-✅ 4 aulas
-✅ 4 tarefas
-✅ 4 sessões de retorno
-
-Isso é RARO. A maioria das pessoas não
-chega até aqui.
-
-Parabéns!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎁 BÔNUS EXTRA:
-
-Como presente, deixo um prompt exclusivo
-de IA para você usar:
-
-{{link_prompt}}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-O que vem agora?
-
-A oferta do Acelerador continua aberta
-até {{data}}.
-
-Se faz sentido, ótimo. Se não, sem
-problemas. Use tudo que aprendeu!
-
+Parabéns pela dedicação!
 Continue firme! 🚀
 
 Equipe Acelerador de Audiência
+```
+
+---
+
+## 💬 GRUPO DE WHATSAPP
+> Onde acontece toda a complexidade e interação
+
+---
+
+## FASE 1: GRUPO FECHADO (Transmissão)
+
+### Mensagem de Boas-Vindas (Pinned)
+
+```
+🎯 BEM-VINDO AO RETIRO ANTICARNAVAL!
+
+Este é um espaço seguro para aprendizado,
+troca e crescimento mútuo.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 REGRAS DO JOGO:
+
+✅ SEJA RESPEITOSO - Todos estão em jornada
+                   única. Valorize isso.
+
+✅ SEM AUTOPROMOÇÃO - Este não é espaço
+                     para vender seus produtos.
+
+✅ FOCO NO CONTEÚDO - Mantenha conversas
+                     alinhadas ao retiro.
+
+✅ PRIVACIDADE - O que é compartilhado aqui,
+                fica aqui.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎁 O QUE VOCÊ VAI ENCONTRAR AQUI:
+
+→ Tarefas diárias completas
+→ Links das aulas e retornos
+→ Espaço para tirar dúvidas
+→ Hot seats (voluntários)
+→ Networking com outros empresários
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 CRONOGRAMA:
+
+Dia 1 (Sáb): Por que você tem autoridade real
+             mas ninguém sabe no digital
+
+Dia 2 (Dom): Posicionamento - Como se tornar
+             a ÚNICA opção no seu mercado
+
+Dia 3 (Seg): Escala de conteúdo - Ter presença
+             sem virar escravo do digital
+
+Dia 4 (Ter): Seu plano de 90 dias - Do
+             posicionamento ao resultado
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 PRIMEIRA AULA: Sábado, 14/03, às 10h
+
+Enquanto isso, se apresente!
+
+Nome:
+Profissão:
+Principal desafio no digital:
+
+Vamos nessa!
+```
+
+---
+
+## FASE 2: GRUPO ABERTO (Interação)
+
+### DIA 1 - TAREFA COMPLETA
+
+```
+📋 TAREFA DO DIA 1 - AUDITORIA DIGITAL
+
+Galera, hora de colocar a mão na massa! 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 OBJETIVO:
+
+Entender onde você está HOJE no digital
+e qual o abismo entre seu mundo real
+e sua presença online.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 DOWNLOAD DO MATERIAL:
+{{link_tarefa_1}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️ DEDICAÇÃO: 30-45 minutos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 O QUE VOCÊ VAI FAZER:
+
+PARTE 1 - AUDITORIA DE PERFIL
+1. Abra seu Instagram
+2. Responda no papel:
+   - O que seu bio diz sobre você?
+   - Se eu não te conhecesse, entenderia
+     o que você faz pela bio?
+   - Seus últimos 10 posts conversam
+     entre si ou parecem de pessoas
+     diferentes?
+   - Qual a primeira palavra que vem
+     à mente quando você vê seu perfil?
+
+PARTE 2 - AUDITORIA DE AUTORIDADE
+1. Liste 5 pessoas que você considera
+   autoridade no seu mercado
+2. O que elas têm em comum?
+3. O que elas fazem no digital que
+   você não faz?
+
+PARTE 3 - O ABISMO
+1. Escreva: "No mundo real, eu sou
+   conhecido por __________"
+2. Escreva: "No digital, pareço que
+   sou __________"
+3. O abismo entre esses dois é o
+   que vamos trabalhar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 IMPORTANTE:
+
+Não pule essa etapa! É na prática que
+o aprendizado se fixa.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ QUANDO TERMINAR:
+
+Comenta "FEITO" abaixo e compartilha:
+1. Qual foi seu maior espanto?
+2. O que você já sabia?
+3. O que vai mudar a partir de hoje?
+
+Vamos ler todos! 🔥
+```
+
+---
+
+### DIA 2 - TAREFA COMPLETA
+
+```
+📋 TAREFA DO DIA 2 - POSICIONAMENTO
+
+Ontem entendemos o problema.
+Hoje vamos definir a SOLUÇÃO. 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 OBJETIVO:
+
+Sair daqui com seu POSICIONAMENTO
+definido. Você vai saber EXATAMENTE
+quem você é, para quem fala e como
+é diferente.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 DOWNLOAD DO MATERIAL:
+{{link_tarefa_2}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️ DEDICAÇÃO: 45 minutos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 O QUE VOCÊ VAI FAZER:
+
+PARTE 1 - SEU DIFERENCIAL
+Responda (no papel):
+1. O que você faz que NINGUÉM faz
+   do jeito que você faz?
+2. Qual sua história única?
+3. Que resultados você tem que
+   poucos têm?
+
+PARTE 2 - SEU PÚBLICO
+1. Quem você AJUDA melhor que
+   qualquer pessoa?
+2. Qual o PROBLEMA que você resolve
+   que ninguém resolve como você?
+
+PARTE 3 - SUA DECLARAÇÃO
+Complete:
+"Eu ajudo [público] a [resultado]
+através de [método único]"
+
+Exemplo:
+"Eu ajudo médicos a ocuparem a
+primeira página do Google através
+de posicionamento de autoridade
+digital em 90 dias"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ QUANDO TERMINAR:
+
+Comenta "FEITO" e compartilha sua
+declaração de posicionamento!
+
+Vamos dar feedback uns nos outros! 👇
+```
+
+---
+
+### DIA 3 - TAREFA COMPLETA
+
+```
+📋 TAREFA DO DIA 3 - PLANO DE CONTEÚDO
+
+Posicionamento definido ✅
+Agora vamos ESCALAR. 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 OBJETIVO:
+
+Sair daqui com sua PRIMEIRA SEMANA
+de conteúdo planejada. E o método
+para repetir todas as semanas.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 DOWNLOAD DO MATERIAL:
+{{link_tarefa_3}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️ DEDICAÇÃO: 45 minutos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 O QUE VOCÊ VAI FAZER:
+
+PARTE 1 - SEU FORMATO PRINCIPAL
+Com base no seu posicionamento:
+1. Qual formato faz MAIS sentido
+   para você? (Vídeo, texto, áudio,
+   carrossel, etc.)
+2. Você TEM condições de produzir
+   isso consistentemente?
+
+PARTE 2 - SUA FREQUÊNCIA
+1. Quantas vezes por SEMANA você
+   pode se comprometer?
+2. Seja REALISTA. É melhor 2x por
+   semana todo dia que 7x uma semana
+   e zero na próxima.
+
+PARTE 3 - SUA PRIMEIRA SEMANA
+Complete a grade:
+
+SEG | TER | QUA | QUI | SEX | SÁB | DOM
+___|___|___|___|___|___|___|
+    |    |    |    |    |    |
+
+Para cada dia:
+- Tema do conteúdo
+- Formato
+- Chamada para ação
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ QUANDO TERMINAR:
+
+Comenta "FEITO" e manda uma foto
+da sua grade planejada!
+
+Vamos nos comprometer juntos! 🚀
+```
+
+---
+
+### DIA 4 - TAREFA COMPLETA
+
+```
+📋 TAREFA DO DIA 4 - PLANO DE 90 DIAS
+
+Último dia. Vamos transformar tudo
+isso em um PLANO. 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 OBJETIVO:
+
+Sair daqui com seu roadmap de 90 dias.
+O que fazer em qual momento para
+chegar onde você quer chegar.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 DOWNLOAD DO MATERIAL:
+{{link_tarefa_4}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️ DEDICAÇÃO: 45 minutos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 O QUE VOCÊ VAI FAZER:
+
+PARTE 1 - ONDE VOCÊ QUER CHEGAR
+Defina para 90 dias:
+1. Que posicionamento quer alcançar?
+2. Que nível de presença digital?
+3. Que resultados de negócio
+   (leads, vendas, etc.)?
+
+PARTE 2 - MARCOS DE 90 DIAS
+Divida em 3 fases:
+
+FASE 1 (Dias 1-30): Fundação
+- O que precisa estar pronto?
+- Meta da fase:
+
+FASE 2 (Dias 31-60): Consistência
+- O que manter/acelerar?
+- Meta da fase:
+
+FASE 3 (Dias 61-90): Otimização
+- O que testar/melhorar?
+- Meta da fase:
+
+PARTE 3 - PRÓXIMA SEMANA
+Escreva os 3 compromissos que você
+vai fazer NA PRÓXIMA SEMANA para
+começar:
+
+1.
+2.
+3.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ QUANDO TERMINAR:
+
+Comenta "FEITO" e compartilha:
+1. Seu objetivo principal de 90 dias
+2. Seus 3 compromissos da próxima semana
+
+Vamos nos cobrar! 💪
+```
+
+---
+
+### POSTS DE ENGAJAMENTO
+
+#### Post 1 - Após Tarefa 1:
+```
+💪 QUEM COMPLETOU A TAREFA DO DIA 1?
+
+Comenta "FEITO" abaixo 👇
+
+Quem ainda não fez, qual a dificuldade?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Lembre-se: é na prática que o
+aprendizado se fixa!
+
+Não deixe para depois 🚀
+```
+
+#### Post 2 - Após Tarefa 2:
+```
+🔥 COMPARTILHE SEU POSICIONAMENTO!
+
+Galera, vamos nos conhecer melhor?
+
+Comenta sua declaração de posicionamento:
+
+"Eu ajudo [público] a [resultado]
+através de [método único]"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vamos ler todos e dar feedback!
+Quem lê, comenta com um emoji
+se faz sentido o posicionamento 👇
+```
+
+#### Post 3 - Encerramento:
+```
+🏆 ÚLTIMO DIA - COMENTEM AQUI!
+
+1. O maior aprendizado desses 4 dias
+2. O que você vai implementar primeiro
+3. Qual seu compromisso para a próxima
+   semana?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vamos celebrar as conquistas de
+cada um! 🎉
+
+Parabéns a todos que chegaram até aqui!
+```
+
+---
+
+### HOT SEAT
+
+```
+🔥 HOT SEAT - QUEM QUER COMPARTILHAR?
+
+Vamos abrir para hot seats!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 COMO FUNCIONA:
+
+1. Voluntário compartilha seu perfil
+2. Galera dá feedback construtivo
+3. Eu dou meu ponto de vista
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Quem quer começar?
+
+Comenta "EU" abaixo 👇
+```
+
+---
+
+### MENSAGENS DE MODERAÇÃO
+
+#### Para Spam:
+```
+⚠️ AVISO - AUTOPROMOÇÃO
+
+Olá, {{nome}}!
+
+Identificamos uma mensagem de autopromoção.
+Por favor, evite esse tipo de conteúdo.
+
+Este é um espaço de aprendizado.
+
+Se continuar, teremos que remover do grupo.
+
+Obrigado pela compreensão!
+```
+
+#### Para Desrespeito:
+```
+⚠️ AVISO - RESPEITO
+
+Olá, {{nome}}!
+
+Sua mensagem foi desrespeitosa.
+Não toleramos esse comportamento.
+
+Por favor, mantenha um tom construtivo.
+
+Em caso de reincidência, será removido.
+
+Obrigado!
+```
+
+#### Para Off-topic:
+```
+📌 LEMBRETE - FOCO NO RETIRO
+
+Olá, {{nome}}!
+
+Sua mensagem está fora do tema do retiro.
+Por favor, mantenha as conversas alinhadas
+ao conteúdo.
+
+Obrigado!
+```
+
+---
+
+### ANÚNCIO DE OFERTA DURANTE O EVENTO
+
+```
+🎁 UMA COISA IMPORTANTE
+
+Galera, durante esses dias eu falei
+sobre posicionamento, conteúdo e
+estratégia.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Alguns de vocês vão querer continuar
+essa jornada com a gente.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+O Acelerador de Audiência é nosso
+programa completo onde:
+
+→ Posicionamento individual com consultor
+→ Brand book completo da sua marca
+→ Conteudos roteirizados toda semana
+→ IA treinada com SUA voz
+→ Acompanhamento por 8 semanas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 CONHECER O PROGRAMA:
+{{link_vendas}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Sem pressão. Sem enrolação.
+
+Se fizer sentido para você, ótimo.
+Se não, use tudo que aprendeu!
+
+Vou apresentar os detalhes na última
+aula de hoje 👇
 ```
 
 ---
@@ -424,8 +666,8 @@ Dia 4 → Seu plano de 90 dias: Do posicionamento
 📱 IMPORTANTE:
 
 Você receberá todas as comunicações pelo
-WhatsApp. Se possível, mantenha as notificações
-ativas para não perder nada.
+WhatsApp. Entre no grupo através do link
+que enviamos por lá.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -448,7 +690,6 @@ Todos os direitos reservados
 **Assunto:** ⏰ O Retiro começa amanhã!
 
 ```
-
 {{nome}},
 
 Falta menos de 24 horas para o Retiro Anti-Carnaval
@@ -502,7 +743,6 @@ Equipe Acelerador de Audiência
 **Assunto:** 🔥 Como está sendo sua experiência?
 
 ```
-
 {{nome}},
 
 Passamos da metade!
@@ -549,7 +789,6 @@ Equipe Acelerador de Audiência
 **Assunto:** 🏆 Parabéns! O que vem agora?
 
 ```
-
 {{nome}},
 
 Parabéns por completar o Retiro Anti-Carnaval! 🎉
@@ -614,158 +853,6 @@ avançando!
 De qualquer forma, parabéns novamente!
 
 Equipe Acelerador de Audiência
-```
-
----
-
-## 💬 GRUPO DE WHATSAPP
-
-### Mensagem de Boas-Vindas (Pinned)
-
-```
-🎯 BEM-VINDO AO RETIRO ANTICARNAVAL!
-
-Este é um espaço seguro para aprendizado,
-troca e crescimento mútuo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📋 REGRAS DO JOGO:
-
-✅ SEJA RESPEITOSO - Todos estão em jornada
-                   única. Valorize isso.
-
-✅ SEM AUTOPROMOÇÃO - Este não é espaço
-                     para vender seus produtos.
-
-✅ FOCO NO CONTEÚDO - Mantenha conversas
-                     alinhadas ao retiro.
-
-✅ PRIVACIDADE - O que é compartilhado aqui,
-                fica aqui.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎁 O QUE VOCÊ VAI ENCONTRAR AQUI:
-
-→ Conteúdos das aulas
-→ Materiais de apoio
-→ Espaço para tirar dúvidas
-→ Hot seats (voluntários)
-→ Networking com outros empresários
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🚀 ESTÁ PRONIO PARA COMEÇAR?
-
-A primeira aula é sábado, 14/03, às 10h.
-
-Enquanto isso, se apresente!
-
-Nome:
-Profissão:
-Principal desafio no digital:
-
-Vamos nessa!
-```
-
----
-
-### Mensagens de Moderação
-
-#### Para Spam:
-```
-⚠️ AVISO - AUTOPROMOÇÃO
-
-Olá, {{nome}}!
-
-Identificamos uma mensagem de autopromoção.
-Por favor, evite esse tipo de conteúdo.
-
-Este é um espaço de aprendizado.
-
-Se continuar, teremos que remover do grupo.
-
-Obrigado pela compreensão!
-```
-
-#### Para Desrespeito:
-```
-⚠️ AVISO - RESPEITO
-
-Olá, {{nome}}!
-
-Sua mensagem foi desrespeitosa.
-Não toleramos esse comportamento.
-
-Por favor, mantenha um tom construtivo.
-
-Em caso de reincidência, será removido.
-
-Obrigado!
-```
-
-#### Para Off-topic:
-```
-📌 LEMBRETE - FOCO NO RETIRO
-
-Olá, {{nome}}!
-
-Sua mensagem está fora do tema do retiro.
-Por favor, mantenha as conversas alinhadas
-ao conteúdo.
-
-Obrigado!
-```
-
----
-
-### Posts de Engajamento
-
-#### Post 1 - Apresentação:
-```
-👋 QUEM É VOCÊ?
-
-Vamos nos conhecer! Responda:
-
-Nome:
-O que faz:
-Principal desafio no digital:
-O que espera do retiro:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Comentem abaixo! 👇
-```
-
-#### Post 2 - Meio do evento:
-```
-💪 DESAFIO DO DIA
-
-Quem completou a tarefa de ontem?
-
-Comenta "FEITO" abaixo 👇
-
-Quem ainda não fez, qual a dificuldade?
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Lembre-se: é na prática que o
-aprendizado se fixa!
-```
-
-#### Post 3 - Final:
-```
-🏆 ÚLTIMO DIA!
-
-Comentem aqui:
-
-1. O maior aprendizado desses 4 dias
-2. O que você vai implementar primeiro
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Vamos celebrar as conquistas de cada um! 🎉
 ```
 
 ---

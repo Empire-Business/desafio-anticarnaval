@@ -52,7 +52,7 @@ Slide 3:
 A frustration slide on black background. White text "Mas no Instagram..." with golden text "NINGUÉM SABE QUE VOCÊ EXISTE" Large, impactful text.
 
 Slide 4:
-A problem enumeration slide. Black background with white bullet points: "✗ Posts com 30 likes ✗ Zero leads chegando ✗ Vendo gente com menos resultado ter mais sucesso" Problem-focused layout.
+A problem enumeration slide. Black background with white bullet points: "✗ Conteúdo sem estratégia ✗ Zero qualificados chegando ✗ Vendo gente com menos resultado ter mais presença" Problem-focused layout.
 
 Slide 5:
 A frustration expression slide. Black background with centered white text "É FRUSTRANTE, NÉ?" Empathetic, relatable design.
@@ -82,7 +82,7 @@ Slide 1:
 A provocative title slide. Black background with large white text "O JOGO MUDOU" and golden subtitle "E você precisa mudar também." Bold, statement-driven design.
 
 Slide 2:
-An old vs new comparison slide. Black background split in two. Left gray "ANTIGO: Viralizar, Ter muitos seguidores, Fazer de tudo" Right golden "NOVO: Retenção, Ser claro, Repetir o que funciona" Comparison layout.
+An old vs new comparison slide. Black background split in two. Left gray "ANTIGO: Viralizar, Ter muitos seguidores, Fazer de tudo" Right golden "NOVO: Retenção, Posicionamento claro, Repetir o que funciona" Comparison layout.
 
 Slide 3:
 An educational slide about retention. Black background with golden text "RETENÇÃO > ALCANCE" White explanation: "1 milhão verem UMA vez ou 10 mil te verem 100 vezes?" Educational, thought-provoking.
@@ -130,7 +130,7 @@ Slide 5:
 Myth 4 slide. Black background with white "MITO 4:" Golden text "IA vai substituir criativos" Below, white "VERDADE: IA expande criativos. Não substitui." Myth-busting layout.
 
 Slide 6:
-Myth 5 slide. Black background with white "MITO 5:" Golden text "Preciso ter um canal ENORME" Below, white "VERDADE: Precisa de audiência ENGAJADA." Myth-busting layout.
+Myth 5 slide. Black background with white "MITO 5:" Golden text "Preciso ter um canal ENORME" Below, white "VERDADE: Preciso de autoridade RECONHECIDA." Myth-busting layout.
 
 Slide 7:
 A transition slide. Black background with centered white text "O que funciona NA VERDADE?" Three golden points: "→ Posicionamento claro → Conteúdo consistente → Estratégia definida"

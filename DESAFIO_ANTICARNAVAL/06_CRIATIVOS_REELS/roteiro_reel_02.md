@@ -35,7 +35,7 @@
 | 5 | Texto na tela com os 4 dias | "Dia 1: Entender o problema. Dia 2: Definir posicionamento." | 3s |
 | 6 | Continuação dos dias | "Dia 3: Escala de conteúdo. Dia 4: Plano de 90 dias." | 3s |
 | 7 | Pessoa sorrindo, mostrando caderno preenchido | "Tudo gratuito. 100% online." | 3s |
-| 8 | CTA final | "Retiro Anti-Carnaval. 14 a 17 de Março. Link na bio." | 4s |
+| 8 | CTA final | "Retiro Anti-Carnaval. 14 a 17 de Fevereiro. Link na bio." | 4s |
 
 **Duração Total:** ~30 segundos
 
@@ -51,7 +51,7 @@
 - DIA 1 / DIA 2 (17-20s)
 - DIA 3 / DIA 4 (20-23s)
 - GRATUITO (23-26s)
-- 14-17/03 (26-30s)
+- 14-17/02 (26-30s)
 - LINK NA BIO (26-30s)
 
 ### Cores
@@ -89,7 +89,7 @@
 
 **Visual:**
 - Logo ou nome "Retiro Anti-Carnaval"
-- Data: "14-17 Março"
+- Data: "14-17 Fevereiro"
 - Setas para baixo
 - "LINK NA BIO" pulsando
 

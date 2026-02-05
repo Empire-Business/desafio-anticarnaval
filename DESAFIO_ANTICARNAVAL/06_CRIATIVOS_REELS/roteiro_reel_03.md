@@ -1,4 +1,4 @@
-# 🎬 REEL 03 - TESTIMONHIO / PROVA SOCIAL
+# 🎬 REEL 03 - TESTIMUNHO / PROVA SOCIAL
 ## "Como fui de invisível no digital a autoridade reconhecida"
 
 ---
@@ -29,11 +29,11 @@
 | Cena | Visual | Áudio/Fala | Duração |
 |------|--------|-------------|---------|
 | 1 | Pessoa falando para câmera, séria | "6 meses atrás, eu tinha sucesso no mundo real. Mas no Instagram? Ninguém me conhecia." | 5s |
-| 2 | B-roll: antigo Instagram com poucos likes (blur) | "Posts com 20 likes. Zero leads chegando. Era frustrante." | 4s |
+| 2 | B-roll: antigo Instagram sem estratégia (blur) | "Conteúdo solto. Zero qualificados chegando. Era frustrante." | 4s |
 | 3 | Volta para câmera | "Até que descobri uma coisa." | 2s |
 | 4 | Texto na tela: "NÃO ERA VIRALIZAR" | "Não era sobre viralizar. Não era sobre ser mais engraçado." | 3s |
 | 5 | Texto: "ERA POSICIONAMENTO" | "Era sobre POSICIONAMENTO. Sobre ser CLARO sobre quem eu era e para quem falava." | 5s |
-| 6 | B-roll: novo Instagram, muitos likes, DMs | "Quando mudei isso... tudo mudou." | 3s |
+| 6 | B-roll: novo Instagram, DMs de qualificados | "Quando mudei isso... tudo mudou." | 3s |
 | 7 | Montagem: resultados, vendas, reconhecimento | "Qualificados passaram a chegar. Autoridade veio. Vendas aconteceram." | 4s |
 | 8 | Pessoa na câmera, confiante | "O mesmo que ensinei para mim, vou te ensinar no Retiro Anti-Carnaval." | 4s |
 | 9 | CTA | "4 dias. Gratuito. Link na bio." | 3s |
@@ -46,7 +46,7 @@
 
 ### Textos na Tela
 - 6 MESES ATRÁS (0-5s)
-- 20 LIKES (5-9s)
+- CONTEÚDO SOLTO (5-9s)
 - ATÉ QUE DESCOBRI (9-11s)
 - NÃO ERA VIRALIZAR (11-14s)
 - ERA POSICIONAMENTO (14-19s)
