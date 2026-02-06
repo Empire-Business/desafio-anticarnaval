@@ -418,12 +418,27 @@ export default function RetiroPage() {
             <div className="fixed inset-y-0 left-0 w-[85vw] max-w-[320px] bg-gray-950 border-r border-gray-800 z-50 overflow-y-auto lg:hidden">
               <div className="p-4">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-semibold text-white">Arquivos</h3>
+                  <h3 className="font-semibold text-white">Menu</h3>
                   <button onClick={() => setSidebarOpen(false)} className="p-2 hover:bg-gray-800 rounded-lg">
                     <X className="w-5 h-5" />
                   </button>
                 </div>
                 <nav className="space-y-1">
+                  {/* Slides Link */}
+                  <button
+                    onClick={() => {
+                      router.push('/slides');
+                      setSidebarOpen(false);
+                    }}
+                    className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-left transition-colors text-yellow-500 hover:bg-yellow-500/10"
+                  >
+                    <Presentation className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-sm font-medium">Slides das Aulas</span>
+                  </button>
+
+                  <div className="border-t border-gray-800 my-2"></div>
+
+                  {/* Files */}
                   {filteredTree.map(node => renderTreeNode(node, 0))}
                 </nav>
               </div>
