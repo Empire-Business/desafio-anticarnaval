@@ -857,27 +857,641 @@ Equipe Acelerador de Audiência
 
 ---
 
-## 📊 SEQUÊNCIA DE FOLLOW-UP PÓS-EVENTO
+## 📊 SEQUÊNCIA DE FOLLOW-UP PÓS-EVENTO (GRUPO)
 
-### Dia 1 Pós-Evento
-**WhatsApp:** Certificado + Prompt de IA
-
-### Dia 2 Pós-Evento
-**WhatsApp:** "Usou o prompt? Conte o resultado"
-
-### Dia 3 Pós-Evento
-**WhatsApp:** "A oferta encerra em X horas"
-
-### Dia 4 Pós-Evento
-**E-mail:** Último dia da oferta
-
-### Dia 5 Pós-Evento
-**WhatsApp:** "Últimas horas"
-
-### Dia 7 Pós-Evento
-**E-mail:** "O que você decidiu?"
+> **Princípio:** Não venda. Rememore, transforme, invite.
 
 ---
 
-*Todos os textos devem ser personalizados com {{nome}}
-quando possível. Teste e otimize conforme resposta.*
+### DIA 1 PÓS-EVENTO
+**Objetivo:** Entregar valor + Certificado + CTA suave
+
+**ENVIO: Domingo, Dia 17/02 - 10h**
+
+```
+🏆 O QUE VOCÊ CONSTRUIU NESSE RETIRO
+
+Galera,
+
+Esses 4 dias foram INTENSOS.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Você passou de alguém que "tem autoridade mas ninguém sabe"
+para alguém que SABE exatamente:
+
+→ Por que o digital é diferente
+→ Quem você é e para quem fala
+→ O que te torna único
+→ Como criar conteúdo que ressoa
+
+Não é pouco. É fundacional.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 SEU CERTIFICADO:
+
+{{link_certificado}}
+
+Pode salvar, compartilhar, prints.
+Você merece reconhecer sua dedicação.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 UMA COISA ANTES DE SEGUIRMOS:
+
+Eu criei um prompt de IA especial para vocês.
+É o mesmo que uso internamente para criar conteúdos.
+
+Ele pega sua declaração de posicionamento
+e transforma em 5 hooks diferentes para você testar.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 PEGAR SEU PROMPT PERSONALIZADO:
+
+{{link_prompt_ia}}
+
+Basta copiar, colar no ChatGPT (ou qualquer IA),
+e customize com o que você criou no dia 2.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+☝️ Isso não é venda. É ferramenta.
+
+Use essa semana para testar pelo menos 2 hooks
+e me conta o que acontece.
+
+Semana que vem volto para ver como foi!
+
+🚀
+```
+
+---
+
+### DIA 2 PÓS-EVENTO
+**Objetivo:** Social proof + curiosity gap + perguntar sobre resultado
+
+**ENVIO: Segunda-feira, Dia 18/02 - 10h**
+
+```
+🔥 E AÍ, TESTOU ALGUM HOOK?
+
+Galera,
+
+Eu quero saber de vocês!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Quem já usou o prompt que mandei ontem?
+
+Comenta aqui embaixo:
+
+✅ "Já testei e foi INSANO"
+✅ "Testei e foi okay, vou ajustar"
+✅ "Ainda não testei, vou hoje"
+✅ "Não vi o prompt, me envia de novo"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Por quê isso importa?
+
+Porquehooks são O ativo mais valioso que você tem.
+
+Um bom hook:
+
+→ Faz a pessoa parar de rolar
+→ Decide se ela vê ou não seu conteúdo
+→ É o diferença entre 100 visualizações e 10.000
+
+Vocês construíram isso no retiro.
+Agora é hora de testar no mundo real.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ ALERTA DE CURIOSIDADE:
+
+Vi alguns de vocês postando Stories
+com o certificado e falando do retiro.
+
+Isso é GIGANTE.
+
+Quando você compartilha, você:
+
+1. Reforça seu próprio posicionamento
+2. Gera curiosidade no seu público
+3. Mostra que você investe em você
+
+Quem postou, comenta com o emoji do seu
+resultado 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Falando em posicionamento...
+
+Vocês viram que a oferta do Acelerador
+encerra em poucos dias?
+
+{{link_oferta}}
+
+Mas isso é conversa para amanhã.
+
+Por hoje, me conta:
+
+QUAL HOOK VOCÊ VAI TESTAR HOJE? 👇
+```
+
+---
+
+### DIA 3 PÓS-EVENTO
+**Objetivo:** Urgência real + benefícios + social proof
+
+**ENVIO: Terça-feira, Dia 19/02 - 10h**
+
+```
+⏰ ÚLTIMAS 48 HORAS
+
+Galera,
+
+Se você estava esperando...
+
+É HOJE.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+A oferta do Acelerador de Audiência
+encerra AMANHÃ à meia-noite.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DEIXA EU TE EXPLICAR POR QUE ISSO IMPORTA:
+
+O retiro te deu o MAPA.
+
+Você sabe:
+→ Onde você está
+→ Para onde quer ir
+→ O que precisa fazer
+
+Mas sabe o que acontece quando você
+tenta fazer sozinho?
+
+→ Você cria 5 posts e ninguém engajou
+→ Você muda seu posicionamento 3x
+→ Você desanima porque "não funciona"
+→ Você volta para zona de conforto
+
+Não é porque você não consegue.
+
+É porque fazer sozinho é 10x mais lento,
+10x mais frustrante, 10x mais fácil de desistir.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+O ACELERADOR É DIFERENTE PORQUE:
+
+→ Você tem UM posicionamento (não muda mais)
+→ Você tem UM método (não inventa toda vez)
+→ Você tem UM time cobrando você (não desanima)
+→ Você tem IA fazendo o trabalho braçal (escala)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🗣️ O QUE OUTRAS PESSOAS DISSERAM:
+
+"Eu fiquei 1 ano tentando entender meu posicionamento.
+Em 2 dias no Acelerador, eu tinha clareza."
+— @mariaempreendedora
+
+"Eu odiava criar conteúdo. Agora eu roteirizo
+em 15 minutos com a IA."
+— @rafaelnegocios
+
+"Eu tentei fazer sozinha 3x. Agora eu tenho
+um plano de 90 dias REAL."
+— @carolcoaching
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎁 PREÇO ESPECIAL DO RETIRO:
+
+{{link_oferta}}
+
+Isso é o menor preço que esse programa
+terá em 2026.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PERGUNTA:
+
+Se você entrar HOJE, qual será a primeira
+coisa que vai mudar na sua presença digital?
+
+Responde aqui. Eu quero ler. 👇
+
+⚡
+```
+
+---
+
+### DIA 4 PÓS-EVENTO
+**Objetivo:** ÚLTIMA CHAMADA - máxima urgência + objeções + CTA final
+
+**ENVIO: Quarta-feira, Dia 20/02 - 17h**
+
+```
+🔥 ÚLTIMAS 7 HORAS
+
+Galera,
+
+Eu vou ser direto com vocês.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HOJE, À MEIA-NOITE, ISSO ACABA.
+
+A oferta especial do Retiro não volta.
+O preço não se repete.
+O lugar na turma não garante.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DEIXA EU TE DAR A VERDADE:
+
+Eu sei por que você ainda não comprou.
+
+1. "Vou esperar o preço melhor"
+   → Não tem preço melhor. Isso é o menor.
+
+2. "Vou fazer sozinho primeiro"
+   → Você já tentou. Por que seria diferente?
+
+3. "Não tenho tempo agora"
+   → Você tem tempo para fazer lento e errado.
+     Não tem para fazer rápido e certo?
+
+4. "Preciso pensar mais"
+   → Você pensou por 4 dias no retiro.
+     O que mais precisa pensar?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+O QUE EU SEI COM CERTEZA:
+
+Se você entrar no Acelerador HOJE:
+
+→ Em 7 dias: Posicionamento definido
+→ Em 14 dias: Primeira semana de conteúdo escalada
+→ Em 30 dias: Primeiros resultados mensuráveis
+→ Em 90 dias: Uma presença digital que você
+              reconhece como SUA
+
+Isso é 90 dias da sua vida.
+
+Compare com os últimos 90 dias.
+
+O que você prefere?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 AÍ ESTÁ O LINK:
+
+{{link_oferta}}
+
+Se você está pronto para SER a pessoa que
+você quer ser no digital...
+
+Se você está cansado de "tentando"...
+
+Se você quer PARAR de reinventar a roda...
+
+É aqui.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ ÚLTIMA COISA:
+
+Depois das 12h da noite, isso some.
+
+Não tem "me avisa quando abrir de novo".
+Não tem "posso pagar parcelado depois".
+
+É AGORA.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Me conta uma última vez:
+
+QUAL É A SUA OBJEÇÃO? 👇
+
+(Se eu puder te ajudar, vou.)
+(Se não puder, pelo menos você tirou a dúvida.)
+```
+
+---
+
+### DIA 5 PÓS-EVENTO
+**Objetivo:** Fechamento + CTA última hora + empatia
+
+**ENVIO: Quinta-feira, Dia 21/02 - 22h**
+
+```
+🚪 ÚLTIMA CHAMADA - 2 HORAS
+
+Galera,
+
+São 22h.
+
+Faltam 2 horas.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Eu sei que alguns de vocês:
+
+→ Estão no limite
+→ Estão pensando demais
+→ Estão esperando um sinal
+
+Deixa eu te dar um.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EU ACREDITO EM VOCÊ.
+
+Você investiu 4 dias do seu tempo.
+Você fez as tarefas.
+Você criou seu posicionamento.
+Você desenhou seu plano.
+
+Você fez TUDO isso.
+
+E agora você está no último degrau.
+
+O que você faz?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+A maioria das pessoas PARA aqui.
+
+Elas voltam para a vida de:
+→ "Eu sei que deveria"
+→ "Um dia eu vou"
+→ "Não é pra mim agora"
+
+ELAS FICAM PRESAS.
+
+Você não quer ficar preso.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 FALTA POUCO:
+
+{{link_oferta}}
+
+São 2 horas.
+
+Clique. Pague. Comece.
+
+É assim que histórias mudam.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se você está lendo isso e pensando:
+
+"Cara, eu VOU fazer isso"
+
+ENTÃO FAÇA.
+
+Não mañana. Não amanhã. AGORA.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NOSSO LINK:
+
+{{link_oferta}}
+
+Vou abrir o sistema uma última vez.
+
+A gente se vê do outro lado. 🚀
+
+—
+Ps: Se você não entrou... tudo bem.
+O conteúdo do retiro é seu. Use bem.
+Eu torço por você de qualquer forma.
+
+Mas se você quiser ir mais rápido...
+sabe onde me encontrar.
+```
+
+---
+
+### DIA 7 PÓS-EVENTO
+**Objetivo:** Fechamento em massa + próximo passo + relacionamento
+
+**ENVIO: Sábado, Dia 23/02 - 10h**
+
+```
+👋 ÚLTIMA MENSAGEM DO RETIRO
+
+Galera,
+
+Passou.
+
+A oferta encerrou. A porta fechou.
+
+Mas a jornada continua.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PARA QUEM ENTROU:
+
+Bem-vindo ao Acelerador de Audiência!
+
+Você acaba de fazer a melhor decisão
+da sua vida digital.
+
+Preparamos tudo para você.
+Segunda-feira você recebe o onboarding.
+
+Fique ligado no e-mail.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PARA QUEM NÃO ENTROU (AINDA):
+
+Eu entendo.
+
+Nem sempre o timing fecha.
+Nem sempre a certeza aparece.
+Nem sempre é "agora".
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Mas eu quero te deixar com uma reflexão:
+
+Você passou 4 dias aqui.
+
+Você viu que eu sei do que estou falando.
+Você viu que o método funciona.
+Você viu que eu me importo de verdade.
+
+E você ainda está aqui, no grupo,
+lendo essa mensagem.
+
+Por quê?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Talvez porque uma parte de você
+SABE que precisa de ajuda.
+
+Que fazer sozinho não está funcionando.
+Que ficar reinventando a roda é exaustivo.
+Que você merece ir mais rápido.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se essa parte estiver falando alto...
+
+A porta do Acelerador pode abrir de novo.
+
+Não hoje. Mas em breve.
+
+Meu conselho:
+
+Quando abrir... não hesite.
+
+Porque hesitar é o inimigo do crescimento.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📬 TEVE ALGUMA DÚVIDA?
+
+Responde esse e-mail.
+
+Se eu puder te ajudar de qualquer forma,
+eu vou.
+
+Afinal, você fez parte disso.
+
+Você é da família agora. 👊
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Obrigado por esses 4 dias.
+
+Obrigado pela energia.
+Obrigado pelas tarefas feitas.
+Obrigado pela presença.
+
+Vocês são especiais.
+
+Eu vejo vocês.
+
+🚀
+
+—
+[Nome]
+Acelerador de Audiência
+```
+
+---
+
+### DIA 14 PÓS-EVENTO
+**Objetivo:** Reativação + results check + nova oportunidade
+
+**ENVIO: Sábado, Dia 28/02 - 10h**
+
+```
+📊 2 SEMANAS DEPOIS...
+
+Galera,
+
+Eu quero saber de vocês.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PARA QUEM ESTÁ NO ACELERADOR:
+
+Como está sendo?
+
+Você já:
+→ Finalizou seu posicionamento?
+→ Criou seus primeiros conteúdos?
+→ Usou a IA pela primeira vez?
+
+Me conta nos comentários:
+
+"Esses 14 dias no Acelerador me
+ ensinaram que..." 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PARA QUEM NÃO ENTROU:
+
+Você ainda está aqui. Isso diz muito.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2 semanas se passaram desde o retiro.
+
+O que você fez com tudo que aprendeu?
+
+→ Posicionamento definido?
+→ Semanas de conteúdo planejadas?
+→ Plano de 90 dias em prática?
+
+Se SIM: parabéns. Você está no caminho.
+
+Se NÃO: sem julgamento.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EU TENHO UMA PERGUNTA:
+
+E se você pudesse voltar no tempo?
+
+E se você pudesse apertar "restart"
+e fazer diferente?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎁 ABERTURA ESPECIAL:
+
+Eu vou abrir UM ÚLTIMO LUGAR no Acelerador.
+
+Não é para todo mundo.
+É para quem está lendo essa mensagem
+e sente que "deveria ter entrado".
+
+Se é você...
+
+Responde "QUERO" nesse e-mail.
+
+Vou te passar os detalhes em privado.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ Mas aviso:
+
+Esse lugar é único. É para quem age AGORA.
+
+Se você hesitar... ele some.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Falando com quem está no grupo:
+
+O que você quer que eu traga de conteúdo
+nesses próximos dias?
+
+Comenta aqui embaixo 👇
+
+🚀
+```
+
+---
+
+> **Nota:** Essa sequência pode ser adaptada conforme os resultados. Teste horários, emojis e CTAs diferentes para otimizar taxa de engajamento.
+
+> **Regra de ouro:** Nunca envie mais de 3 mensagens de follow-up de venda. Após isso, vira spam e prejudica a marca.
