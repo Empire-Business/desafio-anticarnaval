@@ -1,7 +1,35 @@
 "use client";
 
-import { TESTIMONIALS, STATS } from "@/lib/constants";
-import { Quote, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { TrendingUp } from "lucide-react";
+
+interface TestimonialProps {
+  name: string;
+  role: string;
+  quote: string;
+  image?: string;
+}
+
+const testimonials: TestimonialProps[] = [
+  {
+    name: "Fernanda Girassol",
+    role: "De prejuízo com tráfego a +R$ 100 mil/mês",
+    quote: "A Fernanda Girassol pivotou completamente o negócio através da produção de conteúdo. Depois de anos dependendo de anúncios pagos, ela parou de rodar tráfego e hoje fatura mais de R$ 100 mil por mês organicamente, gerando 500 leads mensais.",
+    image: "/assets/cases/fernanda-girassol.jpg",
+  },
+  {
+    name: "Henrique Carolenske",
+    role: "De confuso a +500 mil seguidores",
+    quote: "O Henrique Carolenske produz conteúdo sobre branding e construção de marca. Com consistência e foco, ele construiu uma audiência de mais de 500 mil seguidores. Hoje, ele vende organicamente os produtos da marca dele através do conteúdo que posta todos os dias.",
+    image: "/assets/cases/henrique-carolenske.jpg",
+  },
+];
+
+const stats = [
+  { value: "+10", label: "Perfis próprios gerando demanda" },
+  { value: "R$ 1M", label: "Em vendas mensais orgânicas" },
+  { value: "Centenas", label: "De alunos transformados" },
+];
 
 export default function SocialProof() {
   return (
@@ -15,29 +43,43 @@ export default function SocialProof() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {TESTIMONIALS.map((testimonial, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="bg-gray-950 border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-gold-500/30 transition-colors"
             >
-              <Quote className="w-8 h-8 text-gold-500/30 mb-4" />
-
-              <p className="text-gray-300 leading-relaxed mb-6 italic">
-                "{testimonial.quote}"
-              </p>
-
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-500 to-gold-600 flex items-center justify-center">
-                  <span className="text-black font-bold text-sm">
-                    {testimonial.name.split(" ").map(n => n[0]).join("")}
-                  </span>
+              {/* Profile Image */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-800 flex-shrink-0">
+                  {testimonial.image ? (
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={64}
+                      height={64}
+                      className="object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-gold-500 to-gold-600 flex items-center justify-center">
+                      <span className="text-black font-bold text-xl">
+                        {testimonial.name.split(" ").map(n => n[0]).join("")}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">{testimonial.name}</p>
-                  <p className="text-gray-500 text-xs">{testimonial.role}</p>
+                  <p className="text-white font-semibold text-lg">{testimonial.name}</p>
+                  <p className="text-gold-500 text-sm">{testimonial.role}</p>
                 </div>
               </div>
+
+              {/* Quote */}
+              <p className="text-gray-300 leading-relaxed italic">
+                {testimonial.quote}
+              </p>
             </div>
           ))}
         </div>
@@ -52,7 +94,7 @@ export default function SocialProof() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {STATS.map((stat, index) => (
+            {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <p className="text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
                   {stat.value}

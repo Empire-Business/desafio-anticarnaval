@@ -182,32 +182,32 @@ Enquanto o resto do mundo está no carnaval, você avança.
 │  DIA 1: Por que você tem autoridade real mas ninguém     │
 │         sabe no digital                                 │
 │  • O abismo entre offline e online                     │
-│  • Por que "bom conteúdo" não é suficiente             │
-│  • A nova era do Instagram: retenção > alcance         │
+│  • Por que "bom conteúdo" não é suficiente              │
+│  • A nova era do Instagram: retenção > alcance          │
 └─────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────┐
 │  DIA 2: Posicionamento - Como se tornar a ÚNICA opção   │
 │         no seu mercado                                  │
-│  • Os 4 elementos de um posicionamento forte           │
-│  • Como encontrar seu diferencial único                │
-│  • Sua declaração de posicionamento escrita            │
+│  • Os 4 elementos de um posicionamento forte            │
+│  • Como encontrar seu diferencial único                 │
+│  • Sua declaração de posicionamento escrita             │
 └─────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────┐
-│  DIA 3: Escala de conteúdo - Ter presença sem virar     │
-│         escravo do digital                             │
+│  DIA 3: Escala de conteúdo - Ter presença sem virar    │
+│         escravo do digital                              │
 │  • Os 3 caminhos: Corte, Profundidade, Multi-canais    │
-│  • Por que quantidade gera qualidade                   │
-│  • Como usar IA sem perder sua essência                │
+│  • Por que quantidade gera qualidade                    │
+│  • Como usar IA sem perder sua essência                 │
 └─────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────┐
-│  DIA 4: Seu plano de 90 dias - Do posicionamento        │
+│  DIA 4: Seu plano de 90 dias - Do posicionamento       │
 │         ao resultado                                    │
-│  • Consolidar tudo em um plano de ação                 │
+│  • Consolidar tudo em um plano de ação                  │
 │  • As 3 ações para fazer na semana que vem             │
-│  • Como continuar avançando depois do carnaval         │
+│  • Como continuar avançando depois do carnaval          │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -256,34 +256,28 @@ QUEM JA PASSOU POR ISSO, TRANSFORMOU:
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                                                          │
-│  "Eu achava que tráfego era o único caminho.            │
-│   Em 3 meses mudou tudo. Hoje faço +100k/mês            │
-│   totalmente orgânico."                                 │
+│  A Fernanda Girassol pivotou completamente o negócio     │
+│  através da produção de conteúdo. Depois de anos        │
+│  dependendo de anúncios pagos, ela parou de rodar        │
+│  tráfego e hoje fatura mais de R$ 100 mil por mês       │
+│  organicamente, gerando 500 leads mensais.               │
 │                                                          │
-│  — FERNANDA GIRASSOL                                     │
-│    De prejuízo com tráfego a +R$100 mil/mês            │
-│                                                          │
-└─────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────┐
-│                                                          │
-│  "Eu não sabia o que queria. Tinha autoridade           │
-│   mas não sabia expressar. Hoje tenho +500k             │
-│   seguidores e vendo minha marca."                      │
-│                                                          │
-│  — HENRIQUE                                             │
-│    De confuso a +500k seguidores                        │
+│  — FERNANDA GIRASSOL                                   │
+│    De prejuízo com tráfego a +R$ 100 mil/mês           │
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────┐
 │                                                          │
-│  "Minha base era toda de tráfego e super                │
-│   desengajada. Transformei tudo em vendas               │
-│   consistentes usando conteúdo."                        │
+│  O Henrique Carolenske produz conteúdo sobre            │
+│  branding e construção de marca. Com consistência e      │
+│  foco, ele construiu uma audiência de mais de 500 mil   │
+│  seguidores. Hoje, ele vende organicamente os produtos  │
+│  da marca dele através do conteúdo que posta todos os    │
+│  dias.                                                   │
 │                                                          │
-│  — THIAGO REIS                                          │
-│    De base desengajada a vendas orgânicas              │
+│  — HENRIQUE CAROLENSKE                                 │
+│    De confuso a +500 mil seguidores                    │
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -291,7 +285,7 @@ QUEM JA PASSOU POR ISSO, TRANSFORMOU:
 ### Números da Empresa
 ```
 🏆 +10 perfis próprios gerando demanda
-💰 R$ 1 milhão em vendas orgânicas geradas
+💰 R$ 1 milhão em vendas mensais orgânicas
 👥 Centenas de alunos transformados
 ```
 
