@@ -203,29 +203,47 @@ export default function RetiroPage() {
 
         <main className="pt-16 md:pt-20 pb-8 md:pb-12 px-3 md:px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Hero Section */}
-            <div className="text-center mb-8 md:mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-4 md:mb-6">
-                <Calendar className="w-3 h-3 md:w-4 md:h-4 text-yellow-500" />
-                <span className="text-yellow-500 text-xs md:text-sm font-medium">14 a 17 de Fevereiro de 2026</span>
-              </div>
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4 px-2">
-                Documentação Completa
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto mb-6 md:mb-8 text-sm md:text-base px-4">
-                Acesse todos os documentos estratégicos, operacionais e criativos do Retiro Anti-Carnaval do Acelerador de Audiência.
-              </p>
-
-              {/* Search */}
-              <div className="relative max-w-md mx-auto mb-6 md:mb-8 px-4">
-                <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-500" />
-                <input
-                  type="text"
-                  placeholder="Buscar documentos..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3 bg-gray-900 border border-gray-700 rounded-xl text-white text-sm md:text-base placeholder-gray-500 focus:outline-none focus:border-yellow-500"
+            {/* Hero Section with Image */}
+            <div className="relative rounded-2xl overflow-hidden mb-8 md:mb-12">
+              {/* Background Image with darker overlay */}
+              <div className="absolute inset-0">
+                <img
+                  src="/images/hero00.webp"
+                  alt="Retiro Anti-Carnaval"
+                  className="w-full h-full object-cover"
+                  width="1200"
+                  height="400"
+                  loading="eager"
+                  decoding="async"
                 />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/70" />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 text-center py-12 md:py-16 px-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-4 md:mb-6">
+                  <Calendar className="w-3 h-3 md:w-4 md:h-4 text-yellow-500" />
+                  <span className="text-yellow-500 text-xs md:text-sm font-medium">14 a 17 de Fevereiro de 2026</span>
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4 px-2">
+                  Documentação Completa
+                </h2>
+                <p className="text-gray-300 max-w-2xl mx-auto mb-6 md:mb-8 text-sm md:text-base px-4">
+                  Acesse todos os documentos estratégicos, operacionais e criativos do Retiro Anti-Carnaval do Acelerador de Audiência.
+                </p>
+
+                {/* Search */}
+                <div className="relative max-w-md mx-auto px-4">
+                  <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-500" />
+                  <input
+                    type="text"
+                    placeholder="Buscar documentos..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3 bg-gray-900/90 border border-gray-700 rounded-xl text-white text-sm md:text-base placeholder-gray-500 focus:outline-none focus:border-yellow-500 backdrop-blur-sm"
+                  />
+                </div>
               </div>
             </div>
 
