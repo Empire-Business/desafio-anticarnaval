@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 3 - Retiro Anti-Carnaval | Acelerador de Audiência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../slides.css">
+    <style>
+        .slide { display: none; }
+        .slide.active { display: flex; }
+        .nav-dots { position: fixed; left: 2rem; top: 50%; transform: translateY(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 0.5rem; }
+        .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: 1px solid rgba(212, 175, 55, 0.5); cursor: pointer; transition: all 0.3s; }
+        .nav-dot:hover, .nav-dot.active { background: var(--dourado); transform: scale(1.3); }
+        .nav-arrows { position: fixed; bottom: 2rem; right: 3rem; z-index: 1000; display: flex; gap: 1rem; }
+        .nav-btn { width: 50px; height: 50px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); color: var(--dourado); font-size: 1.5rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .nav-btn:hover { background: rgba(212, 175, 55, 0.3); transform: scale(1.1); }
+        .keyboard-hint { position: fixed; bottom: 2rem; left: 3rem; font-size: 0.75rem; opacity: 0.4; }
+    </style>
+</head>
+<body>
+    <div class="nav-dots" id="navDots"></div>
+    <div class="nav-arrows"><button class="nav-btn" onclick="prevSlide()">←</button><button class="nav-btn" onclick="nextSlide()">→</button></div>
+    <div class="keyboard-hint">Use → ← ou clique para navegar</div>
+
+    <!-- Slides will be inserted here by script for efficiency -->
+    <div id="slidesContainer"></div>
+
+    <script>
+        const slidesData = [
+            { type: 'cover', number: '03', title: 'Escala de Conteúdo', subtitle: 'Como Ter Presença Sem Virar Escravo Do Digital', date: 'Segunda, 16 de Fevereiro de 2026 • 10h' },
+            { type: 'welcome', text: 'Dia 3 do Retiro Anti-Carnaval. Você tem posicionamento definido. Ótimo.' },
+            { type: 'problem', title: 'Mas aqui está a verdade chata:', text: 'Posicionamento sem escala é igual a ter um produto que ninguém conhece.' },
+            { type: 'question', title: 'Como ter presença sem virar escravo do digital?', subtitle: 'Como ter consistência sem ter que produzir 24h por dia?' },
+            { type: 'section', number: '1', title: 'OS 3 CAMINHOS PARA ESCALA' },
+            { type: 'path1', title: 'CAMINHO 1: PERFIS DE CORTE', text: 'Você tem muito conteúdo longo e cria perfis que fazem cortes desses conteúdos.', example: 'Alfredo, Papo Marçal - têm dezenas de perfis de corte.', pros: ['+ Visualizações', '+ Barato que tráfego', 'Outra pessoa te mostrando', 'Efeito fan'], cons: ['Precisa ter muito conteúdo longo', 'Precisa ser carismático', 'Precisa de muito volume/teste'], for: 'Para quem já grava podcast, vídeos longos ou faz muitas palestras' },
+            { type: 'path2', title: 'CAMINHO 2: PROFUNDIDADE', text: 'Você tem um perfil e publica MUITO conteúdo nele.', example: 'Expert Lucrativo (Rob Rezende) - 6 conteúdos por dia.', pros: ['Alta frequência', 'Cria fãs fiéis', 'Domina o território', 'Retenção alta'], cons: ['Demanda mais tempo', 'Precisa de constância', 'Risco de saturação'], for: 'Para quem tem tempo para gravar ou quer se tornar referência absoluta' },
+            { type: 'path3', title: 'CAMINHO 3: MULTI-CANAIS', text: 'Você tem vários perfis produzindo conteúdo para você.', example: 'G4, Empiricus, Acelerador de Audiência (nós).', pros: ['Mais segurança', 'Públicos diversos', 'Universo maior', 'Se um cai, outros sustentam'], cons: ['Complexidade de gestão', 'Precisa de estrutura', 'Exige coordenação'], for: 'Para quem quer construir uma marca duradoura e está disposto a investir' },
+            { type: 'highlight', text: 'Qual é o SEU caminho? Não existe resposta certa. Existe a resposta certa PARA VOCÊ.' },
+            { type: 'section', number: '2', title: 'POR QUANTIDADE GERA QUALIDADE' },
+            { type: 'truth', title: 'Aqui vai uma verdade que muita gente não gosta de ouvir:', subtitle: 'Quantidade gera qualidade.' },
+            { type: 'explanation', text: 'A melhor qualidade é fazer muitos conteúdos bons. E você só consegue fazer bons conteúdos fazendo MUITOS conteúdos.', highlight: 'Produzir conteúdo é uma HABILIDADE. E toda habilidade exige treino.' },
+            { type: 'example', text: 'O Ericko Rocha fez uma live todo dia, por 7 anos. Foram +2.300 lives. É por isso que ele é bom. Não é dom. É repetição.' },
+            { type: 'section', number: '3', title: 'O CONCEITO DE MICROPORGRAMAS' },
+            { type: 'concept', title: 'Para escalar sem enlouquecer, você precisa entender:', highlight: 'MICROPORGRAMAS', text: 'São padrões de conteúdo. Coisas que aparecem na sua grade SEMANALMENTE.' },
+            { type: 'tv-example', text: 'Pensa na TV: Todo domingo tem o Luciano Huck. Toda manhã tem a Ana Maria Braga. Você sabe o que vai ter. E volta todo dia.' },
+            { type: 'microprograms', text: 'No Instagram é igual. Você precisa ter programas que se repetem.', examples: ['Segunda: Conteúdo educativo (carrossel)', 'Terça: Bastidores (story)', 'Quarta: Depoimento (reels)', 'Quinta: Errar para acertar (vídeo)', 'Sexta: Enquete para engajar (story)'] },
+            { type: 'why-works', title: 'Por que funciona?', reasons: ['Você para de reinventar a roda - Sabe o que vai postar', 'Sua audiência sabe o que esperar - Volta por que gosta', 'Você melhora o que funciona - Repetição gera melhoria', 'Escala sem cansar - É um sistema, não criatividade toda hora'] },
+            { type: 'section', number: '4', title: 'COMO USAR IA SEM PERDER SUA ESSÊNCIA' },
+            { type: 'comparison', title: 'A forma ERRADA:', wrong: ['Deixar a IA escrever tudo', 'Usar prompts genéricos', 'Copiar e colar sem editar', 'Perder sua voz'], title2: 'A forma CERTA:', right: ['Usar IA para EXPANDIR quem você é', 'Treinar IA com sua marca', 'Usar como acelerador, não substituto', 'Manter sua essência'] },
+            { type: 'important', text: 'IA não pode construir uma personalidade que você não tem. Se você não é engraçado, IA não vai te fazer engraçado. Se você não é profundo, IA não vai te fazer profundo.' },
+            { type: 'ia-can', title: 'O que IA PODE fazer:', can: ['Expander suas ideias', 'Organizar seus pensamentos', 'Sugerir estruturas', 'Agilizar processos'], title2: 'O que IA NÃO pode fazer:', cannot: ['Dar sua experiência', 'Criar sua história', 'Ter sua opinião', 'Ser você'], footer: 'IA expande. Não substitui.' },
+            { type: 'section', number: '5', title: 'ENCONTRANDO O QUE FUNCIONA' },
+            { type: 'process', title: 'O processo é:', steps: ['Escolha 5 formatos de conteúdo que fazem sentido para você', 'Produza durante 8 semanas', 'Meça os resultados (alcance, engajamento, leads)', 'Identifique o que funciona (acima da média)', 'ESCALE o que funciona'] },
+            { type: 'definition', title: 'O que é "funciona"?', text: 'Não é viralizar. Viralizar é sorte.', checklist: ['Replicável na sua realidade', 'Resultado acima da média', 'Atrai seu cliente ideal', 'Você consegue manter consistência'], footer: 'Quando você encontra o que funciona, você FAZ MAIS DAQUILO.' },
+            { type: 'strategy', text: 'E quando satura? Você mantém 80% do que funciona e testa 20% de novo.', highlight: 'NUNCA muda tudo.' },
+            { type: 'task', number: 'TAREFA', title: 'Para amanhã, última aula, sua tarefa é:', subtitle: 'ESCALA DE CONTEÚDO', items: ['Escolha seu caminho de escala (Perfis de corte? Profundidade? Multi-canais?)', 'Defina 2 formatos de conteúdo para dominar', 'Crie sua primeira semana de grade de conteúdo (Segunda a domingo)'] },
+            { type: 'preview', text: 'Amanhã, vamos juntar tudo e definir seu plano de 90 dias.', highlight: 'Último dia amanhã. Vamos consolidar tudo!' },
+            { type: 'see-you', time: '17h' },
+            { type: 'closing', text: 'Consistência não é perfeição. Um conteúdo simples postado todo dia > Um conteúdo perfeito postado uma vez por mês.' }
+        ];
+
+        let currentSlide = 0;
+        const totalSlides = slidesData.length;
+
+        function createSlideHTML(data, index) {
+            const slideNumber = (index + 1).toString().padStart(2, '0');
+            let content = '';
+
+            const logoHTML = '<div class="slide-logo"><img src="../assets/logotipo-02.png" alt="Logo"></div>';
+            const footerHTML = `<div class="slide-footer"><span class="slide-number">${slideNumber} / ${totalSlides.toString().padStart(2, '0')}</span><span class="slide-date">Aula 3</span></div>`;
+
+            switch(data.type) {
+                case 'cover':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>
+                            <div class="decorative-glow glow-bottom-left"></div>
+                            ${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="hero-section animate-in">
+                                    <p class="text-gold uppercase letter-spacing mb-2" style="font-size: 0.875rem;">Retiro Anti-Carnaval</p>
+                                    <h1 class="slide-title text-white">AULA <span class="text-gradient-gold">${data.number}</span></h1>
+                                    <h2 class="slide-title" style="font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 600;">${data.title}</h2>
+                                    <p class="slide-subtitle text-gray mt-3">${data.subtitle}</p>
+                                </div>
+                            </div>
+                            ${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'welcome':
+                case 'problem':
+                    content = `
+                        <div class="slide-container bg-solid-black bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <h2 class="slide-title text-white">${data.text}</h2>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'question':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <h2 class="slide-title text-white text-center">${data.title}</h2>
+                                    <p class="slide-subtitle text-gray mt-3">${data.subtitle}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'section':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="number-badge text-center" style="margin: 0 auto 2rem;">${data.number}</div>
+                                <h2 class="slide-title text-white text-center">${data.title}</h2>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'path1':
+                case 'path2':
+                case 'path3':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <h2 class="slide-title text-white text-center mb-4">${data.title}</h2>
+                                <div class="card mb-4">
+                                    <p class="text-white">${data.text}</p>
+                                    <p class="text-gold mt-2"><strong>Exemplo:</strong> ${data.example}</p>
+                                </div>
+                                <div class="layout-two-columns">
+                                    <div class="card"><h3 class="text-green font-bold mb-2">✓ Vantagens</h3><ul class="small-text">${data.pros.map(p => `<li class="text-white">${p}</li>`).join('')}</ul></div>
+                                    <div class="card"><h3 class="text-crimson font-bold mb-2">✗ Desvantagens</h3><ul class="small-text">${data.cons.map(c => `<li class="text-white">${c}</li>`).join('')}</ul></div>
+                                </div>
+                                <p class="text-gray text-center mt-3"><strong>Para quem é:</strong> ${data.for}</p>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'highlight':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <div class="framework-box" style="max-width: 900px;">
+                                        <p class="text-white text-center large-text">${data.text}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'truth':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-crimson mb-3" style="font-size: 1.25rem;">Verdade que ninguem gosta de ouvir:</p>
+                                    <h2 class="slide-title text-white text-center" style="font-size: clamp(2rem, 5vw, 4rem);">${data.title}</h2>
+                                    <p class="text-white text-center mt-4 large-text">${data.subtitle}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'explanation':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center large-text">${data.text}</p>
+                                    <div class="highlight-box mt-4 text-center">${data.highlight}</div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'example':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <div class="quote-block" style="max-width: 900px;">
+                                        <p class="text-white">${data.text}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'concept':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white mb-3">${data.text}</p>
+                                    <div style="font-size: 4rem; font-weight: 900; color: var(--dourado);">${data.highlight}</div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'tv-example':
+                case 'why-works':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center large-text">${data.text}</p>
+                                    ${data.reasons ? `<ul class="list-styled mt-4">${data.reasons.map(r => `<li class="text-white">${r}</li>`).join('')}</ul>` : ''}
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'microprograms':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content">
+                                <h2 class="slide-title text-white text-center mb-4">${data.text}</h2>
+                                <ul class="list-numbered" style="max-width: 700px; margin: 0 auto;">${data.examples.map(e => `<li class="text-white">${e}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'important':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <div class="alert-box" style="max-width: 900px;">
+                                        <p class="text-white text-center">${data.text}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'comparison':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <div class="layout-two-columns">
+                                    <div class="card">
+                                        <h3 class="text-crimson font-bold mb-3">${data.title}</h3>
+                                        <ul class="small-text">${data.wrong.map(w => `<li class="text-white">${w}</li>`).join('')}</ul>
+                                    </div>
+                                    <div class="card" style="border-color: var(--dourado);">
+                                        <h3 class="text-gold font-bold mb-3">${data.title2}</h3>
+                                        <ul class="small-text">${data.right.map(r => `<li class="text-white">${r}</li>`).join('')}</ul>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'ia-can':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content">
+                                <div class="layout-two-columns">
+                                    <div class="card">
+                                        <h3 class="text-green font-bold mb-3">${data.title}</h3>
+                                        <ul class="small-text">${data.can.map(c => `<li class="text-white">${c}</li>`).join('')}</ul>
+                                    </div>
+                                    <div class="card">
+                                        <h3 class="text-crimson font-bold mb-3">${data.title2}</h3>
+                                        <ul class="small-text">${data.cannot.map(c => `<li class="text-white">${c}</li>`).join('')}</ul>
+                                    </div>
+                                </div>
+                                <p class="text-gold text-center mt-4" style="font-size: 1.5rem; font-weight: 800;">${data.footer}</p>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'process':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content">
+                                <h2 class="slide-title text-white text-center mb-4">${data.title}</h2>
+                                <ul class="list-numbered">${data.steps.map((s, i) => `<li class="text-white">${s}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'definition':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <h2 class="slide-title text-white text-center">${data.title}</h2>
+                                    <p class="text-white text-center mt-3">${data.text}</p>
+                                    <div class="success-box mt-3" style="max-width: 700px; margin: 0 auto;">
+                                        <p class="text-crimson font-bold text-center">${data.highlight}</p>
+                                    </div>
+                                    <ul class="check-list mt-3" style="max-width: 500px; margin: 0 auto;">${data.checklist.map(c => `<li class="text-white">${c}</li>`).join('')}</ul>
+                                    <p class="text-white text-center mt-3">${data.footer}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'strategy':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center large-text">${data.text}</p>
+                                    <div class="highlight-box mt-4 text-center" style="max-width: 700px; margin: 0 auto;">
+                                        <p class="text-gold" style="font-size: 2rem; font-weight: 800;">${data.highlight}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'task':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <div class="number-badge text-center" style="margin: 0 auto 2rem;">${data.number}</div>
+                                <h2 class="slide-title text-white text-center">${data.title}</h2>
+                                <div class="framework-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                                    <p class="text-gold text-center" style="font-size: 2rem; font-weight: 800;">${data.subtitle}</p>
+                                </div>
+                                <ul class="list-styled mt-4" style="max-width: 700px; margin: 0 auto;">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'preview':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center large-text">${data.text}</p>
+                                    <div class="framework-box mt-4" style="max-width: 800px; margin: 0 auto;">
+                                        <p class="text-gold text-center" style="font-size: 2rem; font-weight: 800;">${data.highlight}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'see-you':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <h2 class="slide-title text-white text-center">Nos vemos às <span class="text-gradient-gold">${data.time}</span>!</h2>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'closing':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center" style="font-size: 2rem; font-weight: 300; opacity: 0.8;">${data.text}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+            }
+            return `<div class="slide ${index === 0 ? 'active' : ''}" id="slide-${index + 1}">${content}</div>`;
+        }
+
+        // Generate all slides
+        const container = document.getElementById('slidesContainer');
+        const dotsContainer = document.getElementById('navDots');
+        slidesData.forEach((data, index) => {
+            container.innerHTML += createSlideHTML(data, index);
+            dotsContainer.innerHTML += `<div class="nav-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`;
+        });
+
+        // Navigation functions
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+            document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === index));
+            document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+            currentSlide = index;
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        // Event listeners
+        document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => touchStartX = e.changedTouches[0].screenX);
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        });
+    </script>
+</body>
+</html>

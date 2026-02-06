@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4 - Retiro Anti-Carnaval | Acelerador de Audiência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../slides.css">
+    <style>
+        .slide { display: none; }
+        .slide.active { display: flex; }
+        .nav-dots { position: fixed; left: 2rem; top: 50%; transform: translateY(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 0.5rem; }
+        .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: 1px solid rgba(212, 175, 55, 0.5); cursor: pointer; transition: all 0.3s; }
+        .nav-dot:hover, .nav-dot.active { background: var(--dourado); transform: scale(1.3); }
+        .nav-arrows { position: fixed; bottom: 2rem; right: 3rem; z-index: 1000; display: flex; gap: 1rem; }
+        .nav-btn { width: 50px; height: 50px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); color: var(--dourado); font-size: 1.5rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .nav-btn:hover { background: rgba(212, 175, 55, 0.3); transform: scale(1.1); }
+        .keyboard-hint { position: fixed; bottom: 2rem; left: 3rem; font-size: 0.75rem; opacity: 0.4; }
+    </style>
+</head>
+<body>
+    <div class="nav-dots" id="navDots"></div>
+    <div class="nav-arrows"><button class="nav-btn" onclick="prevSlide()">←</button><button class="nav-btn" onclick="nextSlide()">→</button></div>
+    <div class="keyboard-hint">Use → ← ou clique para navegar</div>
+
+    <div id="slidesContainer"></div>
+
+    <script>
+        const slidesData = [
+            { type: 'cover', number: '04', title: 'Seu Plano de 90 Dias', subtitle: 'Do Posicionamento Ao Resultado', date: 'Terça, 17 de Fevereiro de 2026 • 10h' },
+            { type: 'welcome', text: 'Último dia do Retiro Anti-Carnaval. Quatro dias. Posicionamento definido. Plano traçado.' },
+            { type: 'question', title: 'A pergunta agora é:', subtitle: 'O que você faz COM tudo isso?' },
+            { type: 'section', number: '1', title: 'REVISÃO: O QUE CONSTRUÍMOS' },
+            { type: 'review-day1', day: 'DIA 1', title: 'O Abismo Offline-Online', items: ['Entendemos que autoridade offline não transfere automaticamente', 'Vimos que "bom conteúdo" não é mais suficiente', 'Compreendemos a nova era do Instagram: retenção > alcance'] },
+            { type: 'review-day2', day: 'DIA 2', title: 'Posicionamento', items: ['Definimos o que é posicionamento', 'Criamos sua declaração de posicionamento', 'Identificamos seus temas centrais'] },
+            { type: 'review-day3', day: 'DIA 3', title: 'Escala de Conteúdo', items: ['Conhecemos os 3 caminhos para escala', 'Entendemos o conceito de microprogramas', 'Definimos seus formatos de conteúdo'] },
+            { type: 'review-day4', day: 'DIA 4', title: 'Consolidação', items: ['Vamos consolidar tudo', 'Criar seu plano de 90 dias', 'Definir seus próximos passos'] },
+            { type: 'highlight', text: 'Você tem o mapa. Agora vamos caminhar.' },
+            { type: 'section', number: '2', title: 'SEU PLANNER DE 90 DIAS' },
+            { type: 'phase-intro', phase: 'FASE 1', title: 'PRIMEIROS 30 DIAS', subtitle: 'FUNDAMENTAÇÃO' },
+            { type: 'week1', week: 'SEMANA 1', items: ['Ajustar bio do Instagram com seu posicionamento', 'Postar 5 conteúdos iniciais', 'Seguir 10 pessoas do seu público ideal por dia', 'Interagir com 5 posts do seu público ideal por dia'] },
+            { type: 'week2', week: 'SEMANA 2', items: ['Postar seguindo sua grade de conteúdo', 'Analisar resultados dos primeiros posts', 'Ajustar o que não está funcionando', 'Continuar interações diárias'] },
+            { type: 'week34', week: 'SEMANAS 3-4', items: ['Manter consistência de postagens', 'Testar 1 novo formato (20% de teste)', 'Documentar aprendizados', 'Celebrar pequenas vitórias'] },
+            { type: 'phase-intro', phase: 'FASE 2', title: 'DIAS 31-60', subtitle: 'CONSOLIDAÇÃO' },
+            { type: 'phase2-content', items: ['Manter o que está funcionando', 'Começar a oferecer algo (lead magnet, aula gratuita)', 'Captar primeiros leads qualificados', 'Aprofundar relacionamento com audiência'] },
+            { type: 'phase-intro', phase: 'FASE 3', title: 'DIAS 61-90', subtitle: 'EXPANSÃO' },
+            { type: 'phase3-content', items: ['Escalar o que funciona', 'Testar novos formatos', 'Considerar multi-canais se fizer sentido', 'Preparar próximo nível'] },
+            { type: 'section', number: '3', title: 'AS 3 AÇÕES PARA ESTA SEMANA' },
+            { type: 'week-intro', text: 'Quarta-feira é dia de trabalho. O Carnaval acabou. ESSA SEMANA, faça estas 3 coisas:' },
+            { type: 'action1', number: '1', action: 'AJUSTE SUA BIO', items: ['Sua bio deve comunicar SEU posicionamento', 'Não precisa ser perfeita. Precisa ser clara.', 'Se eu te conheço, vou te entender?'] },
+            { type: 'action2', number: '2', action: 'POSTE SEU PRIMEIRO CONTEÚDO', items: ['Não precisa ser obra prima', 'Use o formato que você definiu', 'Fale sobre o que você prometeu falar'] },
+            { type: 'action3', number: '3', action: 'INTERAJA COM SEU PÚBLICO', items: ['Encontre 10 pessoas do seu público ideal', 'Interaja de forma genuína', 'Comece a construir relacionamento'] },
+            { type: 'why-matters', text: 'Essas 3 ações mudam tudo. A maioria das pessoas sai de um evento como esse e... não faz nada.', highlight: 'VOCÊ NÃO VAI SER A MAIORIA.' },
+            { type: 'section', number: '4', title: 'O QUE MUDA NA SUA ROTINA' },
+            { type: 'reality', text: 'Você tem um negócio para tocar. Uma vida para viver. E agora precisa adicionar conteúdo à equação.' },
+            { type: 'good-news', text: 'A boa notícia: Se você seguir o que te ensinei, conteúdo não precisa tomar 4h por dia.' },
+            { type: 'routine', title: 'ROTINA SUGERIDA:', items: ['Manhã (30 min): Interagir, responder stories, comentar', 'Tarde (1h): Gravar/batch produzir conteúdo', 'Noite (30 min): Postar, engajar'], total: 'Total: 2h por dia' },
+            { type: 'batch', text: 'E se você fizer BATCH production (gravar vários de uma vez):', items: ['1 vez por semana (2-3h): Gravar tudo', '30 min por dia: Postar e engajar'] },
+            { type: 'secret', highlight: 'O segredo é consistência, não perfeição.', text: 'Um conteúdo simples postado todo dia > Um conteúdo perfeito postado uma vez por mês.' },
+            { type: 'section', number: '5', title: 'FRAMEWORK COMPLETO' },
+            { type: 'framework1', step: 'PASSO 1', title: 'POSICIONAMENTO', items: ['Para quem você fala?', 'Qual problema você resolve?', 'Como você é diferente?', 'Qual é sua prova?'] },
+            { type: 'framework2', step: 'PASSO 2', title: 'MARCA', items: ['Quais são seus valores?', 'Como você quer ser visto?', 'Qual é sua identidade visual?', 'Quais são suas referências?'] },
+            { type: 'framework3', step: 'PASSO 3', title: 'MICROPROGRAMAS', items: ['Quais formatos você vai dominar?', 'Qual é sua grade semanal?', 'Como você vai variar dentro dos temas?', 'Quando você vai postar?'] },
+            { type: 'framework4', step: 'PASSO 4', title: 'ESCALA', items: ['Qual caminho você escolheu?', 'Como você vai medir sucesso?', 'Quando você vai ajustar?', 'Como você vai escalar?'] },
+            { type: 'framework-summary', text: 'Esse é o framework. Simples? Sim. Fácil? Não.', highlight: 'Requer trabalho. Requer consistência. Requer paciência. Mas funciona.' },
+            { type: 'section', number: '6', title: 'O PRÓXIMO NÍVEL' },
+            { type: 'honest', text: 'Agora, eu preciso ser honesto com você. Você tem o mapa. A pergunta é:' },
+            { type: 'choice', question: 'Você vai andar sozinho, ou com aceleração?' },
+            { type: 'alone', title: 'SOZINHO:', items: ['Você pode fazer', 'Vai demorar mais', 'Vai errar mais', 'Vai aprender no trial and error'] },
+            { type: 'accelerated', title: 'COM ACELERAÇÃO:', items: ['Você tem quem já trilhou o caminho', 'Vai errar menos', 'Vai aprender mais rápido', 'Vai ter resultado em menos tempo'] },
+            { type: 'offer-intro', text: 'Acelerador de Audiência é o programa onde:' },
+            { type: 'offer-items', items: ['Definimos seu posicionamento em sessão individual', 'Criamos seu documento de marca completo', 'Pesquisamos os melhores formatos PARA VOCÊ', 'Entregamos roteiros prontos semanalmente', 'Acompanhamos sua evolução por 8 semanas', 'Te damos IA treinada com sua marca'] },
+            { type: 'offer-close', highlight: 'Não é mágica. É aceleração.', text: 'Você faria em 2 anos o que fazemos em 6 meses.' },
+            { type: 'section', number: '7', title: 'TAREFA FINAL E ENCERRAMENTO' },
+            { type: 'task-title', number: 'TAREFA', title: 'Para finalizar, sua última tarefa é:', subtitle: 'PLANO DE 90 DIAS' },
+            { type: 'task-items', items: ['Preencha o planner de 90 dias - O que vai fazer em cada semana', 'Defina metas específicas - Quantos posts por semana? Quantos seguidores em 90 dias?', 'Escolha seu próximo passo - Vai fazer sozinho? Vai conversar com a gente?'] },
+            { type: 'closing1', text: 'Quatro dias. Posicionamento definido. Plano traçado.' },
+            { type: 'closing2', text: 'Enquanto o mundo estava no Carnaval, você estava construindo. E isso diz TUDO sobre você.' },
+            { type: 'closing3', text: 'Você não é da maioria. Você é da minoria que age. A minoria que prioriza crescimento. A minoria que investe em si mesma.' },
+            { type: 'congrats', text: 'De parabéns por estar aqui.' },
+            { type: 'year-starts', highlight: 'O Carnaval acabou. O ano COMEÇA agora.', text: 'Vamos juntos.' }
+        ];
+
+        let currentSlide = 0;
+        const totalSlides = slidesData.length;
+
+        function createSlideHTML(data, index) {
+            const slideNumber = (index + 1).toString().padStart(2, '0');
+            let content = '';
+
+            const logoHTML = '<div class="slide-logo"><img src="../assets/logotipo-02.png" alt="Logo"></div>';
+            const footerHTML = `<div class="slide-footer"><span class="slide-number">${slideNumber} / ${totalSlides.toString().padStart(2, '0')}</span><span class="slide-date">Aula 4</span></div>`;
+
+            switch(data.type) {
+                case 'cover':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>
+                            <div class="decorative-glow glow-bottom-left"></div>
+                            ${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="hero-section animate-in">
+                                    <p class="text-gold uppercase letter-spacing mb-2" style="font-size: 0.875rem;">Retiro Anti-Carnaval</p>
+                                    <h1 class="slide-title text-white">AULA <span class="text-gradient-gold">${data.number}</span></h1>
+                                    <h2 class="slide-title" style="font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 600;">${data.title}</h2>
+                                    <p class="slide-subtitle text-gray mt-3">${data.subtitle}</p>
+                                </div>
+                            </div>
+                            ${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'welcome':
+                    content = `
+                        <div class="slide-container bg-solid-black bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <h2 class="slide-title text-white text-center">${data.text}</h2>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'question':
+                case 'choice':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <h2 class="slide-title text-white text-center">${data.title || data.question}</h2>
+                                    <p class="slide-subtitle text-gray mt-3">${data.subtitle || ''}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'section':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="number-badge text-center" style="margin: 0 auto 2rem;">${data.number}</div>
+                                <h2 class="slide-title text-white text-center">${data.title}</h2>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'review-day1':
+                case 'review-day2':
+                case 'review-day3':
+                case 'review-day4':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <div class="card mb-3">
+                                    <p class="text-gold" style="font-size: 1.5rem; font-weight: 800;">${data.day}</p>
+                                    <h3 class="text-white mt-2" style="font-size: 1.75rem;">${data.title}</h3>
+                                </div>
+                                <ul class="list-styled">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'highlight':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <div class="framework-box" style="max-width: 900px;">
+                                        <p class="text-white text-center large-text">${data.text}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'phase-intro':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-gold" style="font-size: 1.25rem; font-weight: 800;">${data.phase}</p>
+                                    <h2 class="slide-title text-white text-center mt-3">${data.title}</h2>
+                                    <p class="text-gray mt-2" style="font-size: 1.5rem;">${data.subtitle}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'week1':
+                case 'week2':
+                case 'week34':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <h3 class="text-gold mb-4" style="font-size: 1.5rem; font-weight: 800;">${data.week}</h3>
+                                <ul class="check-list">${data.items.map(i => `<li class="text-white"><span class="check-icon">✓</span> ${i}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'phase2-content':
+                case 'phase3-content':
+                case 'routine':
+                case 'batch':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="card" style="max-width: 800px;">
+                                    ${data.text ? `<p class="text-white text-center mb-4">${data.text}</p>` : ''}
+                                    ${data.title ? `<h3 class="text-white text-center mb-4" style="font-size: 1.5rem;">${data.title}</h3>` : ''}
+                                    <ul class="list-styled">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                                    ${data.total ? `<p class="text-gold text-center mt-4" style="font-size: 1.25rem; font-weight: 800;">${data.total}</p>` : ''}
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'week-intro':
+                case 'reality':
+                case 'good-news':
+                case 'honest':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center large-text">${data.text}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'action1':
+                case 'action2':
+                case 'action3':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <div class="card" style="border-color: var(--dourado);">
+                                    <div class="number-badge" style="width: 60px; height: 60px; font-size: 1.5rem;">${data.number}</div>
+                                    <h3 class="text-gold" style="font-size: 1.75rem; font-weight: 800;">${data.action}</h3>
+                                </div>
+                                <ul class="list-styled mt-4">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'why-matters':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-white text-center mb-4" style="font-size: 1.25rem;">${data.text}</p>
+                                    <div class="highlight-box" style="max-width: 700px; margin: 0 auto;">
+                                        <p class="text-gold text-center" style="font-size: 2rem; font-weight: 800;">${data.highlight}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'secret':
+                case 'framework-summary':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-top-right"></div>
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <div class="framework-box" style="max-width: 900px;">
+                                        ${data.highlight ? `<p class="text-gold text-center mb-3" style="font-size: 1.5rem; font-weight: 800;">${data.highlight}</p>` : ''}
+                                        <p class="text-white text-center">${data.text}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'framework1':
+                case 'framework2':
+                case 'framework3':
+                case 'framework4':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="card" style="max-width: 800px;">
+                                    <p class="text-gold" style="font-size: 1.25rem; font-weight: 800;">${data.step}</p>
+                                    <h2 class="text-white mt-2" style="font-size: 2rem;">${data.title}</h2>
+                                    <hr style="border-color: rgba(212, 175, 55, 0.3); margin: 1.5rem 0;">
+                                    <ul class="list-styled" style="font-size: 1.125rem;">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'alone':
+                case 'accelerated':
+                    content = `
+                        <div class="slide-container ${data.type === 'alone' ? 'bg-solid-black' : 'bg-gradient'}">
+                            <div class="decorative-glow ${data.type === 'alone' ? 'glow-bottom-left' : 'glow-top-right'}"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="card ${data.type === 'accelerated' ? 'card-white' : ''}" style="max-width: 700px;">
+                                    <h2 class="${data.type === 'alone' ? 'text-white' : 'text-black'}" style="font-size: 1.75rem; font-weight: 800;">${data.title}</h2>
+                                    <ul class="list-styled mt-4">${data.items.map(i => `<li class="${data.type === 'alone' ? 'text-white' : 'text-black'}">${i}</li>`).join('')}</ul>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'offer-intro':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <div class="framework-box" style="max-width: 800px;">
+                                        <p class="text-white text-center" style="font-size: 1.5rem;">${data.text}</p>
+                                    </div>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'offer-items':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <ul class="list-numbered">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'offer-close':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    <p class="text-gold text-center mb-3" style="font-size: 2rem; font-weight: 800;">${data.highlight}</p>
+                                    <p class="text-white text-center large-text">${data.text}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'task-title':
+                    content = `
+                        <div class="slide-container bg-gradient bg-pattern">
+                            <div class="decorative-glow glow-bottom-left"></div>${logoHTML}
+                            <div class="slide-content">
+                                <div class="number-badge text-center" style="margin: 0 auto 2rem;">${data.number}</div>
+                                <h2 class="slide-title text-white text-center">${data.title}</h2>
+                                <div class="framework-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                                    <p class="text-gold text-center" style="font-size: 2rem; font-weight: 800;">${data.subtitle}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'task-items':
+                    content = `
+                        <div class="slide-container bg-solid-black">
+                            <div class="decorative-glow glow-top-right"></div>${logoHTML}
+                            <div class="slide-content">
+                                <ul class="list-styled" style="max-width: 700px; margin: 0 auto;">${data.items.map(i => `<li class="text-white">${i}</li>`).join('')}</ul>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+                case 'closing1':
+                case 'closing2':
+                case 'closing3':
+                case 'congrats':
+                case 'year-starts':
+                    content = `
+                        <div class="slide-container bg-gradient">
+                            ${index === 40 ? '<div class="decorative-glow glow-top-right"></div><div class="decorative-glow glow-bottom-left"></div>' : '<div class="decorative-glow glow-top-right"></div>'}${logoHTML}
+                            <div class="slide-content layout-center">
+                                <div class="animate-in">
+                                    ${data.highlight ? `<p class="text-gold text-center" style="font-size: 2.5rem; font-weight: 800;">${data.highlight}</p>` : ''}
+                                    <p class="text-white text-center ${data.highlight ? 'mt-4' : ''}" style="font-size: ${data.text.length > 100 ? '1.5rem' : '2rem'}; font-weight: ${index === 40 ? '300' : '400'}; opacity: 0.9;">${data.text}</p>
+                                </div>
+                            </div>${footerHTML}
+                        </div>
+                    `;
+                    break;
+            }
+            return `<div class="slide ${index === 0 ? 'active' : ''}" id="slide-${index + 1}">${content}</div>`;
+        }
+
+        // Generate all slides
+        const container = document.getElementById('slidesContainer');
+        const dotsContainer = document.getElementById('navDots');
+        slidesData.forEach((data, index) => {
+            container.innerHTML += createSlideHTML(data, index);
+            dotsContainer.innerHTML += `<div class="nav-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`;
+        });
+
+        // Navigation functions
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+            document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === index));
+            document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+            currentSlide = index;
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        // Event listeners
+        document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => touchStartX = e.changedTouches[0].screenX);
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        });
+    </script>
+</body>
+</html>

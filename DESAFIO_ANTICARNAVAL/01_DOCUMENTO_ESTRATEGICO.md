@@ -1,4 +1,4 @@
-# 📋 RETIRO ANTICARNAVAL ACelerador de Audiência
+# 📋 RETIRO ANTICARNAVAL Acelerador de Audiência
 ## Documento Estratégico Completo
 
 > **Versão:** 1.0

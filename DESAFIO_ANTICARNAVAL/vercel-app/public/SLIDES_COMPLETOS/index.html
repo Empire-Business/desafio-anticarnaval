@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro Anti-Carnaval - Slides Completos | Acelerador de Audiência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="slides.css">
+    <style>
+        body {
+            background: linear-gradient(180deg, #000000 0%, #0D0D0D 100%);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4CF57 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: var(--cinza-claro);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .event-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .event-info span {
+            color: var(--dourado);
+            font-weight: 600;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .class-card {
+            background: rgba(45, 45, 45, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .class-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .class-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4CF57 50%, #D4AF37 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--preto);
+            margin-bottom: 1.5rem;
+        }
+
+        .class-card h3 {
+            color: var(--branco);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .class-card p {
+            color: var(--cinza-claro);
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+
+        .class-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .class-meta span {
+            color: var(--dourado);
+        }
+
+        .slides-count {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            color: var(--dourado);
+        }
+
+        .instructions {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid var(--dourado);
+            border-radius: 0 1rem 1rem 0;
+        }
+
+        .instructions h3 {
+            color: var(--dourado);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style: none;
+            color: var(--cinza-claro);
+        }
+
+        .instructions li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--dourado);
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--cinza-claro);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 2rem 1rem;
+            }
+
+            .classes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>SLIDES COMPLETOS</h1>
+            <p>Retiro Anti-Carnaval Acelerador de Audiência</p>
+            <div class="event-info">
+                <span>📅 14-17 de Fevereiro de 2026</span>
+                <span>🎯 4 Aulas • 1h cada</span>
+                <span>📊 134 Slides no total</span>
+            </div>
+        </header>
+
+        <div class="classes-grid">
+            <a href="aula01/" class="class-card">
+                <div class="class-number">01</div>
+                <h3>Por Que Você Tem Autoridade Real Mas Ninguém Sabe No Digital</h3>
+                <p>Entenda o abismo entre autoridade offline e online, e o porquê de "bom conteúdo" não ser mais suficiente.</p>
+                <div class="class-meta">
+                    <span>Sábado, 14/02 • 10h</span>
+                    <span class="slides-count">26 slides</span>
+                </div>
+            </a>
+
+            <a href="aula02/" class="class-card">
+                <div class="class-number">02</div>
+                <h3>Posicionamento: Como Se Tornar A ÚNICA Opção No Seu Mercado</h3>
+                <p>Aprenda a definir seu posicionamento único e criar uma declaração clara de quem você é e para quem você fala.</p>
+                <div class="class-meta">
+                    <span>Domingo, 15/02 • 10h</span>
+                    <span class="slides-count">31 slides</span>
+                </div>
+            </a>
+
+            <a href="aula03/" class="class-card">
+                <div class="class-number">03</div>
+                <h3>Escala de Conteúdo: Como Ter Presença Sem Virar Escravo Do Digital</h3>
+                <p>Descubra os 3 caminhos para escala, o conceito de microprogramas e como usar IA sem perder sua essência.</p>
+                <div class="class-meta">
+                    <span>Segunda, 16/02 • 10h</span>
+                    <span class="slides-count">35 slides</span>
+                </div>
+            </a>
+
+            <a href="aula04/" class="class-card">
+                <div class="class-number">04</div>
+                <h3>Seu Plano de 90 Dias: Do Posicionamento Ao Resultado</h3>
+                <p>Consolide tudo o que aprendeu e crie um plano de ação prático para seus próximos 90 dias de estratégia digital.</p>
+                <div class="class-meta">
+                    <span>Terça, 17/02 • 10h</span>
+                    <span class="slides-count">42 slides</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="instructions">
+            <h3>Como Navegar</h3>
+            <ul>
+                <li>Clique em uma aula acima para acessar os slides</li>
+                <li>Use as setas do teclado (← →) para navegar entre slides</li>
+                <li>Use a barra de espaço para avançar</li>
+                <li>Clique nos pontos na lateral esquerda para ir direto a um slide</li>
+                <li>Em dispositivos touch, deslize para esquerda/direita</li>
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <p>Retiro Anti-Carnaval • Acelerador de Audiência • 2026</p>
+            <p style="margin-top: 0.5rem; opacity: 0.6;">Identidade Visual: Anti-Carnaval Pro</p>
+        </footer>
+    </div>
+</body>
+</html>

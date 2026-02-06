@@ -158,7 +158,7 @@ A: Sim, mas recomendamos computador para melhor experiência.
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│              [LOGO ACelerador de Audiência]                 │
+│              [LOGO Acelerador de Audiência]                 │
 │                                                             │
 │                    CERTIFICADO DE                           │
 │                     CONCLUSÃO                               │

@@ -355,7 +355,7 @@ Certificamos que
 
 Concluiu com êxito o
 
-RETIRO ANTICARNAVAL ACelerador de Audiência
+RETIRO ANTICARNAVAL Acelerador de Audiência
 
 Realizado de 14 a 17 de Fevereiro de 2026
 

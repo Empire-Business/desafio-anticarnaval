@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
   Copy, Search, Menu, X, Home, FileText, Video, Image, Mail,
   Phone, CheckCircle, ChevronRight, ChevronDown, Folder,
-  File, ArrowLeft, Calendar, Clock, Users, BookOpen
+  File, ArrowLeft, Calendar, Clock, Users, BookOpen, Presentation
 } from 'lucide-react';
 import contentData from './content.json';
 
@@ -35,6 +36,7 @@ const featuredDocs = [
 ];
 
 export default function RetiroPage() {
+  const router = useRouter();
   const [selectedNode, setSelectedNode] = useState<FileNode | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -205,7 +207,7 @@ export default function RetiroPage() {
             <div className="text-center mb-8 md:mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full mb-4 md:mb-6">
                 <Calendar className="w-3 h-3 md:w-4 md:h-4 text-yellow-500" />
-                <span className="text-yellow-500 text-xs md:text-sm font-medium">14 a 17 de Março de 2026</span>
+                <span className="text-yellow-500 text-xs md:text-sm font-medium">14 a 17 de Fevereiro de 2026</span>
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4 px-2">
                 Documentação Completa
@@ -283,6 +285,29 @@ export default function RetiroPage() {
                   );
                 })}
               </div>
+            </div>
+            )}
+
+            {/* Slides Section - hide when searching */}
+            {!searchTerm && (
+            <div className="mb-8 md:mb-12">
+              <button
+                onClick={() => router.push('/slides')}
+                className="w-full bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 hover:border-yellow-500/50 rounded-xl p-5 md:p-6 text-left transition-all hover:scale-[1.01] group"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-yellow-500/20 rounded-lg group-hover:bg-yellow-500/30 transition-colors">
+                      <Presentation className="w-6 h-6 md:w-7 md:h-7 text-yellow-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-1">Slides das Aulas</h3>
+                      <p className="text-sm md:text-base text-gray-400">Apresentações completas das 4 aulas com navegação interativa</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-6 h-6 text-yellow-500 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </button>
             </div>
             )}
 

@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2 - Retiro Anti-Carnaval | Acelerador de Audiência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../slides.css">
+    <style>
+        .slide { display: none; }
+        .slide.active { display: flex; }
+        .nav-dots {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .nav-dot:hover, .nav-dot.active {
+            background: var(--dourado);
+            transform: scale(1.3);
+        }
+        .nav-arrows {
+            position: fixed;
+            bottom: 2rem;
+            right: 3rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--dourado);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: scale(1.1);
+        }
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 3rem;
+            font-size: 0.75rem;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" data-slide="0"></div>
+        <div class="nav-dot" data-slide="1"></div>
+        <div class="nav-dot" data-slide="2"></div>
+        <div class="nav-dot" data-slide="3"></div>
+        <div class="nav-dot" data-slide="4"></div>
+        <div class="nav-dot" data-slide="5"></div>
+        <div class="nav-dot" data-slide="6"></div>
+        <div class="nav-dot" data-slide="7"></div>
+        <div class="nav-dot" data-slide="8"></div>
+        <div class="nav-dot" data-slide="9"></div>
+        <div class="nav-dot" data-slide="10"></div>
+        <div class="nav-dot" data-slide="11"></div>
+        <div class="nav-dot" data-slide="12"></div>
+        <div class="nav-dot" data-slide="13"></div>
+        <div class="nav-dot" data-slide="14"></div>
+        <div class="nav-dot" data-slide="15"></div>
+        <div class="nav-dot" data-slide="16"></div>
+        <div class="nav-dot" data-slide="17"></div>
+        <div class="nav-dot" data-slide="18"></div>
+        <div class="nav-dot" data-slide="19"></div>
+        <div class="nav-dot" data-slide="20"></div>
+        <div class="nav-dot" data-slide="21"></div>
+        <div class="nav-dot" data-slide="22"></div>
+        <div class="nav-dot" data-slide="23"></div>
+        <div class="nav-dot" data-slide="24"></div>
+        <div class="nav-dot" data-slide="25"></div>
+        <div class="nav-dot" data-slide="26"></div>
+        <div class="nav-dot" data-slide="27"></div>
+        <div class="nav-dot" data-slide="28"></div>
+        <div class="nav-dot" data-slide="29"></div>
+        <div class="nav-dot" data-slide="30"></div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrows">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint">Use → ← ou clique para navegar</div>
+
+    <!-- ==============================================
+         SLIDE 1: CAPA
+         ============================================== -->
+    <div class="slide active" id="slide-1">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-top-right"></div>
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="hero-section animate-in">
+                    <p class="text-gold uppercase letter-spacing mb-2" style="font-size: 0.875rem;">Retiro Anti-Carnaval</p>
+                    <h1 class="slide-title text-white">
+                        AULA <span class="text-gradient-gold">02</span>
+                    </h1>
+                    <h2 class="slide-title" style="font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 600;">
+                        Posicionamento: Como Se Tornar A<br>
+                        <span class="text-gradient-gold">ÚNICA Opção</span> No Seu Mercado
+                    </h2>
+                    <p class="slide-subtitle text-gray mt-3">
+                        Domingo, 15 de Fevereiro de 2026 • 10h
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">01 / 31</span>
+                <span class="slide-date">Retiro Anti-Carnaval</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 2: BOM DIA DIA 2
+         ============================================== -->
+    <div class="slide" id="slide-2">
+        <div class="slide-container bg-solid-black bg-pattern">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <h2 class="slide-title text-white">Bom dia!</h2>
+                    <h2 class="slide-title text-gradient-gold">Dia 2 do Retiro Anti-Carnaval</h2>
+                    <p class="slide-subtitle text-gray mt-4">
+                        Ontem entendemos o problema.<br>
+                        <span class="text-gold">Hoje, vamos resolver.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">02 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 3: REVISÃO
+         ============================================== -->
+    <div class="slide" id="slide-3">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <h2 class="slide-title text-white text-center mb-4">Vamos recapitular rapidamente:</h2>
+
+                <div class="layout-two-columns" style="max-width: 1000px; margin: 0 auto;">
+                    <div class="card">
+                        <h3 class="text-gold font-bold mb-2">ONTEM VIMOS QUE:</h3>
+                        <ul class="small-text text-gray">
+                            <li class="text-white">Autoridade offline não transfere automaticamente</li>
+                            <li class="text-white">Bom conteúdo não é mais suficiente</li>
+                            <li class="text-white">O Instagram mudou: retenção > alcance</li>
+                            <li class="text-white">Você tem tempo NOW para dedicar a isso</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3 class="text-green font-bold mb-2">A PERGUNTA AGORA É:</h3>
+                        <p class="text-white large-text font-bold mt-4">
+                            COMO você se torna conhecido no digital?
+                        </p>
+                        <div class="mt-4" style="font-size: 4rem; font-weight: 900; color: var(--dourado);">
+                            POSICIONAMENTO.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">03 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 4: O QUE É POSICIONAMENTO
+         ============================================== -->
+    <div class="slide" id="slide-4">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="number-badge text-center" style="margin: 0 auto 2rem;">1</div>
+                <h2 class="slide-title text-white text-center">O QUE É POSICIONAMENTO<br><span class="text-gray">(E O QUE NÃO É)</span></h2>
+
+                <div class="layout-two-columns mt-4">
+                    <div class="card">
+                        <h3 class="text-crimson font-bold mb-3 text-center">❌ POSICIONAMENTO NÃO É:</h3>
+                        <ul class="small-text text-gray">
+                            <li>Uma tagline ou slogan</li>
+                            <li>Uma bio bonitinha no Instagram</li>
+                            <li>Um logo ou identidade visual</li>
+                            <li>Falar sobre tudo o que você faz</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="border-color: var(--dourado);">
+                        <h3 class="text-gold font-bold mb-3 text-center">✅ POSICIONAMENTO É:</h3>
+                        <ul class="small-text text-gray">
+                            <li>Uma decisão estratégica sobre QUEM você é</li>
+                            <li>Uma decisão estratégica sobre PARA QUEM você fala</li>
+                            <li>Uma decisão estratégica sobre COMO você é diferente</li>
+                            <li>A promessa única que só você pode entregar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">04 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 5: DECLARAÇÃO DE POSICIONAMENTO
+         ============================================== -->
+    <div class="slide" id="slide-5">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gray mb-3">Posicionamento é responder em UMA frase:</p>
+                    <div class="framework-box" style="max-width: 1000px;">
+                        <p class="text-white text-center large-text">
+                            "Para <span class="text-gold font-bold">[QUEM]</span>, que tem <span class="text-gold font-bold">[PROBLEMA]</span>, eu sou <span class="text-gold font-bold">[QUEM]</span>, que oferece <span class="text-gold font-bold">[SOLUÇÃO ÚNICA]</span>."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">05 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 6: EXEMPLO - HENRIQUE
+         ============================================== -->
+    <div class="slide" id="slide-6">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gold mb-3">Exemplo real:</p>
+                    <div class="quote-block" style="max-width: 900px;">
+                        <p class="text-white">
+                            "Para <span class="text-gold">empresários de produtos físicos</span>, que <span class="text-gold">não sabem como construir marca</span>, eu sou o <span class="text-gold">Henrique</span>, especialista em <span class="text-gold">branding de produtos</span>, que oferece <span class="text-gold">estratégias práticas para transformar produtos em marcas</span>."
+                        </p>
+                    </div>
+                    <div class="success-box mt-4 text-center" style="max-width: 700px; margin: 0 auto;">
+                        <p class="text-white">
+                            <span class="text-green">Resultado:</span> De confuso a +500k seguidores vendendo marca
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">06 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 7: OS 4 ELEMENTOS
+         ============================================== -->
+    <div class="slide" id="slide-7">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="number-badge text-center" style="margin: 0 auto 2rem;">2</div>
+                <h2 class="slide-title text-white text-center">OS 4 ELEMENTOS DE UM<br>POSICIONAMENTO FORTE</h2>
+
+                <div class="layout-two-columns mt-4">
+                    <div class="card text-center">
+                        <div class="text-gold" style="font-size: 3rem; font-weight: 800;">1</div>
+                        <h3 class="text-white font-bold mt-2">PROBLEMA</h3>
+                        <p class="text-gray small-text mt-2">Para quem você fala?<br>Qual é a dor específica?</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="text-gold" style="font-size: 3rem; font-weight: 800;">2</div>
+                        <h3 class="text-white font-bold mt-2">SOLUÇÃO</h3>
+                        <p class="text-gray small-text mt-2">Como você resolve?<br>A solução deve ser ÚNICA</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="text-gold" style="font-size: 3rem; font-weight: 800;">3</div>
+                        <h3 class="text-white font-bold mt-2">DIFERENCIAL</h3>
+                        <p class="text-gray small-text mt-2">Por que VOCÊ?<br>Deve ser INCOPIÁVEL</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="text-gold" style="font-size: 3rem; font-weight: 800;">4</div>
+                        <h3 class="text-white font-bold mt-2">PROVA</h3>
+                        <p class="text-gray small-text mt-2">O que comprova?<br>A prova deve ser ESPECÍFICA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">07 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 8: ELEMENTO 1 - PROBLEMA
+         ============================================== -->
+    <div class="slide" id="slide-8">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold font-bold mb-3" style="font-size: 1.25rem;">ELEMENTO 1: PROBLEMA</div>
+                    <h2 class="slide-title text-white text-center">Para quem você fala?<br>Qual é a dor específica?</h2>
+
+                    <div class="alert-box mt-4" style="max-width: 800px; margin: 0 auto;">
+                        <p class="text-white text-center">
+                            NÃO é "para quem quer emprender"<br>
+                            <span class="text-crimson font-bold">É muito vago.</span>
+                        </p>
+                    </div>
+
+                    <div class="success-box mt-4" style="max-width: 800px; margin: 0 auto;">
+                        <p class="text-white text-center">
+                            É "para <span class="text-green">médicos</span> que têm consultório lotado mas <span class="text-green">zero presença digital</span>"
+                        </p>
+                        <p class="text-white text-center mt-3">
+                            É "para <span class="text-green">empresários</span> que faturam milhões mas <span class="text-green">ninguém conhece a marca</span>"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">08 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 9: ELEMENTO 2 - SOLUÇÃO
+         ============================================== -->
+    <div class="slide" id="slide-9">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold font-bold mb-3" style="font-size: 1.25rem;">ELEMENTO 2: SOLUÇÃO</div>
+                    <h2 class="slide-title text-white text-center">Como você resolve esse problema?</h2>
+
+                    <div class="alert-box mt-4" style="max-width: 800px; margin: 0 auto;">
+                        <p class="text-white text-center">
+                            NÃO é "ajudo a ter mais seguidores"<br>
+                            <span class="text-crimson font-bold">Todo mundo diz isso.</span>
+                        </p>
+                    </div>
+
+                    <div class="success-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                        <p class="text-white text-center">
+                            É "<span class="text-green">transformo sua autoridade offline em autoridade digital através de conteúdo estratégico</span>"
+                        </p>
+                        <p class="text-white text-center mt-3">
+                            É "<span class="text-green">construo marcas de produtos que vendem sozinhas</span>"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">09 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 10: ELEMENTO 3 - DIFERENCIAL
+         ============================================== -->
+    <div class="slide" id="slide-10">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold font-bold mb-3" style="font-size: 1.25rem;">ELEMENTO 3: DIFERENCIAL</div>
+                    <h2 class="slide-title text-white text-center">Por que VOCÊ e não outro?</h2>
+
+                    <div class="alert-box mt-4" style="max-width: 800px; margin: 0 auto;">
+                        <p class="text-white text-center">
+                            NÃO é "porque sou bom"<br>
+                            <span class="text-crimson font-bold">Todo mundo é bom.</span>
+                        </p>
+                    </div>
+
+                    <div class="framework-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                        <p class="text-white text-center large-text">
+                            É "porque fui <span class="text-gold">médico por 15 anos</span> antes de virar consultor de médicos"
+                        </p>
+                        <p class="text-white text-center mt-3 large-text">
+                            É "porque construí <span class="text-gold">8 marcas de produtos</span> do zero"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">10 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 11: ELEMENTO 4 - PROVA
+         ============================================== -->
+    <div class="slide" id="slide-11">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold font-bold mb-3" style="font-size: 1.25rem;">ELEMENTO 4: PROVA</div>
+                    <h2 class="slide-title text-white text-center">O que comprova que você entrega?</h2>
+
+                    <div class="layout-two-columns mt-4" style="max-width: 900px;">
+                        <div class="alert-box">
+                            <p class="text-white text-center">
+                                NÃO é "digo que sou bom"<br>
+                                <span class="text-crimson">Todo mundo diz.</span>
+                            </p>
+                        </div>
+                        <div class="success-box">
+                            <p class="text-white text-center">
+                                É "tenho <span class="text-green">200 alunos</span> que saíram de zero a 100k/seguidores"
+                            </p>
+                            <p class="text-white text-center mt-3">
+                                É "faturei <span class="text-green">R$1 milhão</span> em vendas orgânicas no último ano"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">11 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 12: FALAR DE TUDO
+         ============================================== -->
+    <div class="slide" id="slide-12">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="number-badge text-center" style="margin: 0 auto 2rem;">3</div>
+                <h2 class="slide-title text-white text-center">O ERRO DE FALAR DE TUDO</h2>
+
+                <div class="problem-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                    <p class="text-white text-center large-text">
+                        Aqui vai um erro que vejo O TEMPO TODO:
+                    </p>
+                    <p class="text-crimson text-center mt-3" style="font-size: 2rem; font-weight: 800;">
+                        Pessoas tentando falar sobre tudo.
+                    </p>
+                    <p class="text-white text-center mt-4">
+                        "Ah, eu falo de empreendedorismo, mindset, vendas, marketing, liderança..."
+                    </p>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <p class="text-white large-text">
+                        <span class="text-crimson">"Isso é falar de nada."</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">12 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 13: QUEM FALA DE TUDO
+         ============================================== -->
+    <div class="slide" id="slide-13">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gray mb-3">Você já ouviu aquela frase:</p>
+                    <h2 class="slide-title text-white text-center">
+                        "Quem fala de tudo<br><span class="text-crimson">não é conhecido por nada"?</span>
+                    </h2>
+
+                    <p class="text-white text-center large-text mt-4">
+                        Pois é. <span class="text-gold">Nunca foi tão verdade</span> quanto em 2026.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">13 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 14: EXEMPLO DE MARCAS
+         ============================================== -->
+    <div class="slide" id="slide-14">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <h2 class="slide-title text-white text-center mb-4">Pense nas marcas que você admira:</h2>
+
+                <div class="layout-two-columns">
+                    <div class="card text-center">
+                        <div class="text-white large-text font-bold">Nike</div>
+                        <p class="text-gold mt-2">Just Do It</p>
+                        <p class="text-gray small-text">(performance)</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="text-white large-text font-bold">Havaianas</div>
+                        <p class="text-gold mt-2">liberdade</p>
+                        <p class="text-gray small-text">(recursos e limitações)</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="text-white large-text font-bold">Apple</div>
+                        <p class="text-gold mt-2">Think Different</p>
+                        <p class="text-gray small-text">(inovação)</p>
+                    </div>
+                    <div class="card text-center" style="border-color: var(--dourado);">
+                        <p class="text-white text-center">
+                            Nenhuma dessas marcas fala de tudo.
+                        </p>
+                        <p class="text-gold text-center mt-2">
+                            Elas falam de <span class="font-bold">UMA COISA</span>, de formas diferentes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">14 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 15: COMECE COM UMA
+         ============================================== -->
+    <div class="slide" id="slide-15">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-top-right"></div>
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <h2 class="slide-title text-white text-center">
+                        Você precisa ser conhecido por <span class="text-gradient-gold">UMA COISA</span>.
+                    </h2>
+                    <p class="text-white text-center large-text mt-3">
+                        Depois que você for conhecido por essa coisa, aí sim você pode expandir.
+                    </p>
+                    <p class="text-gold text-center mt-4" style="font-size: 2rem; font-weight: 800;">
+                        Mas começa com uma.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">15 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 16: EXEMPLOS QUE FUNCIONAM
+         ============================================== -->
+    <div class="slide" id="slide-16">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="number-badge text-center" style="margin: 0 auto 2rem;">4</div>
+                <h2 class="slide-title text-white text-center">EXEMPLOS DE POSICIONAMENTOS QUE FUNCIONAM</h2>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">16 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 17: CASE 1 - FERNANDA
+         ============================================== -->
+    <div class="slide" id="slide-17">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gold mb-3">CASE 1: FERNANDA GERASOL</p>
+                    <div class="quote-block" style="max-width: 900px;">
+                        <p class="text-white">
+                            "Para <span class="text-gold">mulheres que estão dependentes de tráfego pago</span> e que <span class="text-gold">estão quebrando para vender</span>, eu sou a <span class="text-gold">Fernanda Gerasol</span>, que <span class="text-gold">transformei meu negócio de prejuízo com tráfego para +100k/mês orgânico</span> através de <span class="text-gold">conteúdo diário</span>."
+                        </p>
+                    </div>
+                    <div class="success-box mt-4 text-center" style="max-width: 700px; margin: 0 auto;">
+                        <p class="text-white">
+                            <span class="text-green">Resultado:</span> Saiu de -100k/mês para +100k/mês em 3 meses
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">17 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 18: CASE 2 - HENRIQUE
+         ============================================== -->
+    <div class="slide" id="slide-18">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gold mb-3">CASE 2: HENRIQUE</p>
+                    <div class="quote-block" style="max-width: 900px;">
+                        <p class="text-white">
+                            "Para <span class="text-gold">donos de marcas de produtos físicos</span> que <span class="text-gold">não sabem como construir marca</span>, eu sou o <span class="text-gold">Henrique</span>, especialista em <span class="text-gold">branding</span>, que ensino a <span class="text-gold">transformar produtos em marcas através de conteúdo estratégico</span>."
+                        </p>
+                    </div>
+                    <div class="success-box mt-4 text-center" style="max-width: 700px; margin: 0 auto;">
+                        <p class="text-white">
+                            <span class="text-green">Resultado:</span> Foi de confuso a +500k seguidores vendendo marca
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">18 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 19: CASE 3 - THIAGO REIS
+         ============================================== -->
+    <div class="slide" id="slide-19">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gold mb-3">CASE 3: THIAGO REIS</p>
+                    <div class="quote-block" style="max-width: 900px;">
+                        <p class="text-white">
+                            "Para <span class="text-gold">quem tem base desengajada comprada com tráfego</span>, eu sou o <span class="text-gold">Thiago Reis</span>, que <span class="text-gold">transformei bases frias em bases quentes através de conteúdo consistente</span>."
+                        </p>
+                    </div>
+                    <div class="success-box mt-4 text-center" style="max-width: 700px; margin: 0 auto;">
+                        <p class="text-white">
+                            <span class="text-green">Resultado:</span> Transformou base desengajada em vendas consistentes
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">19 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 20: O PADRÃO
+         ============================================== -->
+    <div class="slide" id="slide-20">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <h2 class="slide-title text-white text-center">Percebe o padrão?</h2>
+
+                    <div class="layout-two-columns mt-4" style="max-width: 900px;">
+                        <div class="check-list">
+                            <li class="text-white"><span class="text-gold">Específicos</span> sobre PÚBLICO</li>
+                            <li class="text-white"><span class="text-gold">Cluros</span> sobre PROBLEMA</li>
+                        </div>
+                        <div class="check-list">
+                            <li class="text-white"><span class="text-gold">Únicos</span> em DIFERENCIAL</li>
+                            <li class="text-white"><span class="text-gold">Comprovação</span> em PROVA</li>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-gray mt-4">
+                        Todos são específicos, claros, únicos e comprovados.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">20 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 21: EXERCÍCIO
+         ============================================== -->
+    <div class="slide" id="slide-21">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="number-badge text-center" style="margin: 0 auto 2rem;">5</div>
+                <h2 class="slide-title text-white text-center">EXERCÍCIO: CRIANDO SEU POSICIONAMENTO</h2>
+
+                <div class="framework-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                    <p class="text-white text-center large-text">
+                        Pega papel e caneta. Vamos preencher:
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">21 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 22: PERGUNTA 1
+         ============================================== -->
+    <div class="slide" id="slide-22">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold" style="font-size: 4rem; font-weight: 800;">1</div>
+                    <h2 class="slide-title text-white text-center mt-2">PARA QUEM você fala?</h2>
+
+                    <p class="text-gray text-center mt-3">(Seja específico: idade, profissão, situação atual)</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">22 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 23: PERGUNTA 2
+         ============================================== -->
+    <div class="slide" id="slide-23">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold" style="font-size: 4rem; font-weight: 800;">2</div>
+                    <h2 class="slide-title text-white text-center mt-2">Qual PROBLEMA você resolve?</h2>
+
+                    <p class="text-gray text-center mt-3">(Seja específico: qual é a dor que tira o sono?)</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">23 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 24: PERGUNTA 3
+         ============================================== -->
+    <div class="slide" id="slide-24">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold" style="font-size: 4rem; font-weight: 800;">3</div>
+                    <h2 class="slide-title text-white text-center mt-2">Como você é DIFERENTE?</h2>
+
+                    <p class="text-gray text-center mt-3">(Seja específico: sua história, seu método, sua experiência)</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">24 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 25: PERGUNTA 4
+         ============================================== -->
+    <div class="slide" id="slide-25">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-gold" style="font-size: 4rem; font-weight: 800;">4</div>
+                    <h2 class="slide-title text-white text-center mt-2">Qual é sua PROVA?</h2>
+
+                    <p class="text-gray text-center mt-3">(Seja específico: números, cases, resultados)</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">25 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 26: JUNTE TUDO
+         ============================================== -->
+    <div class="slide" id="slide-26">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <p class="text-gold mb-3">Agora, junte tudo:</p>
+                    <div class="framework-box" style="max-width: 1100px;">
+                        <p class="text-white text-center large-text">
+                            "Para <span class="text-gold font-bold">[PÚBLICO]</span>, que tem <span class="text-gold font-bold">[PROBLEMA]</span>, eu sou <span class="text-gold font-bold">[QUEM]</span>, que oferece <span class="text-gold font-bold">[SOLUÇÃO ÚNICA]</span>, comprovado por <span class="text-gold font-bold">[PROVA]</span>."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">26 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 27: TAREFA DO DIA 2
+         ============================================== -->
+    <div class="slide" id="slide-27">
+        <div class="slide-container bg-gradient">
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="number-badge text-center" style="margin: 0 auto 2rem;">TAREFA</div>
+                <h2 class="slide-title text-white text-center">Para segunda-feira, sua tarefa é:</h2>
+
+                <div class="framework-box mt-4" style="max-width: 900px; margin: 0 auto;">
+                    <div class="text-center mb-4">
+                        <div class="text-gold" style="font-size: 2rem; font-weight: 800;">DECLARAÇÃO DE POSICIONAMENTO</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">27 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 28: TAREFA DETALHES
+         ============================================== -->
+    <div class="slide" id="slide-28">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content">
+                <div class="layout-two-columns">
+                    <div class="card">
+                        <div class="text-gold font-bold mb-2">1</div>
+                        <p class="text-white">Escreva sua <span class="font-bold">declaração de posicionamento</span></p>
+                        <p class="text-gray small-text mt-2">Use o framework que acabamos de ver</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-gold font-bold mb-2">2</div>
+                        <p class="text-white">Defina seu <span class="font-bold">cliente ideal com detalhes</span></p>
+                        <p class="text-gray small-text mt-2">Idade, profissão, renda, dores, desejos</p>
+                    </div>
+                    <div class="card" style="grid-column: 1 / -1;">
+                        <div class="text-gold font-bold mb-2">3</div>
+                        <p class="text-white">Liste os <span class="font-bold">3 temas centrais</span> da sua marca</p>
+                        <p class="text-gray small-text mt-2">Sobre o que você vai falar 80% do tempo. Lembre-se: falar de tudo é falar de nada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">28 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 29: AMANHÃ
+         ============================================== -->
+    <div class="slide" id="slide-29">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-top-right"></div>
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <h2 class="slide-title text-white text-center">
+                        Amanhã, vamos ver como <span class="text-gradient-gold">ESCALAR</span> isso.
+                    </h2>
+                    <p class="text-white text-center large-text mt-3">
+                        Você tem seu posicionamento definido. Ótimo.
+                    </p>
+                    <p class="text-crimson text-center mt-4" style="font-size: 2rem; font-weight: 800;">
+                        Mas como isso vira resultado?
+                    </p>
+                    <div class="mt-4" style="font-size: 5rem; font-weight: 900; color: var(--dourado);">
+                        ESCALA.
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">29 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 30: ATÉ LOGO
+         ============================================== -->
+    <div class="slide" id="slide-30">
+        <div class="slide-container bg-solid-black">
+            <div class="decorative-glow glow-top-right"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <h2 class="slide-title text-white text-center">
+                        Nos vemos às <span class="text-gradient-gold">17h</span>!
+                    </h2>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">30 / 31</span>
+                <span class="slide-date">Aula 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 31: ENCERRAMENTO
+         ============================================== -->
+    <div class="slide" id="slide-31">
+        <div class="slide-container bg-gradient bg-pattern">
+            <div class="decorative-glow glow-top-right"></div>
+            <div class="decorative-glow glow-bottom-left"></div>
+
+            <div class="slide-logo">
+                <img src="../assets/logotipo-02.png" alt="Logo">
+            </div>
+
+            <div class="slide-content layout-center">
+                <div class="animate-in">
+                    <div class="text-center">
+                        <h2 class="slide-title text-white">
+                            Posicionamento definido.
+                        </h2>
+                        <h2 class="slide-title text-gradient-gold">
+                            Pronto para escalar.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <span class="slide-number">31 / 31</span>
+                <span class="slide-date">Aula 2 - Fim</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevSlide();
+            }
+        }
+    </script>
+</body>
+</html>
