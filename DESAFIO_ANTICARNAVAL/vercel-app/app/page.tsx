@@ -161,13 +161,10 @@ export default function RetiroPage() {
 
     // File
     return (
-      <button
-        key={node.path}
-        onClick={() => {
-          setSelectedNode(node);
-          setSidebarOpen(false);
-        }}
-        className={`w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-left transition-colors ${
+      <a
+        href={`/${node.name}`}
+        onClick={() => setSidebarOpen(false)}
+        className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-left transition-colors ${
           isSelected ? 'bg-yellow-500/10 text-yellow-500' : 'text-gray-400 hover:bg-gray-900 hover:text-gray-200'
         }`}
         style={{ paddingLeft: `${28 + level * 16}px` }}
@@ -177,7 +174,7 @@ export default function RetiroPage() {
           <div className="text-sm font-medium truncate">{node.name}</div>
           {node.category && <div className="text-xs opacity-60">{node.category}</div>}
         </div>
-      </button>
+      </a>
     );
   };
 
@@ -284,7 +281,7 @@ export default function RetiroPage() {
                   return (
                     <button
                       key={doc.id}
-                      onClick={() => file && setSelectedNode(file)}
+                      onClick={() => router.push('/' + doc.id)}
                       className="bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-4 md:p-5 text-left transition-all hover:scale-[1.02] group"
                     >
                       <div className="flex items-start gap-3 md:gap-4">
@@ -350,7 +347,7 @@ export default function RetiroPage() {
                         return (
                           <button
                             key={node.path}
-                            onClick={() => setSelectedNode(node)}
+                            onClick={() => router.push('/' + node.name)}
                             className="w-full flex items-center gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-4 hover:bg-gray-900/50 transition-colors"
                           >
                             <Icon className="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" />
@@ -382,7 +379,7 @@ export default function RetiroPage() {
                           key={node.path}
                           onClick={() => {
                             toggleFolder(node.path);
-                            setSidebarOpen(true);
+                            router.push('/files');
                           }}
                           className="w-full flex items-center gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-4 hover:bg-gray-900/50 transition-colors"
                         >
@@ -399,7 +396,7 @@ export default function RetiroPage() {
                     return (
                       <button
                         key={node.path}
-                        onClick={() => setSelectedNode(node)}
+                        onClick={() => router.push('/' + node.name)}
                         className="w-full flex items-center gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-4 hover:bg-gray-900/50 transition-colors"
                       >
                         <Icon className="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" />
@@ -414,7 +411,7 @@ export default function RetiroPage() {
                 </div>
                 {filteredTree.length > 8 && (
                   <button
-                    onClick={() => setSidebarOpen(true)}
+                    onClick={() => router.push('/files')}
                     className="w-full px-4 md:px-5 py-3 md:py-4 text-yellow-500 hover:bg-gray-900/50 transition-colors font-medium text-sm md:text-base"
                   >
                     Ver todos os {allFiles.length} arquivos →
