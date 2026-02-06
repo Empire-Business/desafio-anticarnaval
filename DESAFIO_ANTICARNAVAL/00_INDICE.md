@@ -53,7 +53,7 @@ DESAFIO_ANTICARNAVAL/
 
 ### Documento Estratégico (01)
 - ✅ Objetivo e posicionamento
-- ✅ Cronograma completo (14-17/03)
+- ✅ Cronograma completo (14-17/02)
 - ✅ Identidade visual e temática
 - ✅ Framework de execução
 - ✅ Scripts completos das 4 aulas

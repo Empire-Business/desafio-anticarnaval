@@ -154,25 +154,25 @@ Slide 1:
 A step-by-step title slide. Black background with white text "COMO FUNCIONA O RETIRO" and golden subtitle "Seu roteiro de 4 dias." Process-focused design.
 
 Slide 2:
-Day 1 preview slide. Black background with golden number "DIA 1" White text: "Sábado, 14/03 • 10h" Subtitle: "Por que você tem autoridade real mas ninguém sabe no digital" Clean day preview.
+Day 1 preview slide. Black background with golden number "DIA 1" White text: "Sábado, 14/02 • 10h" Subtitle: "Por que você tem autoridade real mas ninguém sabe no digital" Clean day preview.
 
 Slide 3:
 Day 1 deliverables slide. Black background with white text "Você vai:" Three golden bullets: "✓ Entender o abismo offline/online ✓ Identificar seu gap ✓ Receber planilha de auditoria" Deliverable-focused layout.
 
 Slide 4:
-Day 2 preview slide. Black background with golden number "DIA 2" White text: "Domingo, 15/03 • 10h" Subtitle: "Posicionamento - Como se tornar a ÚNICA opção" Clean day preview.
+Day 2 preview slide. Black background with golden number "DIA 2" White text: "Domingo, 15/02 • 10h" Subtitle: "Posicionamento - Como se tornar a ÚNICA opção" Clean day preview.
 
 Slide 5:
 Day 2 deliverables slide. Black background with white text "Você vai:" Three golden bullets: "✓ Definir seu diferencial ✓ Criar sua declaração ✓ Receber template de posicionamento" Deliverable-focused layout.
 
 Slide 6:
-Day 3 preview slide. Black background with golden number "DIA 3" White text: "Segunda, 16/03 • 10h" Subtitle: "Escala - Ter presença sem virar escravo" Clean day preview.
+Day 3 preview slide. Black background with golden number "DIA 3" White text: "Segunda, 16/02 • 10h" Subtitle: "Escala - Ter presença sem virar escravo" Clean day preview.
 
 Slide 7:
 Day 3 deliverables slide. Black background with white text "Você vai:" Three golden bullets: "✓ Conhecer os 3 caminhos ✓ Definir seus formatos ✓ Receber grade de conteúdo" Deliverable-focused layout.
 
 Slide 8:
-Day 4 preview slide. Black background with golden number "DIA 4" White text: "Terça, 17/03 • 10h" Subtitle: "Seu plano de 90 dias - Do posicionamento ao resultado" Clean day preview.
+Day 4 preview slide. Black background with golden number "DIA 4" White text: "Terça, 17/02 • 10h" Subtitle: "Seu plano de 90 dias - Do posicionamento ao resultado" Clean day preview.
 
 Slide 9:
 Day 4 deliverables slide. Black background with white text "Você sai com:" Three golden bullets: "✓ Posicionamento definido ✓ Plano de 90 dias ✓ Certificado de conclusão" Deliverable-focused layout.

@@ -22,7 +22,7 @@ A comparison-style social media graphic on black background. Split design - left
 ## 03. SOLUÇÃO - 4 DIAS
 
 ```
-A promotional announcement graphic with large bold number "4" in golden yellow (#D4AF37) centered on black background. Above the number, white text "EM 4 DIAS," and below "VOCÊ VAI SAIR COM:". Below that, a list in white text with checkmarks: "✓ Posicionamento definido ✓ Plano de conteúdo ✓ Roadmap de 90 dias". At the bottom in golden text: "RETIRO ANTICARNAVAL • 14-17 MAR • GRATUITO". Clean, minimalist design.
+A promotional announcement graphic with large bold number "4" in golden yellow (#D4AF37) centered on black background. Above the number, white text "EM 4 DIAS," and below "VOCÊ VAI SAIR COM:". Below that, a list in white text with checkmarks: "✓ Posicionamento definido ✓ Plano de conteúdo ✓ Roadmap de 90 dias". At the bottom in golden text: "RETIRO ANTICARNAVAL • 14-17 FEV • GRATUITO". Clean, minimalist design.
 ```
 
 ---
@@ -30,7 +30,7 @@ A promotional announcement graphic with large bold number "4" in golden yellow (
 ## 04. URGÊNCIA - ÚLTIMA CHANCE
 
 ```
-An urgent announcement graphic with red accent colors on black background. Large white headline "AS INSCRIÇÕES ENCERRAM EM:" with a stylized countdown showing "13/03" in large red text. Below, supporting text in light gray: "Não deixe pra depois. Você já postergou bastante." Golden CTA button at bottom: "QUERO PARTICIPAR". Urgent, high-energy aesthetic with subtle motion lines suggesting time running out.
+An urgent announcement graphic with red accent colors on black background. Large white headline "AS INSCRIÇÕES ENCERRAM EM:" with a stylized countdown showing "13/02" in large red text. Below, supporting text in light gray: "Não deixe pra depois. Você já postergou bastante." Golden CTA button at bottom: "QUERO PARTICIPAR". Urgent, high-energy aesthetic with subtle motion lines suggesting time running out.
 ```
 
 ---
@@ -46,7 +46,7 @@ A relatable quote graphic on black background. Main headline in white text: "VOC
 ## 06. BENEFÍCIO - POSICIONAMENTO
 
 ```
-A benefit-focused educational graphic with black background. Large golden headline: "POSICIONAMENTO" with a tagline below in white: "A diferença entre ser conhecido e ser VENDIDO." Three bullet points in white text: "✓ Clareza sobre quem você é ✓ Definição do seu público ✓ Mensagem que conecta" At bottom: "Aprenda no Retiro Anti-Carnaval • 14-17 MAR" Professional, educational design.
+A benefit-focused educational graphic with black background. Large golden headline: "POSICIONAMENTO" with a tagline below in white: "A diferença entre ser conhecido e ser VENDIDO." Three bullet points in white text: "✓ Clareza sobre quem você é ✓ Definição do seu público ✓ Mensagem que conecta" At bottom: "Aprenda no Retiro Anti-Carnaval • 14-17 FEV" Professional, educational design.
 ```
 
 ---
@@ -70,7 +70,7 @@ A social proof numbers graphic on black background. Three large golden numbers d
 ## 09. CONVITE - EMPRESÁRIOS
 
 ```
-A direct invitation graphic for business owners. Black background with elegant typography. Main headline in white: "EMPRESÁRIO QUE TEM AUTORIDADE NO MUNDO REAL" Golden continuation: "E quer ampliar para o digital?" Below in white: "Retiro Anti-Carnaval - 4 dias para definir sua estratégia." Bottom golden text: "GRATUITO • 14-17 MAR • LINK NA BIO" Professional, business-focused aesthetic.
+A direct invitation graphic for business owners. Black background with elegant typography. Main headline in white: "EMPRESÁRIO QUE TEM AUTORIDADE NO MUNDO REAL" Golden continuation: "E quer ampliar para o digital?" Below in white: "Retiro Anti-Carnaval - 4 dias para definir sua estratégia." Bottom golden text: "GRATUITO • 14-17 FEV • LINK NA BIO" Professional, business-focused aesthetic.
 ```
 
 ---
@@ -118,7 +118,7 @@ An educational insight graphic. Black background with centered golden text: "RET
 ## 15. MOTIVAÇÃO - ENQUANTO ELES
 
 ```
-A motivational comparison graphic. Black background with white text: "ENQUANTO O MUNDO ESTÁ NO CARNAVAL..." Large golden continuation: "VOCÊ ESTÁ CONSTRUINDO SEU FUTURO." Below: "4 dias. Posicionamento definido. Plano traçado." Bottom: "Retiro Anti-Carnaval • 14-17 MAR • GRATUITO" Inspiring, forward-focused design.
+A motivational comparison graphic. Black background with white text: "ENQUANTO O MUNDO ESTÁ NO CARNAVAL..." Large golden continuation: "VOCÊ ESTÁ CONSTRUINDO SEU FUTURO." Below: "4 dias. Posicionamento definido. Plano traçado." Bottom: "Retiro Anti-Carnaval • 14-17 FEV • GRATUITO" Inspiring, forward-focused design.
 ```
 
 ---
@@ -150,7 +150,7 @@ A niche-targeted graphic for doctors. Black background with elegant medical cros
 ## 19. CONVITE - SÁBADO
 
 ```
-A date-specific announcement graphic. Black background with large calendar icon and date "14/03" in golden text. White text below: "NESSE SÁBADO COMEÇA O RETIRO ANTICARNAVAL" Three bullets: "→ 10h: Primeira aula → 11h: Primeira tarefa → 17h: Primeiro retorno" Bottom CTA in golden: "INSCREVA-SE AGORA →" Event-focused, date-driven design.
+A date-specific announcement graphic. Black background with large calendar icon and date "14/02" in golden text. White text below: "NESSE SÁBADO COMEÇA O RETIRO ANTICARNAVAL" Three bullets: "→ 10h: Primeira aula → 11h: Primeira tarefa → 17h: Primeiro retorno" Bottom CTA in golden: "INSCREVA-SE AGORA →" Event-focused, date-driven design.
 ```
 
 ---
@@ -198,7 +198,7 @@ A frustration-identification graphic. Black background with white text: "DIGITAL
 ## 25. CONVITE - FINALMENTE
 
 ```
-A breakthrough announcement graphic. Black background with golden text: "FINALMENTE" White continuation: "O evento para quem TEM resultado e quer ir pro digital." Below in white: "Não é pra iniciante. É pra quem já provou seu valor no mundo real." Bottom: "Retiro Anti-Carnaval • 14-17 MAR • GRATUITO" Exclusive, qualifying design.
+A breakthrough announcement graphic. Black background with golden text: "FINALMENTE" White continuation: "O evento para quem TEM resultado e quer ir pro digital." Below in white: "Não é pra iniciante. É pra quem já provou seu valor no mundo real." Bottom: "Retiro Anti-Carnaval • 14-17 FEV • GRATUITO" Exclusive, qualifying design.
 ```
 
 ---
@@ -230,7 +230,7 @@ A case study showcase graphic. Black background with golden text: "QUEM JÁ FEZ,
 ## 29. CONVITE - GRÁTITO
 
 ```
-A free-access emphasis graphic. Black background with large golden text: "100% GRATUITO" White explanation below: "Sem pegadinha. Sem compromisso. Só valor." Supporting text: "4 dias de conteúdo que pode mudar seu ano." Bottom: "Retiro Anti-Carnaval • 14-17 MAR • LINK NA BIO" Value-first, transparent design.
+A free-access emphasis graphic. Black background with large golden text: "100% GRATUITO" White explanation below: "Sem pegadinha. Sem compromisso. Só valor." Supporting text: "4 dias de conteúdo que pode mudar seu ano." Bottom: "Retiro Anti-Carnaval • 14-17 FEV • LINK NA BIO" Value-first, transparent design.
 ```
 
 ---
@@ -238,7 +238,7 @@ A free-access emphasis graphic. Black background with large golden text: "100% G
 ## 30. URGÊNCIA - MANHÃ
 
 ```
-A morning-urgency graphic. Black background with sun/morning icon. White text: "AS INSCRIÇÕES ENCERRAM ESSA MANHÃ" Golden detail: "Quarta-feira, 13/03, às 23h59" Supporting text: "Última chance de entrar no Retiro Anti-Carnaval." Bottom CTA: "NÃO DEIXE PRA DEPOIS →" Time-sensitive, morning-focused urgency design.
+A morning-urgency graphic. Black background with sun/morning icon. White text: "AS INSCRIÇÕES ENCERRAM ESSA MANHÃ" Golden detail: "Quarta-feira, 13/02, às 23h59" Supporting text: "Última chance de entrar no Retiro Anti-Carnaval." Bottom CTA: "NÃO DEIXE PRA DEPOIS →" Time-sensitive, morning-focused urgency design.
 ```
 
 ---

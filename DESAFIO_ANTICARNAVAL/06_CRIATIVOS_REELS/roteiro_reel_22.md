@@ -17,7 +17,7 @@
 
 **Visual:**
 - Você dançando levemente ( sarcástico )
-- Texto: "OS DOIS GRUPOS EM MARÇO"
+- Texto: "OS DOIS GRUPOS EM FEVEREIRO"
 
 **Áudio:**
 (Use áudio trending de "esqueleto" ou carnaval)
@@ -43,7 +43,7 @@
 ## 🎨 ELEMENTOS VISUAIS
 
 ### Textos na Tela
-- OS DOIS GRUPOS EM MARÇO
+- OS DOIS GRUPOS EM FEVEREIRO
 - BALANÇOU O ESQUELETO = DESTRUÍDO
 - CONSTRUIU = ESTRATÉGIA PRONTA
 - ABRIL: QUEM VOCÊ QUER SER?

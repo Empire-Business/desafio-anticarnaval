@@ -1,9 +1,195 @@
 # 🎨 DESIGN DESCRIPTION - PÁGINA DE INSCRIÇÃO
 ## Retiro Anti-Carnaval Acelerador de Audiência
 
-> **Versão:** 1.0
-> **Objetivo:** Descrição detalhada para IA criar o design completo
+> **Versão:** 2.4
+> **Objetivo:** Descrição detalhada para implementação do design + Otimização PageSpeed Insights (90+ score target)
+> **Assets**: Prompts de imagem movidos para arquivo separado `04_PROMPTS_IMAGENS.md`
 > **Formato:** Markdown com especificações completas
+> **v2.4**: Substituída seção de depoimentos por perfis dos fundadores (Davi, Sandro, Pedro)
+
+---
+
+## 🎭 IDENTIDADE VISUAL - CONCEITO CORE
+
+### A Narrativa Visual
+**"Enquanto o mundo carnavala, você constrói."**
+
+Esta é a essência visual do projeto:
+- **O CARNAVAL ESTÁ LÁ FORA** - distante, vago, indireto
+- **O FOCO ESTÁ AQUI DENTRO** - trabalho, transformação, construção
+- Você está dentro de casa, focado, enquanto o carnaval acontece lá fora
+
+### Elementos de Carnaval (APENAS background, SUBTIS)
+
+**✅ USE (sutil, elegante):**
+- Máscaras venezianas em preto/dourado (elegantes, NÃO festivas)
+- Confetes dourados caindo sutilmente
+- Penas em dourado/preto
+- Luzes de carnaval MUITO desfocadas, como vistas através de janelas
+- Silhuetas de pessoas fantasiadas ao longe, desfocadas
+
+**❌ NÃO USE:**
+- Cores vibrantes de carnaval (verde, rosa, roxo neon)
+- Elementos festivos diretos
+- Serpentinas, balões, alegorias
+- Qualquer coisa que leve atenção para fora do foco principal
+
+### A Metáfora da Janela
+O design deve criar a sensação de estar dentro de um ambiente escuro, focado, olhando pela janela e vendo o carnaval lá fora - distante,模糊, irrelevante.
+
+---
+
+## 🎨 PALETA DE CORES
+
+| Cor Nome | Hex | RGB | Uso |
+|----------|-----|-----|-----|
+| Black | #000000 | 0,0,0 | Fundo principal (dentro de casa) |
+| White | #FFFFFF | 255,255,255 | Texto base |
+| Gold | #D4AF37 | 212,175,55 | CTA, destaques, bordas principais |
+| Gold Light | #F4D03F | 244,208,63 | Hover states |
+| Purple | #6B46C1 | 107,70,193 | Glow de carnaval (sutil, background) |
+| Crimson | #E74C3C | 231,76,60 | Urgência + glow de carnaval |
+| Green Success | #27AE60 | 39,174,96 | Checkmarks, sucesso |
+| Dark Gray | #1A1A1A | 26,26,26 | Fundo secundário |
+| Light Gray | #F5F5F5 | 245,245,245 | Fundos de seções (raramente usado) |
+
+### Como Usar as Cores de Carnaval
+- **Purple (#6B46C1)**: Apenas em radial gradients no background, opacidade 4-8%
+- **Crimson (#E74C3C)**: Apenas em radial gradients no background, opacidade 4-6%
+- **Gold (#D4AF37)**: Cor principal para CTAs e destaques do CONTEÚDO
+
+---
+
+## ✨ EFEITOS DE CARNAVAL (CSS)
+
+### 1. Carnaval Glow (Background Principal)
+```css
+.carnaval-glow {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(107, 70, 193, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 30% at 50% 100%, rgba(231, 76, 60, 0.04) 0%, transparent 40%);
+}
+```
+**Efeito**: Glow sutil de carnaval lá fora, através de "janelas" imaginárias
+
+### 2. Confetti Fall (Dourado, Subtil)
+```css
+.confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+  border-radius: 1px;
+  opacity: 0.4;
+  animation: confetti-fall linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+```
+**Efeito**: Confetes dourados caindo sutilmente, como vistos através da janela
+
+### 3. Window Glow (Luz de Carnaval Lá Fora)
+```css
+.window-glow {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(255, 200, 100, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+```
+**Efeito**: Luz de carnaval desfocada, como vista através de uma janela
+
+---
+
+## 🖼️ ASSETS DE IMAGEM
+
+> **Nota**: Os prompts detalhados para geração de imagens com IA estão no arquivo separado `04_PROMPTS_IMAGENS.md`.
+> **Ícones**: Use bibliotecas de ícones (Lucide, Heroicons, Phosphor) ao invés de gerar com IA.
+
+### Lista de Imagens Necessárias
+
+| Arquivo | Seção | Formato | Observação |
+|---------|-------|--------|-----------|
+| `hero-carnival-window.webp` | Hero | 1600x900 | Background principal |
+| `epiphany-bridge.webp` | Epiphany Bridge | 1200x800 | Ilustração da história |
+| `day-01-foundations.svg` | Dia 1 | SVG | Ícone (biblioteca) |
+| `day-02-creation.svg` | Dia 2 | SVG | Ícone (biblioteca) |
+| `day-03-distribution.svg` | Dia 3 | SVG | Ícone (biblioteca) |
+| `day-04-monetization.svg` | Dia 4 | SVG | Ícone (biblioteca) |
+| `certificate.webp` | Entregáveis | 800x1067 | Preview do certificado |
+| `mask-decoration.webp` | Decorativo | 500x500 | Máscara veneziana |
+| `feather-decoration.webp` | Decorativo | 500x1000 | Penas de carnaval |
+| `davi.png` | Founders | 400x400 | Foto fundador |
+| `sandro.png` | Founders | 400x400 | Foto fundador |
+| `pedro.png` | Founders | 400x400 | Foto fundador |
+
+### Formato e Conversão
+
+**Original**: `.png` (para edição)
+**Produção**: `.webp` (sistema deve converter automaticamente)
+
+```html
+<!-- Exemplo de uso -->
+<img
+  src="/images/hero-carnival-window.webp"
+  srcset="/images/hero-carnival-window-400.webp 400w,
+          /images/hero-carnival-window-800.webp 800w,
+          /images/hero-carnival-window-1200.webp 1200w,
+          /images/hero-carnival-window-1600.webp 1600w"
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+  width="1600"
+  height="900"
+  loading="eager"
+  alt="Carnaval visto através da janela enquanto trabalho focado"
+>
+```
+
+### Estrutura de Pastas
+
+```
+/public/
+  ├── images/
+  │   ├── hero-carnival-window.webp
+  │   ├── epiphany-bridge.webp
+  │   ├── certificate.webp
+  │   ├── decorative/
+  │   │   ├── mask-decoration.webp
+  │   │   └── feather-decoration.webp
+  │   └── founders/
+  │       ├── davi.png
+  │       ├── sandro.png
+  │       └── pedro.png
+  └── icons/
+      ├── day-01-foundations.svg
+      ├── day-02-creation.svg
+      ├── day-03-distribution.svg
+      └── day-04-monetization.svg
+```
+
+### Ícones - Bibliotecas Recomendadas
+
+- **Lucide Icons**: https://lucide.dev/
+- **Heroicons**: https://heroicons.com/
+- **Phosphor Icons**: https://phosphoricons.com/
+
+Ícones para cada Dia:
+- Dia 1: `Hammer`, `Wrench`, ou `Foundation` (Fundamentos)
+- Dia 2: `PenTool`, `FileEdit`, ou `Pencil` (Criação)
+- Dia 3: `Share`, `Broadcast`, ou `Network` (Distribuição)
+- Dia 4: `TrendingUp`, `Chart`, ou `DollarSign` (Monetização)
 
 ---
 
@@ -30,21 +216,6 @@ section-padding: 80px 0 (desktop), 60px 0 (tablet), 40px 0 (mobile)
 element-margin-bottom: 20px
 group-margin-bottom: 40px
 ```
-
----
-
-## 🎨 PALETA DE CORES
-
-| Cor Nome | Hex | RGB | Uso |
-|----------|-----|-----|-----|
-| Black | #000000 | 0,0,0 | Fundo principal |
-| White | #FFFFFF | 255,255,255 | Texto base |
-| Gold | #D4AF37 | 212,175,55 | CTA, destaques, bordas |
-| Dark Gray | #1A1A1A | 26,26,26 | Fundo secundário |
-| Light Gray | #F5F5F5 | 245,245,245 | Fundos de seções |
-| Gold Light | #F4D03F | 244,208,63 | Hover states |
-| Red Accent | #E74C3C | 231,76,60 | Urgência |
-| Green Success | #27AE60 | 39,174,96 | Checkmarks, sucesso |
 
 ---
 
@@ -109,413 +280,403 @@ Compact: 1.4
 
 ### Especificações Hero
 
-**Background:** #000000 (solid black)
+**Background:** #000000 (solid black) + `.carnaval-glow` overlay
 
 **Headline:**
-- Font-size: 64px (desktop), 40px (mobile)
+- Font-size: clamp(2.5rem, 8vw, 5rem)
 - Font-weight: 700
 - Color: #FFFFFF
-- Text-transform: uppercase
-- Letter-spacing: -1px
+- Text-transform: uppercase (parcial - apenas "ENQUANTO O MUNDO")
+- Letter-spacing: -0.02em
 - Max-width: 900px
 - Text-align: center
+- Destaque "carnavala" em `.text-gold` (#D4AF37)
 
 **Subheadline:**
-- Font-size: 24px (desktop), 18px (mobile)
+- Font-size: 1.25rem (desktop), 1rem (mobile)
 - Font-weight: 400
-- Color: #CCCCCC
-- Max-width: 700px
+- Color: rgba(255, 255, 255, 0.6)
+- Max-width: 650px
 - Text-align: center
-- Margin-top: 24px
+- Margin: 2rem auto
+- Line-height: 1.7
+
+**Hero Badge:**
+- Display: inline-flex
+- Background: rgba(212, 175, 55, 0.1)
+- Border: 1px solid rgba(212, 175, 55, 0.2)
+- Border-radius: 100px
+- Padding: 0.5rem 1rem
+- Font-size: 0.75rem
+- Color: #D4AF37
+- Text-transform: uppercase
+- Letter-spacing: 0.15em
+- Margin-bottom: 2rem
 
 **CTA Button:**
 - Width: 320px (desktop), 100% (mobile)
 - Height: 64px
-- Background: #D4AF37
+- Background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%)
 - Color: #000000
-- Font-size: 16px
+- Font-size: 0.875rem
 - Font-weight: 700
 - Text-transform: uppercase
+- Letter-spacing: 0.08em
 - Border-radius: 8px
-- Border: 2px solid #D4AF37
-- Hover: Background #F4D03F
-- Transition: all 0.3s ease
-- Box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3)
-
-**Sub CTA:**
-- Font-size: 16px
-- Color: #999999
-- Margin-top: 16px
-- Text-align: center
+- Border: none
+- Hover: Transform translateY(-3px), box-shadow increase
+- Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+- Box-shadow: 0 4px 30px rgba(212, 175, 55, 0.3)
 
 **Countdown Timer:**
 - Display: flex
-- Gap: 16px
+- Gap: 1.5rem
 - Justify-content: center
-- Margin-top: 40px
+- Margin: 3rem auto
 
 **Timer Unit Style:**
-- Background: #1A1A1A
-- Border: 1px solid #333333
-- Border-radius: 8px
-- Padding: 16px 20px
+- Background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%)
+- Border: 1px solid rgba(212, 175, 55, 0.2)
+- Border-radius: 12px
+- Padding: 1.25rem 1.5rem
 - Min-width: 80px
+- Position: relative
+- Overflow: hidden
 
 **Timer Number:**
-- Font-size: 32px
-- Font-weight: 700
+- Font-size: 2.25rem
+- Font-weight: 800
 - Color: #D4AF37
+- Font-variant-numeric: tabular-nums
+- Line-height: 1
 
 **Timer Label:**
-- Font-size: 12px
-- Color: #999999
+- Font-size: 0.625rem
 - Text-transform: uppercase
+- Letter-spacing: 0.15em
+- Color: rgba(255, 255, 255, 0.4)
+- Margin-top: 0.75rem
 
 ---
 
 ## 🖼️ SEÇÃO 2: PROBLEMA
 
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│             [Section Title - Centered]                    │
-│                                                            │
-│   ┌────────────────────────────────────────────────┐      │
-│   │                                                │      │
-│   │   [Body Text - 2 columns on desktop]          │      │
-│   │                                                │      │
-│   └────────────────────────────────────────────────┘      │
-│                                                            │
-│              [Bullet Points with X icons]                 │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
-
 ### Especificações Problema
 
-**Background:** #1A1A1A
+**Background:** #000000 + `.carnaval-glow` (continue)
 
 **Container:** Max-width 900px, centered
 
 **Section Title:**
-- Font-size: 40px
+- Font-size: clamp(2rem, 5vw, 3rem)
 - Font-weight: 700
 - Color: #FFFFFF
 - Text-align: center
-- Margin-bottom: 40px
+- Margin-bottom: 3rem
 
 **Body Paragraphs:**
-- Font-size: 18px
+- Font-size: 1.125rem
 - Line-height: 1.8
-- Color: #CCCCCC
-- Margin-bottom: 24px
+- Color: rgba(255, 255, 255, 0.7)
+- Margin-bottom: 1.5rem
 
-**Bullet Points (styled):**
-- Icon: ❌ (24px)
-- Text: 16px, color #999999
-- Padding-left: 40px
-- Margin-bottom: 16px
+**Problem Cards (Grid):**
+- Background: linear-gradient(180deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%)
+- Border: 1px solid rgba(212, 175, 55, 0.1)
+- Border-radius: 16px
+- Padding: 2rem
+- Hover: border-color rgba(212, 175, 55, 0.3), translateY(-4px)
 
 ---
 
 ## 🖼️ SEÇÃO 3: EPIPHANY BRIDGE (HISTÓRIA)
-
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│  [Section Title - Centered, Gold]                         │
-│                                                            │
-│   ┌─────────────────┐      ┌─────────────────┐            │
-│   │                 │      │                 │            │
-│   │  [Image/        │      │  [Story         │            │
-│   │   Illustration] │      │   Text]         │            │
-│   │                 │      │                 │            │
-│   └─────────────────┘      └─────────────────┘            │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
 
 ### Especificações Epiphany Bridge
 
 **Background:** #000000
 
 **Section Title:**
-- Font-size: 36px
+- Font-size: clamp(2rem, 5vw, 3rem)
 - Font-weight: 700
 - Color: #D4AF37
 - Text-align: center
-- Margin-bottom: 48px
-
-**Content Grid (Desktop):**
-- 2 columns: 1fr 1fr
-- Gap: 60px
-
-**Image/Ilustração:**
-- Width: 100%
-- Border-radius: 16px
-- Box-shadow: 0 20px 60px rgba(212, 175, 55, 0.1)
+- Margin-bottom: 3rem
 
 **Story Text:**
-- Font-size: 18px
+- Font-size: 1.125rem
 - Line-height: 1.8
-- Color: #CCCCCC
-- Font-family: Georgia (serif) para feeling de história
+- Color: rgba(255, 255, 255, 0.7)
+- Font-family: Georgia (serif)
+- Max-width: 700px
 
 **Highlight Quote:**
-- Font-size: 24px
+- Font-size: 1.5rem
 - Font-weight: 700
 - Color: #D4AF37
 - Font-style: italic
 - Border-left: 4px solid #D4AF37
-- Padding-left: 24px
-- Margin: 32px 0
+- Padding-left: 1.5rem
+- Margin: 2rem 0
 
 ---
 
-## 🖼️ SEÇÃO 4: SOLUÇÃO (O QUE É)
-
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│           [Section Title - Centered]                      │
-│                                                            │
-│                    [Badge "GRÁTITO"]                      │
-│                                                            │
-│              [Description Text]                           │
-│                                                            │
-│   ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐    │
-│   │   DIA 1  │ │   DIA 2  │ │   DIA 3  │ │   DIA 4  │    │
-│   │          │ │          │ │          │ │          │    │
-│   │ [Icon+   │ │ [Icon+   │ │ [Icon+   │ │ [Icon+   │    │
-│   │  Title]  │ │  Title]  │ │  Title]  │ │  Title]  │    │
-│   │          │ │          │ │          │ │          │    │
-│   │  [Bullets│ │  [Bullets│ │  [Bullets│ │  [Bullets│    │
-│   │   list]  │ │   list]  │ │   list]  │ │   list]  │    │
-│   └──────────┘ └──────────┘ └──────────┘ └──────────┘    │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
+## 🖼️ SEÇÃO 4: SOLUÇÃO (4 DIAS)
 
 ### Especificações Solução
 
-**Background:** #0A0A0A (quasi black)
-
-**Section Title:**
-- Font-size: 40px
-- Color: #FFFFFF
-- Text-align: center
-- Margin-bottom: 24px
+**Background:** #0A0A0A
 
 **Badge:**
-- Background: #27AE60
-- Color: #FFFFFF
-- Padding: 8px 24px
+- Background: rgba(39, 174, 96, 0.15)
+- Color: #27AE60
+- Padding: 0.5rem 1rem
 - Border-radius: 100px
-- Font-size: 14px
+- Font-size: 0.75rem
 - Font-weight: 600
 - Text-transform: uppercase
-- Display: inline-block
-- Margin: 0 auto 32px
+- Letter-spacing: 0.15em
+- Display: inline-flex
+- Align-items: center
+- Gap: 0.5rem
 
 **Day Cards:**
-- Background: #1A1A1A
-- Border: 1px solid #333333
-- Border-radius: 16px
-- Padding: 32px
+- Background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%)
+- Border: 1px solid rgba(255, 255, 255, 0.06)
+- Border-radius: 20px
+- Padding: 2.5rem 2rem
 - Height: 100%
-- Transition: transform 0.3s, border-color 0.3s
-- Hover: Transform translateY(-4px), Border-color #D4AF37
+- Position: relative
+- Overflow: hidden
+- Hover: border-color rgba(212, 175, 55, 0.25)
 
-**Day Number:**
-- Font-size: 64px
-- Font-weight: 900
-- Color: rgba(255,255,255,0.05)
+**Day Number (Watermark):**
 - Position: absolute
-- Top: 0
-- Right: 16px
+- Top: 1rem
+- Right: 1.5rem
+- Font-size: 4rem
+- Font-weight: 900
+- Color: rgba(255, 255, 255, 0.03)
+- Line-height: 1
 
-**Day Icon:**
-- Width: 48px
-- Height: 48px
-- Color: #D4AF37
-- Margin-bottom: 16px
+**Day Icon Container:**
+- Width: 56px
+- Height: 56px
+- Display: flex
+- Align-items: center
+- Justify-content: center
+- Background: rgba(212, 175, 55, 0.1)
+- Border-radius: 12px
+- Font-size: 1.5rem
+- Margin-bottom: 1.5rem
 
 **Day Title:**
-- Font-size: 20px
+- Font-size: 1.5rem
 - Font-weight: 700
 - Color: #FFFFFF
-- Margin-bottom: 16px
+- Margin-bottom: 1rem
 
 **Day Bullets:**
-- Font-size: 14px
-- Color: #999999
+- Font-size: 0.9375rem
+- Color: rgba(255, 255, 255, 0.6)
 - Line-height: 1.6
-- Padding-left: 24px
+- Each bullet: checkmark #27AE60
 
 ---
 
 ## 🖼️ SEÇÃO 5: ENTREGÁVEIS E BÔNUS
 
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│           [Section Title - Centered]                      │
-│                                                            │
-│   ┌──────────────────┐  ┌──────────────────┐             │
-│   │   📦 DIA 1-4     │  │   🎁 BÔNUS       │             │
-│   │                  │  │                  │             │
-│   │   [List items]   │  │   [List items]   │             │
-│   │                  │  │                  │             │
-│   └──────────────────┘  └──────────────────┘             │
-│                                                            │
-│   ┌──────────────────────────────────────────────┐       │
-│   │         🏆 CERTIFICADO                         │       │
-│   │   [Certificate preview graphic]              │       │
-│   └──────────────────────────────────────────────┘       │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
-
 ### Especificações Entregáveis
 
-**Background:** #1A1A1A
+**Background:** #000000
 
 **Cards Grid:**
 - Desktop: 3 columns
 - Tablet: 2 columns
 - Mobile: 1 column
-- Gap: 24px
+- Gap: 1.5rem
 
 **Entregável Card:**
-- Background: #000000
-- Border: 1px solid #D4AF37
-- Border-radius: 12px
-- Padding: 24px
+- Background: linear-gradient(180deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%)
+- Border: 1px solid rgba(212, 175, 55, 0.1)
+- Border-radius: 16px
+- Padding: 2rem
 - Position: relative
-- Overflow: hidden
+- Top border: 1px gradient transparent to gold to transparent
 
 **Card Icon:**
-- Font-size: 32px
-- Margin-bottom: 16px
+- Font-size: 2rem
+- Margin-bottom: 1rem
 
 **Card Title:**
-- Font-size: 20px
+- Font-size: 1.25rem
 - Font-weight: 700
 - Color: #FFFFFF
-- Margin-bottom: 16px
+- Margin-bottom: 1rem
 
 **Card List:**
-- Font-size: 14px
-- Color: #CCCCCC
+- Font-size: 0.875rem
+- Color: rgba(255, 255, 255, 0.7)
 - Line-height: 2
 
-**Checkmark Icon:** ✅ - #27AE60
+**Checkmark Icon:** ✓ - #27AE60
 
 ---
 
-## 🖼️ SEÇÃO 6: PROVA SOCIAL
+## 🖼️ SEÇÃO 6: QUEM VAI ENSINAR (FOUNDERS)
 
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│           [Section Title - Centered]                      │
-│                                                            │
-│   ┌─────────────────────────────────────────────────┐     │
-│   │  [Photo]                                       │     │
-│   │                                                 │     │
-│   │  "Testimonial quote..."                        │     │
-│   │                                                 │     │
-│   │  — NAME                                         │     │
-│   │     Credencial                                 │     │
-│   └─────────────────────────────────────────────────┘     │
-│                                                            │
-│         [Stats Bar - 3 columns]                          │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
-
-### Especificações Prova Social
+### Especificações Founders Section
 
 **Background:** #0A0A0A
 
-**Testimonial Card:**
-- Background: #1A1A1A
-- Border-radius: 16px
-- Padding: 40px
-- Max-width: 700px
-- Center: horizontally
-- Margin: 0 auto 40px
+**Section Label:**
+- Font-size: 0.75rem
+- Font-weight: 600
+- Text-transform: uppercase
+- Letter-spacing: 0.15em
+- Color: #D4AF37
+- Text-align: center
+- Margin-bottom: 1rem
 
-**Photo:**
-- Width: 80px
-- Height: 80px
-- Border-radius: 50%
-- Object-fit: cover
-- Border: 3px solid #D4AF37
-- Margin-bottom: 24px
-
-**Quote:**
-- Font-size: 20px
-- Font-style: italic
-- Color: #CCCCCC
-- Line-height: 1.6
-- Font-family: Georgia
-
-**Quote Marks:** " " - #D4AF37, 48px, opacity 0.3
-
-**Author Name:**
-- Font-size: 18px
+**Section Title:**
+- Font-size: clamp(1.75rem, 4vw, 2.5rem)
 - Font-weight: 700
 - Color: #FFFFFF
-- Margin-top: 24px
-
-**Author Credencial:**
-- Font-size: 14px
-- Color: #999999
-
-**Stats Bar:**
-- Display: flex
-- Gap: 40px
-- Justify-content: center
-- Padding: 40px 0
-
-**Stat Item:**
 - Text-align: center
+- Margin-bottom: 1rem
 
-**Stat Number:**
-- Font-size: 48px
-- Font-weight: 900
+**Section Subtitle:**
+- Font-size: 1.125rem (desktop), 1rem (mobile)
+- Line-height: 1.7
+- Color: rgba(255, 255, 255, 0.7)
+- Text-align: center
+- Max-width: 800px
+- Margin: 0 auto 3rem
+
+**Founders Grid:**
+- Display: grid
+- Grid-template-columns: repeat(3, 1fr)
+- Gap: 2rem
+- Margin-bottom: 3rem
+- Mobile: 1 column
+
+**Founder Card:**
+- Background: linear-gradient(180deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%)
+- Border: 1px solid rgba(212, 175, 55, 0.15)
+- Border-radius: 20px
+- Padding: 2rem
+- Text-align: center
+- Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+- Hover: border-color rgba(212, 175, 55, 0.35), translateY(-4px)
+
+**Founder Image Wrapper:**
+- Position: relative
+- Display: inline-block
+- Margin-bottom: 1.5rem
+
+**Founder Image:**
+- Width: 150px
+- Height: 150px
+- Border-radius: 50%
+- Object-fit: cover
+- Border: 3px solid rgba(212, 175, 55, 0.3)
+
+**Founder Badge:**
+- Position: absolute
+- Bottom: -8px
+- Left: 50%
+- Transform: translateX(-50%)
+- Background: rgba(212, 175, 55, 0.2)
+- Border: 1px solid rgba(212, 175, 55, 0.3)
 - Color: #D4AF37
-
-**Stat Label:**
-- Font-size: 14px
-- Color: #CCCCCC
+- Font-size: 0.65rem
+- Font-weight: 700
 - Text-transform: uppercase
+- Letter-spacing: 0.1em
+- Padding: 0.25rem 0.75rem
+- Border-radius: 100px
+- White-space: nowrap
+
+**Founder Name:**
+- Font-size: 1.5rem
+- Font-weight: 700
+- Color: #FFFFFF
+- Margin-bottom: 0.25rem
+
+**Founder Credential:**
+- Font-size: 0.875rem
+- Color: rgba(212, 175, 55, 0.8)
+- Margin-bottom: 1.5rem
+
+**Founder Highlights List:**
+- List-style: none
+- Text-align: left
+- Padding: 0
+
+**Founder Highlights Item:**
+- Font-size: 0.875rem
+- Color: rgba(255, 255, 255, 0.7)
+- Padding: 0.5rem 0
+- Line-height: 1.5
+- Bullet: ✦ (diamante dourado)
+
+**Founders CTA Box:**
+- Text-align: center
+- Max-width: 700px
+- Margin: 0 auto
+- Padding: 2rem
+- Background: rgba(212, 175, 55, 0.05)
+- Border: 1px solid rgba(212, 175, 55, 0.15)
+- Border-radius: 16px
+
+**Founders CTA Text:**
+- Font-size: 1.125rem (desktop), 1rem (mobile)
+- Color: rgba(255, 255, 255, 0.8)
+- Line-height: 1.7
+
+### Imagens dos Fundadores
+
+| Arquivo | Fundador | Formato | Dimensões |
+|---------|----------|---------|-----------|
+| `davi.png` | Davi | PNG | 400x400px |
+| `sandro.png` | Sandro | PNG | 400x400px |
+| `pedro.png` | Pedro | PNG | 400x400px |
+
+**Estrutura de pastas:**
+```
+/public/
+  └── images/
+      └── founders/
+          ├── davi.png
+          ├── sandro.png
+          └── pedro.png
+```
+
+### Conteúdo dos Cards
+
+**DAVI - Criador da Metodologia**
+- +2.000 conteúdos produzidos
+- Criou o framework que gerou R$ 1M em vendas orgânicas
+- Desenvolveu o "Manual da Viralização" usado por grandes marcas
+- Trabalhou com empresas como Empiricus
+- Especialista em transformar autoridade offline em digital
+
+**SANDRO - Especialista em Estrutura**
+- +20 empresas escaladas
+- Escalou +20 empresas de zero a milhões
+- Especialista em estrutura de operação de escala
+- Transformou bases desengajadas em vendas consistentes
+- Domina a arte de fazer muito conteúdo com qualidade
+
+**PEDRO - Especialista em Operação**
+- Operação & Escala
+- Responsável por fazer a metodologia funcionar na prática
+- Especialista em transformar estratégia em execução
+- Gerencia operação de múltiplos perfis em escala
+- Garante que o aluno saia do retiro com o plano aplicável
 
 ---
 
 ## 🖼️ SEÇÃO 7: FAQ
-
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│           [Section Title - Centered]                      │
-│                                                            │
-│   ┌─────────────────────────────────────────────────┐     │
-│   │  ❓ PERGUNTA                                    │     │
-│   │   [Answer - expandable]                         │     │
-│   └─────────────────────────────────────────────────┘     │
-│                                                            │
-│   [Repeat for each FAQ item]                             │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
 
 ### Especificações FAQ
 
@@ -524,164 +685,109 @@ Compact: 1.4
 **Container:** Max-width 800px
 
 **FAQ Item:**
-- Background: #000000
-- Border: 1px solid #333333
-- Border-radius: 8px
-- Margin-bottom: 16px
-- Overflow: hidden
+- Border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+- No background on item itself
 
 **FAQ Question:**
-- Padding: 20px 24px
-- Font-size: 18px
+- Padding: 1.75rem 0
+- Font-size: 1.125rem
 - Font-weight: 600
 - Color: #FFFFFF
 - Cursor: pointer
 - Display: flex
 - Justify-content: space-between
 - Align-items: center
+- Background: none
+- Border: none
+- Hover: color #D4AF37
 
 **FAQ Icon:**
-- Color: #D4AF37
-- Transition: transform 0.3s
+- Width: 28px
+- Height: 28px
+- Display: flex
+- Background: rgba(212, 175, 55, 0.1)
+- Border-radius: 50%
+- Transition: all 0.3s
 
 **FAQ Answer (expanded):**
-- Padding: 0 24px 24px
-- Font-size: 16px
-- Color: #CCCCCC
-- Line-height: 1.6
-- Display: none (default)
-- Animation: slideDown 0.3s ease
+- Max-height: 0
+- Overflow: hidden
+- Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+- Padding-bottom: 0
 
-**FAQ Answer (active):**
-- Display: block
+**FAQ Answer.open:**
+- Max-height: 300px
+- Padding-bottom: 1.75rem
+- Font-size: 1rem
+- Color: rgba(255, 255, 255, 0.7)
 
 ---
 
 ## 🖼️ SEÇÃO 8: ESCASSEZ FINAL
 
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│         AS INSCRIÇÕES ENCERRAM EM:                        │
-│                                                            │
-│              [COUNTDOWN TIMER - Large]                    │
-│                                                            │
-│            [Escassez copy text]                           │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
-
 ### Especificações Escassez
 
-**Background:** Gradient linear - #000000 to #1A1A1A
+**Background:** Gradient - linear-gradient(180deg, #000 0%, #1A0A0A 50%, #000 100%)
+**::before overlay:** radial-gradient(ellipse 80% 50% at 50% 0%, rgba(231, 76, 60, 0.05) 0%, transparent 50%)
 
 **Title:**
-- Font-size: 28px
+- Font-size: clamp(1.75rem, 4vw, 2.5rem)
 - Font-weight: 700
-- Color: #E74C3C (red accent)
+- Color: #E74C3C
 - Text-align: center
 - Text-transform: uppercase
 
-**Timer (Large):**
-- Gap: 24px
-- Timer Unit: 120px x 120px
-- Timer Number: 56px
-- Timer Label: 14px
-
 **Copy Text:**
-- Font-size: 16px
-- Color: #CCCCCC
+- Font-size: 1rem
+- Color: rgba(255, 255, 255, 0.7)
 - Max-width: 600px
 - Text-align: center
-- Margin: 40px auto
+- Margin: 2rem auto
 
 ---
 
 ## 🖼️ SEÇÃO 9: CTA FINAL
-
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│       PRONTO PARA RECUPERAR O COMEÇO DO SEU ANO?          │
-│                                                            │
-│            [Subheadline]                                  │
-│                                                            │
-│         [CTA BUTTON - Large]                              │
-│                                                            │
-│            [Garantia text]                                │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
 
 ### Especificações CTA Final
 
 **Background:** #000000
 
 **Title:**
-- Font-size: 36px
+- Font-size: clamp(2rem, 5vw, 3rem)
 - Font-weight: 700
 - Color: #FFFFFF
 - Text-align: center
 
-**Subheadline:**
-- Font-size: 18px
-- Color: #CCCCCC
-- Text-align: center
-- Margin: 24px 0 40px
-
 **CTA Button (Large):**
-- Width: 400px
-- Height: 72px
-- Font-size: 18px
-- Animation: pulse 2s infinite
+- Width: 100% max 400px
+- Animation: pulse-glow 3s ease-in-out infinite
 
 **Pulse Animation:**
-```
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
-  50% { box-shadow: 0 4px 40px rgba(212, 175, 55, 0.6); }
+```css
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 30px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 8px 50px rgba(212, 175, 55, 0.5); }
 }
 ```
-
-**Garantia:**
-- Font-size: 14px
-- Color: #999999
-- Text-align: center
-- Margin-top: 24px
-
-**Lock Icon:** 🔒 - 16px
 
 ---
 
 ## 📱 FOOTER
 
-### Layout
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│   © 2026 Acelerador de Audiência                           │
-│                                                            │
-│   [Links: Contato | Termos | Privacidade]                │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
-
 ### Especificações Footer
 
 **Background:** #000000
-**Border-top:** 1px solid #333333
-**Padding:** 40px 0
+**Border-top:** 1px solid rgba(255, 255, 255, 0.06)
+**Padding:** 4rem 0 3rem
 
 **Copyright:**
-- Font-size: 14px
-- Color: #666666
+- Font-size: 0.875rem
+- Color: rgba(255, 255, 255, 0.4)
 - Text-align: center
 
 **Links:**
-- Font-size: 14px
-- Color: #999999
+- Font-size: 0.875rem
+- Color: rgba(255, 255, 255, 0.5)
 - Text-decoration: none
 - Hover: Color #D4AF37
 
@@ -692,68 +798,72 @@ Compact: 1.4
 ### Mobile Adjustments (< 768px)
 
 1. **Hero:**
-   - H1: 40px (2 lines max)
-   - Reduce padding to 24px
-   - Stack timer units
+   - H1: clamp(2.5rem, 8vw, 5rem) - responsive
+   - Section padding: 6rem 1.5rem 4rem
+   - Stack timer units if needed
 
 2. **Day Cards:**
    - Single column
-   - Reduce padding to 24px
+   - Reduce padding to 2rem
    - Stack vertically
 
 3. **Testimonials:**
    - Full width cards
-   - Reduce padding to 24px
-   - Stack stats vertically
+   - Reduce padding to 2rem
 
 4. **CTA:**
    - Full width (100%)
-   - Fixed bottom on scroll
-   - Height: 56px
 
 ### Tablet Adjustments (768px - 1024px)
 
-1. **Hero:** H1: 48px
+1. **Hero:** Maintain responsive H1
 2. **Day Cards:** 2x2 grid
 3. **Testimonials:** Single column, centered
-4. **Stats:** Wrap to 2 lines if needed
 
 ---
 
-## 🎬 INTERAÇÕES E ANIMAÇÕES
+## 🎬 ANIMAÇÕES
 
-### Scroll Animations
+### CSS Keyframes Defined
 
-**Fade In Up:**
-```
-.trigger: opacity 0, transform translateY(40px)
-.visible: opacity 1, transform translateY(0)
-transition: all 0.6s ease
-```
-
-**Stagger Children:**
-```
-.child-1: delay 0ms
-.child-2: delay 100ms
-.child-3: delay 200ms
-.child-4: delay 300ms
+**Float (for icons/badges):**
+```css
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
 ```
 
-### Hover States
+**Confetti Fall:**
+```css
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+```
+
+**Pulse Glow:**
+```css
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 30px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 8px 50px rgba(212, 175, 55, 0.5); }
+}
+```
+
+### Transitions
 
 **Buttons:**
-- Transform: translateY(-2px)
-- Box-shadow: Increase
-- Background: Lighten by 10%
+- Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+- Hover: translateY(-3px)
 
 **Cards:**
-- Transform: translateY(-4px)
-- Border-color: #D4AF37
-- Box-shadow: 0 20px 40px rgba(0,0,0,0.4)
+- Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+- Hover: translateY(-4px), border-color change
 
-**Links:**
-- Color: #D4AF37
-- Underline: animate from left
+**FAQ:**
+- Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
 
 ---
 
@@ -786,80 +896,483 @@ transition: all 0.6s ease
 
 ### Images
 ```
-- Hero background: Optional, 1920x1080px, PNG/JPG
-- Testimonial photos: 200x200px, PNG/JPG
-- Certificate preview: 800x600px, PNG
-- Icons: SVG format, 24px, 32px, 48px
+- Hero background: Optional, use AI prompt above
+- Testimonial photos: 200x200px, PNG/JPG - use AI prompts
+- Certificate preview: 800x600px, PNG - use AI prompt
+- Icons: SVG format, 24px, 32px, 48px - use AI prompts
 ```
 
-### Icons
+### Icons (emoji fallback)
 ```
-- Checkmark: ✅ or custom SVG
-- X mark: ❌ or custom SVG
-- Arrow: → or custom SVG
-- Question mark: ❓ or custom SVG
-- Lock: 🔒 or custom SVG
-- Fire: 🔥 or custom SVG
-- Gift: 🎁 or custom SVG
-- Trophy: 🏆 or custom SVG
+- Checkmark: ✓
+- Arrow: →
+- Lock: 🔒
+- Fire: 🔥
+- Gift: 🎁
+- Trophy: 🏆
+- Calendar: 📅
+- WhatsApp: 💬
+- Email: 📧
 ```
 
 ### Fonts
 ```
 - Inter: https://fonts.google.com/specimen/Inter
-- Or use system fonts for performance
+- Or use system fonts for performance (SF Pro Display)
 ```
 
 ---
 
 ## 🚀 PERFORMANCE
 
-### Optimization Targets
+### Core Web Vitals - Google PageSpeed Targets
 
-1. **LCP (Largest Contentful Paint):** < 2.5s
-2. **FID (First Input Delay):** < 100ms
-3. **CLS (Cumulative Layout Shift):** < 0.1
-4. **Page Size:** < 2MB
-5. **Load Time:** < 3s on 4G
+| Métrica | Bom (Verde) | Precisa Melhorar (Amarelo) | Ruim (Vermelho) |
+|---------|-------------|---------------------------|-----------------|
+| **LCP** | < 2.5s | 2.5s - 4s | > 4s |
+| **FID** | < 100ms | 100ms - 300ms | > 300ms |
+| **CLS** | < 0.1 | 0.1 - 0.25 | > 0.25 |
+| **FCP** | < 1.8s | 1.8s - 3s | > 3s |
+| **TBT** | < 200ms | 200ms - 600ms | > 600ms |
+| **Speed Index** | < 3.4s | 3.4s - 5.8s | > 5.8s |
 
-### Best Practices
+### Additional Targets
+
+- **Page Size:** < 1MB (ideal), < 2MB (aceitável)
+- **Load Time (3G):** < 5s
+- **Load Time (4G):** < 3s
+- **Time to Interactive (TTI):** < 3.8s
+- **Total Blocking Time (TBT):** < 200ms
+
+### Best Practices Summary
 
 - Lazy load images below fold
-- WebP format with fallback
+- WebP format with AVIF fallback
 - Minify CSS/JS
-- Inline critical CSS
-- Use system fonts where possible
+- Inline critical CSS for above-fold content
+- Use system fonts where possible (no web font request)
 - Defer non-critical JS
-- Enable compression (gzip/brotli)
+- Enable compression (brotli preferred, gzip fallback)
+- Preconnect to external origins
+- Use native lazy loading (loading="lazy")
+- Minimize main thread work
+- Reduce JavaScript execution time
+- Minimize layout shifts
+
+---
+
+## ⚡ PAGESPEED OPTIMIZATION - IMPLEMENTAÇÃO DETALHADA
+
+### 1. Otimização de Imagens
+
+#### Formatos e Compressão
+```
+Format priority: AVIF → WebP → JPEG/PNG fallback
+
+Max file sizes per image type:
+- Hero images: < 200KB (WebP), < 300KB (fallback)
+- Above-fold images: < 100KB
+- Below-fold images: < 50KB
+- Icons/illustrations: Use SVG (< 10KB)
+```
+
+#### Responsive Images com srcset
+```html
+<!-- Exemplo de implementação -->
+<img
+  src="/hero-image-800.webp"
+  srcset="
+    /hero-image-400.webp 400w,
+    /hero-image-800.webp 800w,
+    /hero-image-1200.webp 1200w,
+    /hero-image-1600.webp 1600w
+  "
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+  width="1600"
+  height="900"
+  loading="eager"
+  decoding="sync"
+  fetchpriority="high"
+  alt="..."
+>
+```
+
+#### Lazy Loading nativo
+```html
+<!-- Imagens abaixo do fold -->
+<img
+  src="/image.webp"
+  loading="lazy"
+  decoding="async"
+  width="800"
+  height="600"
+  alt="..."
+>
+```
+
+### 2. Estratégia de Fontes
+
+#### System Fonts (RECOMENDADO - Zero Request)
+```css
+/* Sem requests de fonte web */
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+```
+
+#### Se usar Web Fonts
+```html
+<!-- Pré-conectar ao Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Font display para evitar FOIT/FOUT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS com font-display -->
+@font-face {
+  font-family: 'Inter';
+  font-display: swap; /* ou 'optional' para menor impacto */
+  src: url('/fonts/inter.woff2') format('woff2');
+}
+```
+
+### 3. Otimização CSS
+
+#### Critical CSS Inline
+```html
+<!-- CSS crítico inline para above-fold -->
+<style>
+  /* Above-fold styles only - ~5-10KB max */
+  body { background: #000; color: #fff; }
+  .hero { min-height: 100vh; }
+  /* ... */
+</style>
+
+<!-- CSS completo carregado assincronamente -->
+<link rel="preload" href="/globals.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+```
+
+#### Reduzir CSS não utilizado
+```css
+/* Evite estilos não usados */
+/* PurgeCSS/Tailwind purge ou CSS manual minificado */
+```
+
+### 4. Otimização JavaScript
+
+#### Defer JS não crítico
+```html
+<!-- Não usar defer/emergency no LCP -->
+<script defer src="/countdown.js"></script>
+<script defer src="/faq.js"></script>
+
+<!-- Analytics sempre com defer -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXX"></script>
+```
+
+#### Reduzir JavaScript principal
+```javascript
+// Minify todos os JS
+// Code splitting para routes
+// Dynamic imports para componentes pesados
+
+const CountdownTimer = dynamic(() => import('./components/CountdownTimer'), {
+  loading: () => <div>Loading...</div>,
+});
+```
+
+### 5. Preconnect e DNS Prefetch
+```html
+<!-- Preconnect para origens externas -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+
+<!-- DNS prefetch para domínios de terceiros -->
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
+```
+
+### 6. Otimizações Específicas do Carnaval
+
+#### Confetti Animation - Versão Otimizada
+```javascript
+// REDUZIR número de elementos para melhor performance
+// Antes: 50 confetti elements
+// Depois: 15-20 confetti elements
+
+// Usar requestAnimationFrame em vez de setInterval
+// Implementar intersection observer para animar apenas quando visível
+
+// Exemplo otimizado:
+const confettiContainer = document.querySelector('.confetti-container');
+const CONFETTI_COUNT = 15; // Reduzido de 50
+
+// Criar confetti apenas após página carregada
+window.addEventListener('load', () => {
+  createConfetti();
+});
+
+// Parar animação quando fora de viewport
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startConfettiAnimation();
+    } else {
+      stopConfettiAnimation();
+    }
+  });
+});
+```
+
+#### Glow Effects - Otimizado
+```css
+/* Usar will-change para melhorar performance de paint */
+.carnaval-glow {
+  position: fixed;
+  will-change: transform; /* Opcional - usar com cautela */
+  contain: layout style paint; /* Melhor para isolamento */
+  /* ... */
+}
+```
+
+---
+
+## 📏 CLS PREVENTION - Prevenção de Layout Shift
+
+### 1. Sempre Definir Dimensões de Imagem
+```html
+<!-- ❌ ERRADO - causa CLS -->
+<img src="image.webp" alt="...">
+
+<!-- ✅ CORRETO -->
+<img src="image.webp" width="800" height="600" alt="...">
+```
+
+### 2. Reservar Espaço para Conteúdo Dinâmico
+```css
+/* Countdown timer - reservar espaço */
+.countdown {
+  display: flex;
+  gap: 1.5rem;
+  min-height: 120px; /* Previne shift quando carrega */
+  justify-content: center;
+}
+
+/* FAQ - reservar espaço antes de expandir */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer.open {
+  max-height: 300px; /* Altura máxima fixa */
+}
+```
+
+### 3. Font Display Strategy
+```css
+/* Usar font-display: swap ou optional */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap; /* Permite texto visível imediatamente */
+}
+```
+
+### 4. Espaço para Anúncios/Widgets
+```css
+/* Se usar widgets de terceiros, reservar espaço */
+.widget-container {
+  min-height: 250px;
+  width: 100%;
+}
+```
+
+### 5. Skeleton Loading para Conteúdo Assíncrono
+```html
+<!-- Mostrar skeleton enquanto carrega -->
+<div class="skeleton" style="height: 200px; width: 100%;"></div>
+```
+
+---
+
+## 🎯 PERFORMANCE BUDGETS
+
+### Orçamento Máximo por Tipo de Recurso
+
+| Recurso | Mobile | Desktop | Prioridade |
+|---------|--------|---------|------------|
+| **JavaScript Total** | < 150KB | < 200KB | Alta |
+| **CSS Total** | < 50KB | < 75KB | Alta |
+| **HTML** | < 15KB | < 15KB | Média |
+| **Imagens Above-Fold** | < 300KB | < 400KB | Alta |
+| **Imagens Below-Fold** | < 500KB | < 800KB | Média |
+| **Fontes** | < 50KB | < 50KB | Média |
+| **Total Page Weight** | < 1MB | < 1.5MB | Alta |
+
+### Orçamento de Execução
+
+| Métrica | Limite Máximo |
+|---------|---------------|
+| Blocking Time | < 200ms |
+| Script Evaluation | < 500ms |
+| Scripting Time | < 1s |
+| Layout Time | < 500ms |
+| Paint Time | < 500ms |
+
+### Orçamento por Terceiro
+
+| Terceiro | Limite |
+|----------|-------|
+| Google Analytics | < 40KB |
+| Hotjar/Clarity | < 50KB ou remover |
+| Outros trackers | < 30KB total |
+
+---
+
+## 🔍 PAGESPEED CHECKLIST - IMPLEMENTAÇÃO
+
+### Imagens
+- [ ] Todas as imagens têm width e height explícitos
+- [ ] Imagens above-fold em WebP com fallback JPEG
+- [ ] Imagens below-fold com loading="lazy"
+- [ ] Todas as imagens otimizadas (compressão adequada)
+- [ ] Imagens responsivas com srcset/sizes
+- [ ] Imagens decorativas com alt="" ou aria-hidden="true"
+
+### Fontes
+- [ ] Usar system fonts quando possível (RECOMENDADO)
+- [ ] Se usar web fonts: font-display: swap
+- [ ] Preconnect para origens de fontes
+- [ ] Apenas 1-2 famílias de fonte
+- [ ] Apenas weights necessários (400, 600, 700)
+
+### CSS
+- [ ] CSS crítico inline (< 10KB)
+- [ ] CSS não crítico carregado assincronamente
+- [ ] CSS minificado
+- [ ] Remover CSS não utilizado
+- [ ] Evitar @import no CSS
+
+### JavaScript
+- [ ] JS não crítico com defer
+- [ ] JS minificado
+- [ ] Analytics com defer
+- [ ] Reduzir JavaScript principal
+- [ ] Code splitting implementado
+- [ ] Evitar inline handlers (onclick="...")
+
+### Server/CDN
+- [ ] Brotli compression habilitado
+- [ ] Gzip fallback habilitado
+- [ ] Cache headers configurados (1 ano para assets estáticos)
+- [ ] CDN para assets estáticos
+- [ ] HTTP/2 ou HTTP/3 habilitado
+
+### Pré-carregamento
+- [ ] Preconnect para origens externas críticas
+- [ ] Preload para recursos críticos (CSS acima do fold)
+- [ ] Fetchpriority para recursos mais importantes
+
+### Animações (Carnaval Effects)
+- [ ] Confetti reduzido para 15-20 elementos
+- [ ] Intersection Observer para animações fora de viewport
+- [ ] requestAnimationFrame em vez de setInterval
+- [ ] Animacoes paradas quando elemento não visível
+- [ ] will-change usado com cautela
+- [ ] contain: layout style paint em elementos fixos
+
+### Mobile Específico
+- [ ] Texto legível sem zoom (16px base)
+- [ ] Touch targets adequados (48x48px mínimo)
+- [ ] Viewport configurado corretamente
+- [ ] Sem horizontal scroll
+- [ ] Fast tap/remover delay de 300ms
+
+### Third-Party
+- [ ] Google Analytics com defer
+- [ ] Remover scripts não essenciais
+- [ ] Usar tag management quando apropriado
+- [ ] Scripts de terceiros carregados assincronamente
 
 ---
 
 ## 🔧 DESENVOLVIMENTO
 
-### Tech Stack Suggestion
+### Tech Stack (Implementado)
 
 ```
-- Framework: Next.js / React
-- Styling: Tailwind CSS / CSS Modules
-- Forms: React Hook Form + Yup
-- Analytics: Google Analytics 4
-- Heatmaps: Hotjar / Clarity
+- Framework: Next.js 16.1.6 (App Router)
+- Language: TypeScript
+- Styling: Pure CSS (globals.css) - no Tailwind utilities
+- Components: React with 'use client' directive
 ```
 
-### Components Needed
+### Components Implemented
 
-1. Hero (with countdown)
-2. ProblemSection
-3. StorySection (with image)
-4. SolutionSection (day cards)
-5. DeliverablesSection (bonus cards)
-6. Testimonials (carousel or grid)
-7. FAQ (accordion)
-8. ScarcitySection
-9. FinalCTA
-10. Footer
+1. ✅ Hero (with countdown)
+2. ✅ Problem Section
+3. ✅ Epiphany Bridge (Story)
+4. ✅ Solution Section (4 day cards)
+5. ✅ Deliverables Section
+6. ✅ Founders (quem vai ensinar)
+7. ✅ FAQ (accordion)
+8. ✅ Scarcity Section
+9. ✅ Final CTA
+10. ✅ Footer
+
+### Pages Implemented
+
+1. ✅ `/inscricao` - Registration page
+2. ✅ `/obrigado` - Thank you page
 
 ---
 
-*Esta especificação está completa e pronta para desenvolvimento.
-Quaisquer dúvidas, consulte a equipe de design.*
+## 📋 CHECKLIST DE IMPLEMENTAÇÃO
+
+### Visual Identity
+- [x] Carnaval glow background effect
+- [x] Confetti fall animation (subtle, golden)
+- [x] Window glow effects
+- [x] Color palette implemented
+- [x] Typography system
+
+### Sections
+- [x] Hero with countdown
+- [x] Problem/Agitation
+- [x] Epiphany Bridge story
+- [x] 4 Day cards
+- [x] Deliverables/Bonus
+- [x] Founders (quem vai ensinar)
+- [x] FAQ accordion
+- [x] Scarcity section
+- [x] Final CTA
+- [x] Footer
+
+### Technical
+- [x] Responsive design
+- [x] Accessibility (ARIA, contrast)
+- [x] Performance optimization
+- [x] Smooth animations
+- [x] Cross-browser compatibility
+
+### PageSpeed Optimization (PENDENTE)
+- [ ] Confetti reduzido para 15-20 elementos
+- [ ] Imagens com width/height explícitos
+- [ ] WebP format com fallback
+- [ ] Lazy loading para imagens below-fold
+- [ ] System fonts (sem web font requests)
+- [ ] CSS minificado
+- [ ] JS com defer
+- [ ] Preconnect para origens externas
+- [ ] Intersection Observer para animações
+- [ ] Compression habilitada (brotli/gzip)
+- [ ] Cache headers configurados
+
+---
+
+*v2.4 - Substituída seção de depoimentos por perfis dos fundadores (Davi, Sandro, Pedro)*
+*v2.3 - Atualizado com conceito "carnaval fora, foco dentro" e otimização PageSpeed Insights*
+*Prompts de imagem movidos para `04_PROMPTS_IMAGENS.md`*
+*Seções novas: PAGESPEED OPTIMIZATION, CLS PREVENTION, PERFORMANCE BUDGETS, PAGESPEED CHECKLIST*
+*Ícones: usar bibliotecas (Lucide, Heroicons, Phosphor) ao invés de IA*
+*Meta: 90+ score no Google PageSpeed Insights (Mobile e Desktop)*
+*Imagens: armazenar como .png, sistema converte para .webp automaticamente*

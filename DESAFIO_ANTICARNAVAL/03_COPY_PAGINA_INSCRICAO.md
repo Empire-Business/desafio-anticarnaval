@@ -355,7 +355,7 @@ AS INSCRIÇÕES ENCERRAM EM:
 
 ### Timer
 ```
-[COUNTDOWN TIMER - 13/03 às 23h59]
+[COUNTDOWN TIMER - 13/02 às 23h59]
 ```
 
 ### Copy de Escassez
@@ -369,7 +369,7 @@ E também porque queremos que você entre com disposição
 total, sem a pressa de última hora.
 
 Então, se você quer participar, inscreva-se até
-quarta-feira, 13/03.
+quarta-feira, 13/02.
 
 Depois disso, as portas fecham.
 ```

@@ -3,7 +3,7 @@
 
 > **Versão:** 1.0
 > **Data de criação:** 05 de Fevereiro de 2026
-> **Evento:** 14 a 17 de Março de 2026
+> **Evento:** 14 a 17 de Fevereiro de 2026
 
 ---
 
@@ -40,30 +40,30 @@ O Carnaval é o momento perfeito para **recuperar o começo do ano**. Enquanto t
 
 | Data | Dia | Horário | Atividade |
 |------|-----|---------|-----------|
-| 14/03 | Sábado | 10h - 11h | Aula 1 + Tarefa |
-| 14/03 | Sábado | 17h - 18h | Retorno / Hot Seat |
-| 15/03 | Domingo | 10h - 11h | Aula 2 + Tarefa |
-| 15/03 | Domingo | 17h - 18h | Retorno / Hot Seat |
-| 16/03 | Segunda | 10h - 11h | Aula 3 + Tarefa |
-| 16/03 | Segunda | 17h - 18h | Retorno / Hot Seat |
-| 17/03 | Terça | 10h - 11h | Aula 4 + Encerramento |
-| 17/03 | Terça | 18h - 19h | Live Extra com Time de Vendas |
+| 14/02 | Sábado | 10h - 11h | Aula 1 + Tarefa |
+| 14/02 | Sábado | 17h - 18h | Retorno / Hot Seat |
+| 15/02 | Domingo | 10h - 11h | Aula 2 + Tarefa |
+| 15/02 | Domingo | 17h - 18h | Retorno / Hot Seat |
+| 16/02 | Segunda | 10h - 11h | Aula 3 + Tarefa |
+| 16/02 | Segunda | 17h - 18h | Retorno / Hot Seat |
+| 17/02 | Terça | 10h - 11h | Aula 4 + Encerramento |
+| 17/02 | Terça | 18h - 19h | Live Extra com Time de Vendas |
 
 ### Pré-Evento
 
 | Data | Ação |
 |------|------|
-| A partir de 07/03 | Início das chamadas nos conteúdos |
-| 10/03 | Abertura das inscrições |
-| 13/03 | Último dia de inscrição (sexta antes do carnaval) |
+| A partir de 07/02 | Início das chamadas nos conteúdos |
+| 10/02 | Abertura das inscrições |
+| 13/02 | Último dia de inscrição (sexta antes do carnaval) |
 
 ### Pós-Evento
 
 | Data | Ação |
 |------|------|
-| 18/03 | Quarta de Cinzas - Time de vendas ativo |
-| 19/03 a 21/03 | Follow-up intenso |
-| 22/03 | Último dia da oferta especial |
+| 18/02 | Quarta de Cinzas - Time de vendas ativo |
+| 19/02 a 21/02 | Follow-up intenso |
+| 22/02 | Último dia da oferta especial |
 
 ---
 
@@ -180,7 +180,7 @@ Serão fornecidos robôs/prompts de IA para:
 
 ## 📚 TEMAS E STRUCURA DAS AULAS
 
-### AULA 1 - Sábado (14/03)
+### AULA 1 - Sábado (14/02)
 **Título:** "Por Que Você Tem Autoridade Real Mas Ninguém Sabe No Digital"
 
 **Objetivos:**
@@ -221,7 +221,7 @@ Mas antes, preciso que você faça a tarefa de hoje..."
 
 ---
 
-### AULA 2 - Domingo (15/03)
+### AULA 2 - Domingo (15/02)
 **Título:** "Posicionamento: Como Se Tornar A ÚNica Opção No Seu Mercado"
 
 **Objetivos:**
@@ -260,7 +260,7 @@ Amanhã, vamos ver como ESCALAR isso."
 
 ---
 
-### AULA 3 - Segunda (16/03)
+### AULA 3 - Segunda (16/02)
 **Título:** "Escala de Conteúdo: Como Ter Presença Sem Virar Escravo do Digital"
 
 **Objetivos:**
@@ -299,7 +299,7 @@ seu plano completo para depois do carnaval."
 
 ---
 
-### AULA 4 - Terça (17/03)
+### AULA 4 - Terça (17/02)
 **Título:** "Seu Plano de 90 Dias: Do Posicionamento Ao Resultado"
 
 **Objetivos:**
@@ -490,7 +490,7 @@ anda sozinho, ou com aceleração?"
 Retiro Anti-Carnaval do Acelerador de Audiência
 
 **Quando:**
-14 a 17 de Março de 2026
+14 a 17 de Fevereiro de 2026
 
 **Para quem:**
 Empresários com autoridade no mundo real que querem ampliar no digital

@@ -57,6 +57,17 @@ export default function RetiroPage() {
     return files;
   }, []);
 
+  // Count files in specific folders
+  const reelsCount = useMemo(() => {
+    const reelsFolder = contentData.tree.find((n: any) => n.name === '06_CRIATIVOS_REELS');
+    return reelsFolder?.children?.length || 0;
+  }, []);
+
+  const promptsCount = useMemo(() => {
+    const staticFolder = contentData.tree.find((n: any) => n.name === '07_CRIATIVOS_ESTATICOS');
+    return staticFolder?.children?.length || 0;
+  }, []);
+
   // Get file by name
   const getFileByName = (name: string) => allFiles.find(f => f.name === name);
 
@@ -70,7 +81,7 @@ export default function RetiroPage() {
     );
   }, [searchTerm, allFiles]);
 
-  // Get filtered folders
+  // Get filtered tree for sidebar
   const filteredTree = useMemo(() => {
     if (!searchTerm) return contentData.tree;
 
@@ -225,12 +236,12 @@ export default function RetiroPage() {
               </div>
               <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-3 md:p-4 text-center">
                 <Video className="w-5 h-5 md:w-6 md:h-6 text-yellow-500 mx-auto mb-1 md:mb-2" />
-                <div className="text-xl md:text-2xl font-bold text-white">5</div>
+                <div className="text-xl md:text-2xl font-bold text-white">{reelsCount}</div>
                 <div className="text-[10px] md:text-xs text-gray-500">Roteiros de Reels</div>
               </div>
               <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-3 md:p-4 text-center">
                 <Image className="w-5 h-5 md:w-6 md:h-6 text-yellow-500 mx-auto mb-1 md:mb-2" />
-                <div className="text-xl md:text-2xl font-bold text-white">30+</div>
+                <div className="text-xl md:text-2xl font-bold text-white">{promptsCount}</div>
                 <div className="text-[10px] md:text-xs text-gray-500">Prompts Criativos</div>
               </div>
               <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-3 md:p-4 text-center">
@@ -240,7 +251,8 @@ export default function RetiroPage() {
               </div>
             </div>
 
-            {/* Featured Docs */}
+            {/* Featured Docs - hide when searching */}
+            {!searchTerm && (
             <div className="mb-8 md:mb-12">
               <h3 className="text-lg md:text-xl font-semibold text-white mb-4 md:mb-6 flex items-center gap-2 px-2">
                 <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
@@ -272,8 +284,49 @@ export default function RetiroPage() {
                 })}
               </div>
             </div>
+            )}
 
-            {/* All Files */}
+            {/* Search Results */}
+            {searchTerm && (
+              <div className="mb-8 md:mb-12">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-4 md:mb-6 px-2 flex items-center gap-2">
+                  <Search className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
+                  Resultados da Busca ({filteredFiles.length})
+                </h3>
+                {filteredFiles.length === 0 ? (
+                  <div className="text-center py-12 px-4">
+                    <Search className="w-12 h-12 text-gray-700 mx-auto mb-4" />
+                    <p className="text-gray-500 mb-2">Nenhum resultado encontrado</p>
+                    <p className="text-sm text-gray-600">Tente outros termos</p>
+                  </div>
+                ) : (
+                  <div className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden">
+                    <div className="divide-y divide-gray-800">
+                      {filteredFiles.map((node: any) => {
+                        const Icon = getIcon(node.icon);
+                        return (
+                          <button
+                            key={node.path}
+                            onClick={() => setSelectedNode(node)}
+                            className="w-full flex items-center gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-4 hover:bg-gray-900/50 transition-colors"
+                          >
+                            <Icon className="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" />
+                            <div className="flex-1 text-left min-w-0">
+                              <div className="font-medium text-white text-sm md:text-base truncate">{node.name}</div>
+                              {node.category && <div className="text-xs md:text-sm text-gray-500 truncate">{node.category}</div>}
+                            </div>
+                            <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 flex-shrink-0" />
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* All Files - hide when searching */}
+            {!searchTerm && (
             <div>
               <h3 className="text-lg md:text-xl font-semibold text-white mb-4 md:mb-6 px-2">Todos os Arquivos</h3>
               <div className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden">
@@ -326,6 +379,7 @@ export default function RetiroPage() {
                 )}
               </div>
             </div>
+            )}
           </div>
         </main>
 

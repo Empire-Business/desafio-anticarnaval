@@ -15,7 +15,7 @@ com os seguintes termos:
 
 1. DO EVENTO
    O Evento é 100% online e gratuito, realizado de 14 a 17 de
-   Março de 2026. As aulas serão transmitidas ao vivo e ficarão
+   Fevereiro de 2026. As aulas serão transmitidas ao vivo e ficarão
    disponíveis em gravação durante o período do evento.
 
 2. DAS INSCRIÇÕES
@@ -56,7 +56,7 @@ com os seguintes termos:
 9. ACEITAÇÃO
    Ao se inscrever, você declara ter lido e concordado com estes termos.
 
-Última atualização: Março de 2026
+Última atualização: Fevereiro de 2026
 ```
 
 ---
@@ -103,7 +103,7 @@ A: Você pode assistir a gravação. O importante é fazer a tarefa
 antes do retorno.
 
 **Q: O evento cai em algum feriado?**
-A: O evento é durante o carnaval (14-17/03). Não são feriados nacionais.
+A: O evento é durante o carnaval (14-17/02). Não são feriados nacionais.
 
 ---
 
@@ -133,7 +133,7 @@ A: Não. O evento é 100% gratuito e sem compromisso.
 
 **Q: A oferta é válida por quanto tempo?**
 A: A oferta especial para participantes do Retiro é válida até
-22/03.
+22/02.
 
 ---
 
@@ -170,7 +170,7 @@ A: Sim, mas recomendamos computador para melhor experiência.
 │  Concluiu com êxito o Retiro Anti-Carnaval do               │
 │  Acelerador de Audiência                                    │
 │                                                             │
-│  Período: 14 a 17 de Março de 2026                          │
+│  Período: 14 a 17 de Fevereiro de 2026                          │
 │  Carga horária: 8 horas                                     │
 │                                                             │
 │                                                             │
@@ -368,19 +368,19 @@ personalizados para cada participante.
 
 ### Sequência de Follow-up
 
-**Dia 1 (18/03):**
+**Dia 1 (18/02):**
 - Envio de certificados
 - E-mail de agradecimento
 
-**Dia 2 (19/03):**
+**Dia 2 (19/02):**
 - Lembrete da oferta
 - Cases de sucesso
 
-**Dia 3 (20/03):**
+**Dia 3 (20/02):**
 - Último dia da oferta
 - Urgência
 
-**Dia 4+ (21/03+):**
+**Dia 4+ (21/02+):**
 - Conteúdo educacional
 - Próximos eventos
 
@@ -388,7 +388,7 @@ personalizados para cada participante.
 
 ## 📋 CHECKLIST DE EXECUÇÃO
 
-### Semana Antes (10-13/03)
+### Semana Antes (10-13/02)
 
 - [ ] Página testada
 - [ ] Formulário funcionando
@@ -399,7 +399,7 @@ personalizados para cada participante.
 - [ ] Materiais prontos
 - [ ] Equipe briefada
 
-### Durante (14-17/03)
+### Durante (14-17/02)
 
 - [ ] Links enviados 1h antes
 - [ ] Gravação funcionando

@@ -50,10 +50,10 @@
 
 | Data/Dia | Aula Manhã | Retorno Tarde | Moderador | Suporte |
 |----------|------------|---------------|-----------|---------|
-| 14/03 Sáb | Davi | Sandro | [Nome] | [Nome] |
-| 15/03 Dom | Pedro | Davi | [Nome] | [Nome] |
-| 16/03 Seg | Sandro | Pedro | [Nome] | [Nome] |
-| 17/03 Ter | Davi | Time Completo | [Nome] | [Nome] |
+| 14/02 Sáb | Davi | Sandro | [Nome] | [Nome] |
+| 15/02 Dom | Pedro | Davi | [Nome] | [Nome] |
+| 16/02 Seg | Sandro | Pedro | [Nome] | [Nome] |
+| 17/02 Ter | Davi | Time Completo | [Nome] | [Nome] |
 
 ### Escala de Suporte WhatsApp
 
@@ -61,14 +61,14 @@
 
 | Dia | Manhã (9-13) | Tarde (13-17) | Noite (17-20) |
 |-----|--------------|---------------|---------------|
-| 14/03 | [Nome 1] | [Nome 2] | [Nome 3] |
-| 15/03 | [Nome 4] | [Nome 5] | [Nome 6] |
-| 16/03 | [Nome 1] | [Nome 2] | [Nome 3] |
-| 17/03 | [Nome 4] | [Nome 5] | [Nome 6] |
+| 14/02 | [Nome 1] | [Nome 2] | [Nome 3] |
+| 15/02 | [Nome 4] | [Nome 5] | [Nome 6] |
+| 16/02 | [Nome 1] | [Nome 2] | [Nome 3] |
+| 17/02 | [Nome 4] | [Nome 5] | [Nome 6] |
 
 ### Escala de Closers
 
-**Disponibilidade para reuniões:** 14-17/03
+**Disponibilidade para reuniões:** 14-17/02
 
 | Closer | Disponibilidade | Meta de reuniões |
 |--------|-----------------|------------------|
@@ -80,7 +80,7 @@
 
 ## ✅ CHECKLIST OPERACIONAL COMPLETO
 
-### Semana ANTES do Evento (10-13/03)
+### Semana ANTES do Evento (10-13/02)
 
 - [ ] Página de inscrição no ar e testada
 - [ ] Formulário de captura funcionando
@@ -95,7 +95,7 @@
 - [ ] Equipe briefada e alinhada
 - [ ] Backup de tudo salvo
 
-### DURANTE o Evento (14-17/03)
+### DURANTE o Evento (14-17/02)
 
 #### Antes de Cada Aula (1h antes)
 - [ ] Enviar link no WhatsApp
@@ -145,7 +145,7 @@ Você está no lugar certo. Nesses 4 dias, vamos:
 ✅ Usar IA para escalar produção
 ✅ Sair com um roadmap de 90 dias
 
-📅 PRIMEIRA AULA: Sábado, 14/03, às 10h
+📅 PRIMEIRA AULA: Sábado, 14/02, às 10h
 🔗 O link será enviado aqui 1h antes
 
 📋 Grupo de notificações ativo aqui!
@@ -357,7 +357,7 @@ Concluiu com êxito o
 
 RETIRO ANTICARNAVAL ACelerador de Audiência
 
-Realizado de 14 a 17 de Março de 2026
+Realizado de 14 a 17 de Fevereiro de 2026
 
 Carga horária: 8 horas
 
@@ -406,7 +406,7 @@ TI: [Telefone]
 
 ### Relatório Final
 
-**Enviar até 25/03:**
+**Enviar até 25/02:**
 
 - Total de inscritos
 - Taxa de comparecimento

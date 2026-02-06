@@ -86,7 +86,7 @@
 **Visual:**
 - Pessoa sorrindo
 - Logo da empresa
-- "Retiro Anti-Carnaval - 14 a 17/03"
+- "Retiro Anti-Carnaval - 14 a 17/02"
 - "LINK NA BIO ↘"
 
 ---
