@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { ArrowLeft, Play, ExternalLink } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { ArrowLeft, Play, ExternalLink, Maximize, Minimize } from 'lucide-react';
 
 const aulas = [
   { id: 'aula01', title: 'Aula 1 - Introdução', path: 'SLIDES_COMPLETOS/aula01/index.html' },
@@ -12,40 +12,78 @@ const aulas = [
 
 export default function SlidesPage() {
   const [selectedAula, setSelectedAula] = useState<typeof aulas[0] | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // URL base dos slides - será servida da pasta public
   const getSlideUrl = (path: string) => {
     return `/${path}`;
   };
 
+  const toggleFullscreen = async () => {
+    if (!containerRef.current) return;
+
+    try {
+      if (!document.fullscreenElement) {
+        await containerRef.current.requestFullscreen();
+        setIsFullscreen(true);
+      } else {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      }
+    } catch (err) {
+      console.log('Fullscreen not supported');
+    }
+  };
+
+  // Listen for fullscreen change events
+  if (typeof window !== 'undefined') {
+    document.addEventListener('fullscreenchange', () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    });
+  }
+
   if (selectedAula) {
     return (
-      <div className="min-h-screen bg-black text-gray-100">
+      <div ref={containerRef} className="min-h-screen bg-black text-gray-100">
         {/* Header */}
-        <header className="fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm border-b border-gray-800 z-50">
+        <header className={`fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm border-b border-gray-800 z-50 transition-opacity ${isFullscreen ? 'opacity-0 hover:opacity-100' : 'opacity-100'}`}>
           <div className="flex items-center justify-between px-3 md:px-4 py-3">
             <button
-              onClick={() => setSelectedAula(null)}
+              onClick={() => {
+                if (document.fullscreenElement) {
+                  document.exitFullscreen();
+                }
+                setSelectedAula(null);
+              }}
               className="flex items-center gap-1.5 md:gap-2 text-gray-400 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
-              <span className="text-sm md:text-base">Voltar</span>
+              <span className="text-sm md:text-base hidden sm:inline">Voltar</span>
             </button>
-            <h1 className="text-sm font-medium text-white truncate max-w-[200px] md:max-w-[400px]">{selectedAula.title}</h1>
-            <a
-              href={getSlideUrl(selectedAula.path)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 md:p-2 hover:bg-gray-800 rounded-lg text-gray-400 hover:text-white"
-              title="Abrir em nova aba"
-            >
-              <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
-            </a>
+            <h1 className="text-sm font-medium text-white truncate max-w-[150px] md:max-w-[300px]">{selectedAula.title}</h1>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={toggleFullscreen}
+                className="p-1.5 md:p-2 hover:bg-gray-800 rounded-lg text-gray-400 hover:text-white"
+                title={isFullscreen ? 'Sair tela cheia' : 'Tela cheia'}
+              >
+                {isFullscreen ? <Minimize className="w-4 h-4 md:w-5 md:h-5" /> : <Maximize className="w-4 h-4 md:w-5 md:h-5" />}
+              </button>
+              <a
+                href={getSlideUrl(selectedAula.path)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 md:p-2 hover:bg-gray-800 rounded-lg text-gray-400 hover:text-white"
+                title="Abrir em nova aba"
+              >
+                <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
+              </a>
+            </div>
           </div>
         </header>
 
         {/* Iframe com slides */}
-        <div className="pt-14 md:pt-16 h-screen">
+        <div className={`h-screen ${isFullscreen ? 'pt-0' : 'pt-14 md:pt-16'}`}>
           <iframe
             src={getSlideUrl(selectedAula.path)}
             className="w-full h-full border-0"
@@ -112,7 +150,8 @@ export default function SlidesPage() {
             <ul className="text-xs md:text-sm text-gray-400 space-y-1">
               <li>• Use as setas na tela para navegar entre slides</li>
               <li>• Clique nos pontos na lateral esquerda para pular para um slide específico</li>
-              <li>• Abra em nova aba se preferir tela cheia</li>
+              <li>• Use o botão de tela cheia para maximizar a visualização</li>
+              <li>• Abra em nova aba se preferir</li>
             </ul>
           </div>
         </div>
