@@ -21,16 +21,16 @@ export default function Hero() {
     <section
       className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32 overflow-hidden"
       style={{
-        backgroundImage: `url('/assets/hero-carnival.webp')`,
+        backgroundImage: `url('/hero00.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Overlay layers */}
-      <div className="absolute inset-0 bg-black/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+      {/* Overlay layers - mais escuro para destacar o título */}
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
