@@ -1,12 +1,33 @@
 "use client";
 
 import { useEffect } from "react";
-import { CheckCircle, Calendar, Clock, Share2, Download } from "lucide-react";
+import dynamic from "next/dynamic";
+import { CheckCircle, Calendar, Clock, Share2, Download, MessageCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { EVENT_INFO } from "@/lib/constants";
 import Link from "next/link";
 
+// Lazy load confetti for performance (not blocking LCP)
+const ConfettiCarnaval = dynamic(
+  () => import("@/components/ui/ConfettiCarnaval").then((mod) => mod.default),
+  { ssr: false }
+);
+
 export default function ObrigadoPage() {
+  // GTM page view tracking
+  useEffect(() => {
+    // Push to dataLayer for GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "inscricao_concluida",
+      page: "/obrigado",
+      timestamp: new Date().toISOString(),
+    });
+  }, []);
+
+  // Replace with actual Google Meet link when available
+  const GOOGLE_MEET_URL = "https://meet.google.com/"; // TODO: Add actual meeting link
+
   // Create calendar file content
   const createCalendarEvent = () => {
     const startDate = new Date("2026-02-14T10:00:00");
@@ -16,28 +37,40 @@ export default function ObrigadoPage() {
       return date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
     };
 
+    const escapeText = (text: string) => {
+      return text
+        .replace(/\\/g, "\\\\")
+        .replace(/;/g, "\\;")
+        .replace(/,/g, "\\,")
+        .replace(/\n/g, "\\n");
+    };
+
     return `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Acelerador de Audiência//Retiro Anti-Carnaval//PT
+PRODID:-//Acelerador de Audiencia//Retiro Anti-Carnaval//PT
 BEGIN:VEVENT
 UID:retiro-anticarnaval-2026@aceleradordeaudiencia.com
 DTSTAMP:${formatDate(new Date())}
 DTSTART:${formatDate(startDate)}
 DTEND:${formatDate(endDate)}
-SUMMARY:Retiro Anti-Carnaval - Acelerador de Audiência
-DESCRIPTION:Em 4 dias, saia do carnaval com seu posicionamento digital definido. Evento 100% online e gratuito.
-LOCATION:Online (Zoom/Google Meet)
+SUMMARY:Retiro Anti-Carnaval - Acelerador de Audiencia
+DESCRIPTION:${escapeText(`Em 4 dias, saia do carnaval com seu posicionamento digital definido.\\n\\nEvento 100% online e gratuito.\\n\\nLink da reuniao: ${GOOGLE_MEET_URL}`)}
+LOCATION:${GOOGLE_MEET_URL}
 STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-P1D
 ACTION:DISPLAY
-DESCRIPTION:Lembrete: Retiro Anti-Carnaval começa amanhã!
+DESCRIPTION:Reminder: Retiro Anti-Carnaval comeca amanha!
 END:VALARM
 END:VEVENT
 END:VCALENDAR`;
   };
 
   const downloadCalendar = () => {
+    // GTM tracking
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "download_calendario" });
+
     const calendarContent = createCalendarEvent();
     const blob = new Blob([calendarContent], { type: "text/calendar" });
     const url = URL.createObjectURL(blob);
@@ -51,16 +84,35 @@ END:VCALENDAR`;
   };
 
   const shareOnWhatsApp = () => {
+    // GTM tracking
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "compartilhar_whatsapp" });
+
     const text = encodeURIComponent(
-      "Acabei de me inscrever no Retiro Anti-Carnaval! 🎯\n\n4 dias para definir meu posicionamento digital enquanto o mundo está no carnaval.\n\nVem comigo: "
+      `Acabei de me inscrever no Retiro Anti-Carnaval - Acelerador de Audiência!
+
+Em 4 dias, vou definir meu posicionamento digital, enquanto todo mundo perde tempo no carnaval.
+
+Vem comigo? Segue o link: https://hi.switchy.io/RetiroAntiCarnaval`
     );
     window.open(`https://wa.me/?text=${text}`, "_blank");
   };
 
+  const joinWhatsAppGroup = () => {
+    // GTM tracking
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "click_grupo_whatsapp" });
+
+    window.open("https://hi.switchy.io/grupoanticarnaval", "_blank");
+  };
+
   return (
     <main className="relative min-h-screen bg-black">
+      {/* Confetti Celebration Effect */}
+      <ConfettiCarnaval duration={6000} particleCount={120} />
+
       {/* Carnival Background Effects - Subtle */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-30">
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
       </div>
 
@@ -71,12 +123,24 @@ END:VCALENDAR`;
             <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-green-500/20 border-2 border-green-500 mb-6 animate-bounce">
               <CheckCircle className="w-10 h-10 md:w-12 md:h-12 text-green-500" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">
               Inscrição <span className="text-green-500">Confirmada!</span>
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-lg mb-6">
               Você está dentro do Retiro Anti-Carnaval
             </p>
+
+            {/* WhatsApp Group Button - Top CTA */}
+            <Button
+              variant="whatsapp"
+              size="lg"
+              fullWidth
+              onClick={joinWhatsAppGroup}
+              icon={<MessageCircle className="w-5 h-5" />}
+              className="animate-pulse"
+            >
+              Entrar no Grupo do WhatsApp Agora
+            </Button>
           </div>
 
           {/* Event Details Card */}
@@ -116,13 +180,7 @@ END:VCALENDAR`;
                   <p className="text-white font-semibold">{EVENT_INFO.location}</p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-6 p-4 bg-gold-500/10 border border-gold-500/20 rounded-xl">
-              <p className="text-gold-500 text-sm font-medium">
-                ✓ Os links de acesso serão enviados para seu WhatsApp antes do evento
-              </p>
-            </div>
+             </div>
           </div>
 
           {/* Next Steps */}
@@ -131,11 +189,11 @@ END:VCALENDAR`;
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Fique atento ao seu WhatsApp - vamos te adicionar ao grupo</span>
+                <span className="text-gray-300">Entre no grupo do WhatsApp para receber todas as informacoes</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Reserve os horários dos 4 dias (manhã e tarde)</span>
+                <span className="text-gray-300">Reserve os horarios dos 4 dias (manha e tarde)</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
