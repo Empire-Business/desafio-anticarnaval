@@ -42,7 +42,7 @@ export default function Scarcity() {
             E também porque queremos que você entre com disposição total, sem a pressa de última hora.
           </p>
           <p className="text-white text-lg">
-            Então, se você quer participar, inscreva-se até <span className="text-gold-500 font-semibold">quarta-feira, 13/02</span>.
+            Então, se você quer participar, inscreva-se até <span className="text-gold-500 font-semibold">sexta-feira, 13/02</span>.
           </p>
           <p className="text-red-500 font-semibold text-lg mt-4">
             Depois disso, as portas fecham.
