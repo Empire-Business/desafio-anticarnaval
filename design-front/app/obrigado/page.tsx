@@ -2,6 +2,13 @@
 
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
+
+// Declare dataLayer for GTM
+declare global {
+  interface Window {
+    dataLayer?: any[];
+  }
+}
 import { CheckCircle, Calendar, Clock, Share2, Download, MessageCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { EVENT_INFO } from "@/lib/constants";
