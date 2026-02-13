@@ -1,10 +1,10 @@
 # 🎯 ÚLTIMAS 2 MENSAGENS DE AQUECIMENTO
 ## Faltam 2 Dias Pro Retiro Anti-Carnaval
 
-> **Versão:** 1.1
+> **Versão:** 1.2
 > **Data de Criação:** 12 de Fevereiro de 2026
 > **Período:** 12/2 (Quinta) e 13/2 (Sexta)
-> **Estilo:** Russell Brunson - Story-Driven, Funnels-First, Action-Oriented
+> **Estilo:** Russell Brunson - Story-Driven, Action-Oriented
 
 ---
 
@@ -13,7 +13,7 @@
 
 **Objetivo:** Criar urgência positiva + identificar padrão
 **Gatilho:** Identificação + Curiosidade
-**Framework:** Padrão que se repete (sem inventar história)
+**Framework:** Padrão que se repete
 
 ---
 
@@ -136,18 +136,18 @@ Professional portrait of confident professional standing at crossroads, symbolic
 ---
 
 ## 📅 DIA 2 - 13/2 (SEXTA-FEIRA)
-### Tema: "Um Funnel de Distância"
+### Tema: "Amanhã Começa Tudo"
 
 **Objetivo:** Excitação máxima + responsabilidade
 **Gatilho:** Urgência + Comunidade + Promessa
-**Framework:** "You're One Funnel Away" adaptado
+**Framework:** Compromisso público + countdown
 
 ---
 
 ### 📝 MENSAGEM WHATSAPP
 
 ```
-🚀 UM FUNNEL DE DISTÂNCIA
+🚀 AMANHÃ COMEÇA TUDO
 
 Gente...
 
@@ -157,14 +157,15 @@ AMANHÃ É O DIA.
 
 Sabe o que eu sempre digo?
 
-"Você está a UM FUNNEL de distância
-do seu próximo nível."
+"Você está a UM POSICIONAMENTO de distância
+de transformar sua autoridade real em
+autoridade digital."
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 E amanhã?
 
-Vamos construir esse funnel JUNTOS.
+Vamos definir isso JUNTOS.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -259,7 +260,7 @@ Esse é o jeito. 💪
 ### 🎨 PROMPT NANO BANANA PRO
 
 ```
-Dynamic countdown celebration image: black premium background with bold golden typography "SÁBADO 10H" at center, glowing and radiant. Golden clock showing 10 o'clock, golden funnel shape flowing upward toward success. Golden particles and sparkles creating excitement atmosphere. Green growth arrow rising from funnel. Professional business aesthetic with urgency element. Golden geometric frame border. Warm golden glow with hints of purple accent. High-energy anticipation design, premium countdown visual. --ar 1:1 --stylize 150 --v 6.0
+Dynamic countdown celebration image: black premium background with bold golden typography "SÁBADO 10H" at center, glowing and radiant. Golden clock showing 10 o'clock. Golden particles and sparkles creating excitement atmosphere. Green growth arrow rising upward. Professional business aesthetic with urgency element. Golden geometric frame border. Warm golden glow with hints of purple accent. High-energy anticipation design, premium countdown visual. --ar 1:1 --stylize 150 --v 6.0
 ```
 
 ---
@@ -278,11 +279,11 @@ Dynamic countdown celebration image: black premium background with bold golden t
 | Dia | Data | Tema | CTA Principal |
 |-----|------|------|---------------|
 | 1 | 12/2 (Qui) | "O Momento Decisivo" | Responder dor (A/B/C/D) |
-| 2 | 13/2 (Sex) | "Um Funnel de Distância" | "EU VOU ESTAR LÁ SÁBADO 10H!" |
+| 2 | 13/2 (Sex) | "Amanhã Começa Tudo" | "EU VOU ESTAR LÁ SÁBADO 10H!" |
 
 ---
 
-## 🎯 FRAMEWORKS RUSSELL BRUNSON APLICADOS
+## 🎯 FRAMEWORKS APLICADOS
 
 ### Padrão que se repete (Dia 1)
 - Identifica o problema comum do público
@@ -290,8 +291,8 @@ Dynamic countdown celebration image: black premium background with bold golden t
 - Aponta a causa raiz (posicionamento)
 - Conecta diretamente com o Retiro
 
-### "One Funnel Away" (Dia 2)
-- Frase icônica adaptada: "Você está a UM FUNNEL de distância"
+### Um Posicionamento de Distância (Dia 2)
+- Frase alinhada com a promessa do Retiro
 - Cria sensação de proximidade do resultado
 - Responsabilidade através de commitment público
 
@@ -313,6 +314,4 @@ Dynamic countdown celebration image: black premium background with bold golden t
 
 ---
 
-**Lembrem-se: You're just one funnel away!** 🚀
-
-*Enquanto o mundo carnavala, vocês constroem.*
+**Enquanto o mundo carnavala, vocês constroem.** 🚀
