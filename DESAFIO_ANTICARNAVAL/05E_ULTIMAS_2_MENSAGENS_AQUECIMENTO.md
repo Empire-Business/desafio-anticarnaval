@@ -1,7 +1,7 @@
 # 🎯 ÚLTIMAS 2 MENSAGENS DE AQUECIMENTO
 ## Faltam 2 Dias Pro Retiro Anti-Carnaval
 
-> **Versão:** 1.0
+> **Versão:** 1.1
 > **Data de Criação:** 12 de Fevereiro de 2026
 > **Período:** 12/2 (Quinta) e 13/2 (Sexta)
 > **Estilo:** Russell Brunson - Story-Driven, Funnels-First, Action-Oriented
@@ -11,9 +11,9 @@
 ## 📅 DIA 1 - 12/2 (QUINTA-FEIRA)
 ### Tema: "O Momento Decisivo"
 
-**Objetivo:** Criar urgência positiva + história de transformação
-**Gatilho:** Identificação + Prova Social
-**Framework:** Epiphany Bridge Story
+**Objetivo:** Criar urgência positiva + identificar padrão
+**Gatilho:** Identificação + Curiosidade
+**Framework:** Padrão que se repete (sem inventar história)
 
 ---
 
@@ -47,61 +47,50 @@ E COMEÇAR a jogar o jogo de verdade.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💡 DEIXA EU TE CONTAR UMA HISTÓRIA RÁPIDA:
+💡 UM PADRÃO QUE EU VEJO O TEMPO TODO:
 
-Tem um médico que conheço.
+Trabalho com profissionais de autoridade.
 
-Autoridade ABSURDA no mundo real.
+Médicos, empresários, consultores...
 
-Pacientes que lotam o consultório.
+Gente que TEM resultado no mundo real.
 
-Respeito dos colegas de profissão.
+Consultório cheio. Negócio funcionando.
 
-Mas no digital?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Mas quando chega no digital?
 
 INVISÍVEL.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A maioria tentou de tudo:
 
-Ele tentou de tudo:
+→ Postar conteúdo (e nada acontece)
+→ Fazer cursos de marketing
+→ Contratar agências
 
-→ Postou conteúdo por 2 anos
-→ Fez cursos de marketing
-→ Contratou agências
-
-Resultado? NADA mudou.
+Resultado? Continua na mesma.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Até que ele descobriu UMA coisa.
+Sabe qual é o problema?
 
-O mesmo que vamos trabalhar no Retiro:
+NÃO É O CONTEÚDO.
 
-NÃO ERA O CONTEÚDO.
-
-ERA O POSICIONAMENTO.
+É O POSICIONAMENTO.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Resultado depois de descobrir isso?
+E é EXATAMENTE isso que vamos resolver
+no Retiro Anti-Carnaval.
 
-→ 50k seguidores em 6 meses
-→ Pacientes de outros estados
-→ Escritório cheio SEM anúncio
+Sábado, 10h da manhã.
 
-O resultado DELE pode ser o SEU.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎯 VOCÊ ESTÁ A 2 DIAS DESSA TRANSFORMAÇÃO.
-
-Sábado que vem, 10h da manhã.
-
-Vamos sentar juntos e RESOLVER isso.
+Vamos sentar juntos e DEFINIR seu posicionamento.
 
 Não é teoria. É PRÁTICA.
 
-Você vai SAIR com seu posicionamento definido.
+Você vai SAIR com isso pronto.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -132,16 +121,16 @@ VOCÊ CONSTRÓI.
 ### 🎨 PROMPT NANO BANANA PRO
 
 ```
-Professional portrait of confident healthcare professional (doctor or consultant) standing at crossroads, symbolic decision moment. Left path shows gray, empty waiting room with crickets/dust. Right path shows vibrant digital success visualization - glowing smartphone with engagement notifications, follower count rising, green growth arrow. Person looking toward the bright path with determined expression. Black background with golden spotlight on person. Warm golden glow from right path, muted gray tones from left. Professional business casual attire. Authentic moment of decision and transformation. --ar 1:1 --stylize 150 --v 6.0
+Professional portrait of confident professional standing at crossroads, symbolic decision moment. Left path shows gray, muted colors representing stagnation. Right path shows vibrant digital success visualization - glowing smartphone with engagement notifications, growth arrow. Person looking toward the bright path with determined expression. Black background with golden spotlight on person. Warm golden glow from right path, muted gray tones from left. Professional business casual attire. Authentic moment of decision and transformation. --ar 1:1 --stylize 150 --v 6.0
 ```
 
 ---
 
 ### 📌 NOTAS DE IMPLEMENTAÇÃO
 - **Horário sugerido:** 11h (depois do almoço, pessoas mais receptivas)
-- **Objetivo:** Criar identificação através de história
+- **Objetivo:** Criar identificação através de padrão real
 - **Engajamento:** Pergunta com opções A/B/C/D (fácil de responder)
-- **Tom:** Story-driven + urgência positiva
+- **Tom:** Direto + urgência positiva
 - **CTA:** Responder com a letra da dor principal
 
 ---
@@ -236,7 +225,7 @@ Isso cria COMPROMISSO.
 
 Isso cria RESPONSABILIDADE.
 
-Isso mostra que você está SERIO(A).
+Isso mostra que você está SÉRIO(A).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -295,14 +284,11 @@ Dynamic countdown celebration image: black premium background with bold golden t
 
 ## 🎯 FRAMEWORKS RUSSELL BRUNSON APLICADOS
 
-### Epiphany Bridge Story (Dia 1)
-- **Backstory:** Médico com autoridade real mas invisível no digital
-- **Desire:** Tentou de tudo (conteúdo, cursos, agências)
-- **Wall:** Nada funcionou
-- **Epiphany:** Descobriu que era POSICIONAMENTO, não conteúdo
-- **Plan:** Aplicou o que aprendeu
-- **Result:** 50k seguidores, pacientes de outros estados
-- **New Opportunity:** O mesmo está disponível no Retiro
+### Padrão que se repete (Dia 1)
+- Identifica o problema comum do público
+- Mostra que não é falta de esforço
+- Aponta a causa raiz (posicionamento)
+- Conecta diretamente com o Retiro
 
 ### "One Funnel Away" (Dia 2)
 - Frase icônica adaptada: "Você está a UM FUNNEL de distância"
