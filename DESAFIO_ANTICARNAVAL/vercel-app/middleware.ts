@@ -55,7 +55,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all paths except api, _next, static files, and mapa-invisivel
-    '/((?!api|_next|.*\\..*|mapa-invisivel).*)',
+    '/((?!api|_next|mapa-invisivel).*)',
   ],
 };
