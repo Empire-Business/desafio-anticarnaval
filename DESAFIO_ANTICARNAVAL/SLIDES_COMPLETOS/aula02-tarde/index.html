@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de Branding com IA - Workshop Prático</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* === CORES BASE (EMPIRE) === */
+            --empire-bg: #0a0a0b;
+            --empire-surface: #111113;
+            --empire-card: #18181b;
+            --empire-border: #27272a;
+            --empire-muted: #71717a;
+            --empire-text: #fafafa;
+
+            /* === CORES DE DESTAQUE (GOLD) === */
+            --empire-gold: #c9a962;
+            --empire-goldLight: #e4d4a5;
+            --empire-goldDark: #9a7b3c;
+
+            /* Aliases para compatibilidade */
+            --bg-primary: var(--empire-bg);
+            --bg-secondary: var(--empire-surface);
+            --bg-tertiary: var(--empire-card);
+            --text-primary: var(--empire-text);
+            --text-secondary: var(--empire-muted);
+            --text-muted: var(--empire-muted);
+            --accent: var(--empire-gold);
+            --accent-glow: rgba(201, 169, 98, 0.15);
+            --success: #22c55e;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--empire-bg);
+            color: var(--empire-text);
+            overflow: hidden;
+        }
+
+        /* ===========================================
+           SLIDE BASE
+           =========================================== */
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-inner {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===========================================
+           BACKGROUNDS
+           =========================================== */
+        .bg-gradient {
+            background: linear-gradient(135deg, var(--empire-bg) 0%, var(--empire-card) 50%, var(--empire-bg) 100%);
+        }
+
+        .bg-solid {
+            background: var(--empire-bg);
+        }
+
+        .bg-pattern {
+            position: relative;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse at 20% 30%, var(--accent-glow) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(201, 169, 98, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY (EMPIRE DESIGN SYSTEM)
+           =========================================== */
+
+        /* Display / Headlines - Cormorant Garamond */
+        .title-xl,
+        .title-lg,
+        .title-md,
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .title-xl {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .title-lg {
+            font-size: clamp(1.75rem, 5vw, 3rem);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .title-md {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        /* Body / UI - DM Sans */
+        .text-lg,
+        .text-base,
+        .text-sm,
+        body, p {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .text-lg {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            line-height: 1.6;
+        }
+
+        .text-base {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.6;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .text-accent {
+            color: var(--empire-gold);
+        }
+
+        .text-secondary {
+            color: var(--empire-muted);
+        }
+
+        .text-muted {
+            color: var(--empire-muted);
+        }
+
+        /* Gold gradient text */
+        .text-gold-gradient,
+        .text-gold-gradient {
+            background: linear-gradient(135deg, var(--empire-gold) 0%, var(--empire-goldLight) 50%, var(--empire-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Badge (Design System) */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(201, 169, 98, 0.3);
+            background: rgba(201, 169, 98, 0.05);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--empire-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Card */
+        .card {
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .card-accent {
+            border-color: rgba(201, 169, 98, 0.3);
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.05), transparent);
+        }
+
+        /* Step number (Design System) */
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(135deg, var(--empire-gold), var(--empire-goldDark));
+            border-radius: 50%;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--empire-bg);
+        }
+
+        /* Icon circle */
+        .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            background: var(--accent-glow);
+            border: 1px solid rgba(201, 169, 98, 0.2);
+            border-radius: 50%;
+            font-size: 1.75rem;
+        }
+
+        /* Button/CTA */
+        .cta-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2.5rem 3.5rem;
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.1), rgba(201, 169, 98, 0.02));
+            border: 2px solid var(--empire-gold);
+            border-radius: 20px;
+        }
+
+        .cta-link {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--empire-gold);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        /* Bio card (Design System) */
+        .bio-card {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 3rem;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 24px;
+        }
+
+        .bio-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--empire-gold);
+            box-shadow: 0 0 40px var(--accent-glow);
+        }
+
+        .bio-info h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio-role {
+            font-size: 1.25rem;
+            color: var(--empire-gold);
+            margin-bottom: 1rem;
+        }
+
+        .bio-desc {
+            color: var(--empire-muted);
+            font-size: 1.125rem;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        /* Feature list */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 12px;
+        }
+
+        .feature-check {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 50%;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Steps grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: rgba(201, 169, 98, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .step-card .num {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--empire-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card p {
+            color: var(--empire-muted);
+            font-size: 0.9375rem;
+        }
+
+        /* IA options */
+        .ia-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .ia-option {
+            padding: 1rem 2rem;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .ia-option:hover {
+            border-color: var(--empire-gold);
+            color: var(--empire-gold);
+        }
+
+        /* Question blocks */
+        .blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .block-card {
+            padding: 1.75rem;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 16px;
+        }
+
+        .block-card h4 {
+            font-size: 0.875rem;
+            color: var(--empire-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .block-card .count {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--empire-text);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .block-card p {
+            color: var(--empire-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Tips */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+        }
+
+        .tip-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .tip-item p {
+            font-size: 1rem;
+        }
+
+        .tip-item strong {
+            color: var(--success);
+        }
+
+        /* Errors */
+        .errors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .error-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+        }
+
+        .error-icon {
+            color: var(--danger);
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .error-item p {
+            font-size: 1rem;
+        }
+
+        .error-item strong {
+            color: var(--danger);
+        }
+
+        /* Document sections */
+        .doc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 1.75rem;
+            background: var(--empire-card);
+            border-left: 4px solid var(--empire-gold);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .doc-item .num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--empire-gold);
+        }
+
+        .doc-item .text {
+            font-size: 1.0625rem;
+        }
+
+        /* Help cards */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .help-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--empire-card);
+            border: 2px solid rgba(201, 169, 98, 0.3);
+            border-radius: 16px;
+        }
+
+        .help-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-card p {
+            color: var(--empire-muted);
+        }
+
+        /* Preview card */
+        .preview-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.08), rgba(201, 169, 98, 0.02));
+            border: 1px solid rgba(201, 169, 98, 0.2);
+            border-radius: 16px;
+        }
+
+        .preview-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .preview-card ul {
+            list-style: none;
+        }
+
+        .preview-card li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .preview-card li:last-child {
+            border-bottom: none;
+        }
+
+        .preview-card .bullet {
+            color: var(--empire-gold);
+        }
+
+        /* Next day card */
+        .next-day-card {
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--empire-card), var(--empire-border));
+            border: 2px solid var(--empire-gold);
+            border-radius: 24px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .next-day-card .label {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: var(--empire-gold);
+            color: var(--empire-bg);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .next-day-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .next-day-card .items {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 1.5rem;
+        }
+
+        .next-day-card .item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .next-day-card .item .icon {
+            color: var(--empire-gold);
+            font-size: 1.5rem;
+        }
+
+        /* Upsell card */
+        .upsell-card {
+            padding: 2.5rem;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            border-radius: 20px;
+            max-width: 700px;
+        }
+
+        .upsell-card .badge {
+            margin-bottom: 1.5rem;
+        }
+
+        .upsell-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .upsell-card p {
+            color: var(--empire-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .upsell-card .link-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--accent-glow);
+            border-radius: 12px;
+            color: var(--empire-gold);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--empire-muted);
+            border-top: 1px solid var(--empire-border);
+            z-index: 100;
+        }
+
+        /* ===========================================
+           NAVIGATION
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--empire-border);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot:hover {
+            background: var(--empire-muted);
+        }
+
+        .nav-dot.active {
+            background: var(--empire-gold);
+            transform: scale(1.3);
+        }
+
+        .nav-arrows {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--empire-card);
+            border: 1px solid var(--empire-border);
+            color: var(--empire-text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: var(--empire-gold);
+            color: var(--empire-bg);
+            border-color: var(--empire-gold);
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 0.75rem;
+            color: var(--empire-muted);
+            z-index: 1000;
+        }
+
+        /* ===========================================
+           ANIMATIONS (EMPIRE DESIGN SYSTEM)
+           =========================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-in > *:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+        .animate-in > *:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+        .animate-in > *:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+        .animate-in > *:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
+        .animate-in > *:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
+        .animate-in > *:nth-child(6) { animation-delay: 0.6s; opacity: 0; }
+
+        /* === NOVOS COMPONENTES DO DESIGN SYSTEM === */
+
+        /* Badge com indicador pulsante */
+        .badge-pulse {
+            position: relative;
+        }
+
+        .badge-pulse::before {
+            content: '';
+            width: 0.5rem;
+            height: 0.5rem;
+            background: var(--empire-gold);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* Card com borda dourada gradiente */
+        .card-gold-border {
+            border: 1px solid transparent;
+            background: linear-gradient(var(--empire-card), var(--empire-card)) padding-box,
+                        linear-gradient(135deg, var(--empire-gold), var(--empire-goldLight), var(--empire-gold)) border-box;
+        }
+
+        /* Botão Premium (CTA) */
+        .btn-premium {
+            background: linear-gradient(135deg, var(--empire-gold) 0%, var(--empire-goldLight) 50%, var(--empire-gold) 100%);
+            color: var(--empire-bg);
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+        }
+
+        /* Pulse Ring (efeito de anel pulsante) */
+        .pulse-ring {
+            position: relative;
+        }
+
+        .pulse-ring::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 2px solid var(--empire-gold);
+            border-radius: 2px;
+            animation: pulse-ring 2s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.1); opacity: 0; }
+        }
+
+        /* Shine Effect (efeito de brilho em cards) */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.05),
+                transparent
+            );
+            animation: shine 4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% { left: -75%; }
+            100% { left: 125%; }
+        }
+
+        /* Fade In Up com Intersection Observer */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger Children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+        .stagger-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Grid Pattern */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border-color: rgba(201, 169, 98, 0.3);
+        }
+
+        /* Section divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
+        }
+
+        /* ===========================================
+           RESPONSIVE
+           =========================================== */
+        @media (max-width: 1024px) {
+            .slide-inner {
+                padding: 3rem 4rem;
+            }
+
+            .steps-grid,
+            .blocks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tips-grid,
+            .errors-grid,
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .next-day-card .items {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-inner {
+                padding: 2rem;
+            }
+
+            .nav-dots,
+            .keyboard-hint {
+                display: none;
+            }
+
+            .bio-photo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="navDots"></div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrows">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint">Use → ← ou Espaço para navegar</div>
+
+    <!-- ==============================================
+         SLIDE 1: CAPA
+         ============================================== -->
+    <div class="slide active bg-gradient bg-pattern" id="slide-1">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <span class="badge badge-pulse">Retiro Anti-Carnaval</span>
+            <h1 class="title-xl text-gold-gradient text-center" style="margin-top: 2rem;">Documento de Branding<br>com IA</h1>
+            <h2 class="title-md text-secondary" style="margin-top: 1.5rem;">Workshop Prático</h2>
+            <p class="text-lg text-muted" style="margin-top: 2rem;">Bruno Guzela • Dia 2 - Tarde</p>
+        </div>
+        <div class="slide-footer">
+            <span>01 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 2: QUEM SOU EU
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-2">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <div class="bio-card card-hover">
+                <img src="../assets/bruno-guzela.webp" alt="Bruno Guzela" class="bio-photo">
+                <div class="bio-info">
+                    <h2>Bruno Guzela</h2>
+                    <p class="bio-role">Diretor de Operações na Empire</p>
+                    <p class="bio-desc">Sou o criador deste workshop e vou guiar vocês pessoalmente neste exercício prático. Hoje, cada um de vocês vai sair com um documento de branding completo nas mãos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>02 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 3: O QUE VAMOS FAZER
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-3">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center">O que vamos fazer hoje</h2>
+            <p class="text-lg text-accent text-center" style="margin-top: 1rem; margin-bottom: 2.5rem;">
+                Você vai sair daqui com seu documento de branding completo
+            </p>
+            <div class="feature-list" style="max-width: 600px;">
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span>Posicionamento definido</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span>Público mapeado</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span>Método estruturado</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span>Voz da marca clara</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span>Motor de conteúdo pronto</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>03 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 4: O QUE É O DOCUMENTO
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-4">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center">O que é o documento de branding?</h2>
+            <div class="card card-accent text-center" style="max-width: 700px; margin-top: 2rem;">
+                <p class="text-lg" style="font-size: 2rem; font-weight: 700; color: var(--empire-gold);">
+                    É o GPS da sua marca.
+                </p>
+            </div>
+            <p class="text-base text-secondary text-center" style="max-width: 700px; margin-top: 2rem;">
+                Um documento que guia todas as decisões de conteúdo e comunicação.
+                Toda vez que você for criar algo, consulta ele primeiro.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; max-width: 700px;">
+                <div class="preview-card">
+                    <ul>
+                        <li><span class="bullet">→</span> O que falar</li>
+                        <li><span class="bullet">→</span> Como falar</li>
+                        <li><span class="bullet">→</span> Para quem falar</li>
+                    </ul>
+                </div>
+                <div class="preview-card">
+                    <ul>
+                        <li><span class="bullet">→</span> Tom de voz</li>
+                        <li><span class="bullet">→</span> Temas principais</li>
+                        <li><span class="bullet">→</span> Diferenciais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>04 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 5: COMO VAMOS FAZER
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-5">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <p class="text-secondary text-lg">Como vamos fazer isso?</p>
+            <h2 class="title-lg" style="margin-top: 1rem;">
+                Vou te apresentar a <span class="text-gold-gradient">CAMI</span>
+            </h2>
+            <div class="card card-accent" style="max-width: 700px; margin-top: 2.5rem;">
+                <p class="text-base" style="text-align: center;">
+                    CAMI é uma <strong style="color: var(--empire-gold);">IA especialista em branding</strong>
+                    que vai fazer uma entrevista guiada com você.
+                </p>
+                <p class="text-base text-secondary" style="text-align: center; margin-top: 1rem;">
+                    No final da entrevista, ela entrega seu documento completo.
+                </p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>05 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 6: A CAMI
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-6">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-xl text-gold-gradient text-center">CAMI</h2>
+            <p class="text-lg text-center" style="margin-top: 0.5rem; margin-bottom: 2.5rem;">
+                Sua Estrategista de Branding Pessoal
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px;">
+                <div class="card">
+                    <h3 style="font-size: 0.875rem; color: var(--empire-gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Arquétipo</h3>
+                    <p style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem;">Governante</p>
+                    <p class="text-secondary text-sm">Lidera por presença, não por imposição</p>
+                </div>
+                <div class="card card-accent">
+                    <h3 style="font-size: 0.875rem; color: var(--empire-gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Tom de Voz</h3>
+                    <ul style="list-style: none; font-size: 0.9375rem;">
+                        <li style="margin-bottom: 0.5rem;">✓ Calma implacável</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Direta</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Sem enrolação</li>
+                        <li>✓ Cortes secos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>06 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 7: O PROCESSO
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-7">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 3rem;">O processo é simples</h2>
+            <div class="steps-grid" style="max-width: 900px;">
+                <div class="step-card">
+                    <span class="num">1</span>
+                    <h3>Cole o Prompt</h3>
+                    <p>Abra sua IA favorita e cole o prompt da CAMI</p>
+                </div>
+                <div class="step-card">
+                    <span class="num">2</span>
+                    <h3>Responda</h3>
+                    <p>12 perguntas que a CAMI vai te fazer</p>
+                </div>
+                <div class="step-card">
+                    <span class="num">3</span>
+                    <h3>Receba</h3>
+                    <p>Seu documento de branding completo</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>07 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 8: PREPARANDO O TERRENO
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-8">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center">Preparando o terreno</h2>
+            <p class="text-lg text-secondary text-center" style="margin-top: 1rem; margin-bottom: 2rem;">
+                Onde colar o prompt?
+            </p>
+            <p class="text-base text-accent text-center" style="margin-bottom: 2rem;">
+                Qualquer IA serve. Use a que você preferir:
+            </p>
+            <div class="ia-grid">
+                <span class="ia-option">ChatGPT</span>
+                <span class="ia-option">Gemini</span>
+                <span class="ia-option">Claude</span>
+                <span class="ia-option">Z.ai</span>
+                <span class="ia-option">Outra...</span>
+            </div>
+            <p class="text-sm text-muted text-center" style="margin-top: 2rem;">
+                O importante é colar o prompt completo e deixar a IA fazer o trabalho.
+            </p>
+        </div>
+        <div class="slide-footer">
+            <span>08 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 9: AS 12 PERGUNTAS
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-9">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2.5rem;">As 12 perguntas da entrevista</h2>
+            <div class="blocks-grid" style="max-width: 1000px;">
+                <div class="block-card">
+                    <h4>Bloco 1</h4>
+                    <span class="count">3</span>
+                    <p>perguntas sobre posicionamento</p>
+                </div>
+                <div class="block-card">
+                    <h4>Bloco 2</h4>
+                    <span class="count">2</span>
+                    <p>perguntas sobre público</p>
+                </div>
+                <div class="block-card">
+                    <h4>Bloco 3</h4>
+                    <span class="count">2</span>
+                    <p>perguntas sobre método</p>
+                </div>
+                <div class="block-card">
+                    <h4>Bloco 4</h4>
+                    <span class="count">3</span>
+                    <p>perguntas sobre personalidade</p>
+                </div>
+                <div class="block-card">
+                    <h4>Bloco 5</h4>
+                    <span class="count">2</span>
+                    <p>perguntas sobre conteúdo</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>09 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 10: VAMOS PRATICAR
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-10">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-xl text-gold-gradient text-center" style="margin-bottom: 2rem;">Vamos praticar!</h2>
+            <div class="cta-box pulse-ring" style="text-align: center;">
+                <p class="text-lg">Abra sua IA preferida e acesse:</p>
+                <a href="https://tinyurl.com/mx2nd5c" target="_blank" class="btn-premium">
+                    tinyurl.com/mx2nd5c
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+                <p class="text-sm text-muted">O link está no grupo do WhatsApp</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>10 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 11: DURANTE A ENTREVISTA
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-11">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2rem;">Durante a entrevista</h2>
+            <div class="tips-grid" style="max-width: 800px;">
+                <div class="tip-item">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Seja honesto</strong> — Não tem resposta certa ou errada</p>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Não tente impressionar</strong> — A IA não está te julgando</p>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Deixe a CAMI te guiar</strong> — Uma pergunta por vez</p>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Respostas longas = documento melhor</strong> — Dê detalhes!</p>
+                </div>
+            </div>
+            <p class="text-lg text-accent text-center" style="margin-top: 2rem;">
+                Quanto mais você se abrir, melhor será o resultado.
+            </p>
+        </div>
+        <div class="slide-footer">
+            <span>11 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 12: O QUE VAI SAIR NO FINAL
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-12">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2rem;">O que vai sair no final</h2>
+            <div class="doc-list">
+                <div class="doc-item">
+                    <span class="num">1</span>
+                    <span class="text">Núcleo Estratégico — Quem você é, posicionamento, crenças</span>
+                </div>
+                <div class="doc-item">
+                    <span class="num">2</span>
+                    <span class="text">Público — Persona, dores, crenças limitantes</span>
+                </div>
+                <div class="doc-item">
+                    <span class="num">3</span>
+                    <span class="text">Método — Framework, etapas, metáfora</span>
+                </div>
+                <div class="doc-item">
+                    <span class="num">4</span>
+                    <span class="text">Marca como Personagem — Arquétipo, tom de voz, identidade</span>
+                </div>
+                <div class="doc-item">
+                    <span class="num">5</span>
+                    <span class="text">Motor de Conteúdo — Ganchos, ideias, símbolos</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>12 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 13: ERROS COMUNS
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-13">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2rem;">
+                Erros comuns a <span style="color: var(--danger);">evitar</span>
+            </h2>
+            <div class="errors-grid" style="max-width: 800px;">
+                <div class="error-item">
+                    <span class="error-icon">✗</span>
+                    <p><strong>Responder com uma palavra só</strong> — A IA precisa de contexto</p>
+                </div>
+                <div class="error-item">
+                    <span class="error-icon">✗</span>
+                    <p><strong>Pular perguntas</strong> — Cada uma tem um propósito</p>
+                </div>
+                <div class="error-item">
+                    <span class="error-icon">✗</span>
+                    <p><strong>Tentar parecer profissional demais</strong> — Seja você mesmo</p>
+                </div>
+                <div class="error-item">
+                    <span class="error-icon">✗</span>
+                    <p><strong>Não ser você mesmo</strong> — Autenticidade é tudo</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>13 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 14: SE TRAVAR
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-14">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 1rem;">Se travar... é normal!</h2>
+            <div class="card card-accent text-center" style="max-width: 500px; margin-bottom: 2rem;">
+                <p style="font-size: 1.75rem; font-weight: 700; color: var(--empire-gold);">
+                    Estou aqui para ajudar.
+                </p>
+            </div>
+            <div class="help-grid" style="max-width: 600px;">
+                <div class="help-card">
+                    <span class="icon">✋</span>
+                    <h3>Levante a mão</h3>
+                    <p class="text-secondary">No Zoom, use o botão</p>
+                </div>
+                <div class="help-card">
+                    <span class="icon">💬</span>
+                    <h3>Chama Bruno</h3>
+                    <p class="text-secondary">Manda mensagem no chat</p>
+                </div>
+            </div>
+            <p class="text-base text-secondary text-center" style="margin-top: 2rem;">
+                Nenhuma pergunta é boba. Se travou, me chama.
+            </p>
+        </div>
+        <div class="slide-footer">
+            <span>14 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 15: DEPOIS DA AULA
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-15">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2rem;">Depois da aula</h2>
+            <div class="card card-accent text-center" style="max-width: 600px; margin-bottom: 2.5rem;">
+                <p style="font-size: 1.75rem; font-weight: 700; color: var(--empire-gold); margin-bottom: 0.5rem;">
+                    Seu documento é VIVO.
+                </p>
+                <p class="text-secondary">Não é algo que você faz uma vez e esquece.</p>
+            </div>
+            <div class="feature-list" style="max-width: 600px;">
+                <div class="feature-item">
+                    <span class="icon-circle" style="width: 2.5rem; height: 2.5rem; font-size: 1rem;">↻</span>
+                    <span>Volte nele sempre — Antes de criar conteúdo, consulte</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon-circle" style="width: 2.5rem; height: 2.5rem; font-size: 1rem;">↻</span>
+                    <span>Atualize conforme evoluir — Sua marca cresce com você</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon-circle" style="width: 2.5rem; height: 2.5rem; font-size: 1rem;">↻</span>
+                    <span>Use antes de criar — É seu norte, não enfeite</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>15 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 16: VERSÃO SIMPLIFICADA + UPSELL
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-16">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2rem;">Importante</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px;">
+                <div class="card">
+                    <p class="text-lg" style="margin-bottom: 1rem;">
+                        Essa é uma <span class="text-accent">versão simplificada</span> do documento de branding.
+                    </p>
+                    <p class="text-secondary">
+                        Já é muito poderosa e vai te dar direção clara. Mas não é o processo completo que fazemos com clientes.
+                    </p>
+                </div>
+                <div class="upsell-card">
+                    <span class="badge">Para quem quer ir longe</span>
+                    <h3>Quer avançar com nossa equipe?</h3>
+                    <p>
+                        Aplicando no link da descrição do grupo, você tem esse processo todo feito por nós de maneira detalhada e minuciosa.
+                    </p>
+                    <div class="link-hint">
+                        <span>→</span>
+                        <span>Link na descrição do grupo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>16 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 17: AMANHÃ
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-17">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <div class="next-day-card">
+                <span class="label">Amanhã</span>
+                <h3>O que vem pela frente</h3>
+                <p class="text-secondary" style="font-size: 1.125rem;">
+                    Dois blocos de conteúdo que vão transformar sua estratégia:
+                </p>
+                <div class="items">
+                    <div class="item">
+                        <span class="icon">🎯</span>
+                        <span>Crenças e Armadilhas — Aprofundamento</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon">🎬</span>
+                        <span>Vídeo Longo — Vamos criar juntos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>17 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 18: ENCERRAMENTO
+         ============================================== -->
+    <div class="slide bg-solid" id="slide-18">
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-lg text-center" style="margin-bottom: 2rem;">Você saiu com:</h2>
+            <div class="feature-list" style="max-width: 550px;">
+                <div class="feature-item" style="background: var(--accent-glow); border-color: var(--empire-gold);">
+                    <span class="text-accent" style="font-weight: 700; font-size: 1.25rem;">Posicionamento claro</span>
+                </div>
+                <div class="feature-item" style="background: var(--accent-glow); border-color: var(--empire-gold);">
+                    <span class="text-accent" style="font-weight: 700; font-size: 1.25rem;">Direção definida</span>
+                </div>
+                <div class="feature-item" style="background: var(--accent-glow); border-color: var(--empire-gold);">
+                    <span class="text-accent" style="font-weight: 700; font-size: 1.25rem;">Pronto para criar</span>
+                </div>
+            </div>
+            <p class="text-lg text-accent text-center" style="margin-top: 2.5rem; font-weight: 700;">
+                Agora é mão na massa!
+            </p>
+        </div>
+        <div class="slide-footer">
+            <span>18 / 19</span>
+            <span>Aula 2 - Tarde</span>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SLIDE 19: FIM
+         ============================================== -->
+    <div class="slide bg-gradient bg-pattern" id="slide-19">
+        <div class="grid-overlay"></div>
+        <div class="logo">
+            <img src="../assets/logotipo-02.png" alt="Empire">
+        </div>
+        <div class="slide-inner animate-in">
+            <h2 class="title-xl text-gold-gradient text-center">Até amanhã!</h2>
+            <p class="text-lg text-secondary text-center" style="margin-top: 1.5rem;">
+                Dia 3 • Crenças, Armadilhas + Vídeo Longo
+            </p>
+        </div>
+        <div class="slide-footer">
+            <span>19 / 19</span>
+            <span>Aula 2 - Tarde • Fim</span>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer para animações de scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up, .stagger-children').forEach(el => observer.observe(el));
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        // Create navigation dots
+        const navDots = document.getElementById('navDots');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => showSlide(i);
+            navDots.appendChild(dot);
+        }
+        const dots = document.querySelectorAll('.nav-dot');
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevSlide();
+            }
+        }
+    </script>
+</body>
+</html>
