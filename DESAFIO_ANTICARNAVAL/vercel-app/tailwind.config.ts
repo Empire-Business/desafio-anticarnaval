@@ -9,6 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        empire: {
+          bg: '#0a0a0b',
+          surface: '#111113',
+          card: '#18181b',
+          border: '#27272a',
+          muted: '#71717a',
+          text: '#fafafa',
+          gold: '#c9a962',
+          goldLight: '#e4d4a5',
+          goldDark: '#9a7b3c',
+        },
         yellow: {
           50: '#fefce8',
           100: '#fef9c3',
@@ -24,8 +35,29 @@ const config: Config = {
         },
       },
       fontFamily: {
+        display: ['Cormorant Garamond', 'serif'],
+        body: ['DM Sans', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['SF Mono', 'JetBrains Mono', 'monospace'],
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.8s ease forwards',
+        'shine': 'shine 4s infinite',
+        'pulse-ring': 'pulseRing 2s infinite',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        shine: {
+          '0%': { left: '-75%' },
+          '100%': { left: '125%' },
+        },
+        pulseRing: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(1.1)', opacity: '0' },
+        },
       },
     },
   },
