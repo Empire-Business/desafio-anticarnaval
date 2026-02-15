@@ -1,6 +1,14 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+// Middleware desabilitado - acesso livre
+// TODO: Se precisar de autenticação futura, descomentar e configurar
+
+export function middleware(request: NextRequest) {
+  return NextResponse.next();
+}
+
+/*
 const PASSWORD = 'empire2026';
 
 export function middleware(request: NextRequest) {
@@ -52,6 +60,7 @@ export function middleware(request: NextRequest) {
     },
   });
 }
+*/
 
 export const config = {
   matcher: [
