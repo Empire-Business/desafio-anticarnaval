@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 3: Do Zero ao REC - Como Criar Roteiros para Vídeos Longos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            empire: {
+              bg: '#0a0a0b',
+              surface: '#111113',
+              card: '#18181b',
+              border: '#27272a',
+              muted: '#71717a',
+              text: '#fafafa',
+              gold: '#c9a962',
+              goldLight: '#e4d4a5',
+              goldDark: '#9a7b3c',
+            }
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    body {
+      background: #0a0a0b;
+      font-family: 'DM Sans', sans-serif;
+      color: #fafafa;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem;
+      padding-bottom: 8rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      overflow-y: auto;
+    }
+    
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .slide-content {
+      max-width: 1200px;
+      width: 100%;
+    }
+    
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #c9a962 0%, #e4d4a5 50%, #c9a962 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-gold-border {
+      border: 1px solid transparent;
+      background: linear-gradient(#18181b, #18181b) padding-box,
+                  linear-gradient(135deg, #c9a962, #e4d4a5, #c9a962) border-box;
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(201, 169, 98, 0.3);
+      background: rgba(201, 169, 98, 0.05);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a962;
+    }
+    
+    .nav-controls {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 100;
+      background: rgba(10, 10, 11, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      border: 1px solid #27272a;
+      box-shadow: 0 -10px 40px rgba(10, 10, 11, 0.8);
+    }
+    
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid #27272a;
+      border-radius: 50%;
+      color: #fafafa;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-btn:hover {
+      border-color: #c9a962;
+      color: #c9a962;
+    }
+    
+    .slide-counter {
+      font-size: 0.875rem;
+      color: #71717a;
+      min-width: 60px;
+      text-align: center;
+    }
+    
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #c9a962, #e4d4a5);
+      transition: width 0.3s ease;
+      z-index: 100;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .slide.active .stagger-item {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    .slide.active .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+    .slide.active .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+    .slide.active .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+    .slide.active .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+    .slide.active .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+    .slide.active .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+    
+    /* Slide specific styles */
+    .problem-card {
+      background: #18181b;
+      border: 1px solid #27272a;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .problem-card:hover {
+      border-color: rgba(201, 169, 98, 0.3);
+      transform: translateY(-4px);
+    }
+    
+    .technique-box {
+      background: linear-gradient(135deg, rgba(201, 169, 98, 0.1), rgba(201, 169, 98, 0.05));
+      border: 1px solid rgba(201, 169, 98, 0.2);
+      padding: 1.5rem;
+      border-radius: 4px;
+    }
+    
+    .hook-highlight {
+      background: rgba(201, 169, 98, 0.15);
+      border-left: 3px solid #c9a962;
+      padding: 1rem 1.5rem;
+    }
+    
+    .pyramid-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: #18181b;
+      border: 1px solid #27272a;
+      margin-bottom: 0.5rem;
+    }
+    
+    .speaker-note {
+      font-size: 0.875rem;
+      color: #71717a;
+      font-style: italic;
+      border-left: 2px solid #c9a962;
+      padding-left: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .checklist-item .icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(201, 169, 98, 0.1);
+      border-radius: 50%;
+      color: #c9a962;
+      flex-shrink: 0;
+    }
+    
+    .number-badge {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #c9a962, #e4d4a5);
+      color: #0a0a0b;
+      font-weight: 600;
+      font-size: 1.25rem;
+      border-radius: 50%;
+    }
+    
+    table.style-comparison {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    table.style-comparison th,
+    table.style-comparison td {
+      padding: 1.5rem;
+      text-align: left;
+      border: 1px solid #27272a;
+    }
+    
+    table.style-comparison th {
+      background: rgba(201, 169, 98, 0.1);
+      color: #c9a962;
+      font-weight: 600;
+    }
+    
+    table.style-comparison tr:hover td {
+      background: rgba(201, 169, 98, 0.05);
+    }
+    
+    .sandwich-visual {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .sandwich-layer {
+      padding: 1.5rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .sandwich-top {
+      background: linear-gradient(135deg, #c9a962, #e4d4a5);
+      color: #0a0a0b;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    .sandwich-middle {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-top: none;
+      border-bottom: none;
+    }
+    
+    .sandwich-bottom {
+      background: linear-gradient(135deg, #c9a962, #e4d4a5);
+      color: #0a0a0b;
+      border-radius: 0 0 8px 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="grid-pattern"></div>
+
+  <!-- SLIDE 1: CAPA -->
+  <div class="slide active" data-slide="1">
+    <div class="slide-content text-center">
+      <div class="stagger-item mb-8">
+        <span class="badge">AULA 3 — PARTE DA TARDE</span>
+      </div>
+      <h1 class="font-display text-6xl md:text-7xl lg:text-8xl font-semibold mb-8 stagger-item">
+        <span class="text-gold-gradient">Do Zero ao REC</span>
+      </h1>
+      <h2 class="font-display text-3xl md:text-4xl text-empire-text mb-6 stagger-item">
+        Como Criar Roteiros para Vídeos Longos no YouTube
+      </h2>
+      <div class="section-divider max-w-md mx-auto mb-8 stagger-item"></div>
+      <p class="text-xl text-empire-muted max-w-2xl mx-auto stagger-item">
+        Estratégias de Pesquisa, Estrutura e Escrita para Iniciantes
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: O PROBLEMA -->
+  <div class="slide" data-slide="2">
+    <div class="slide-content">
+      <div class="text-center mb-12">
+        <span class="badge mb-4 inline-block">O BLOQUEIO</span>
+        <h2 class="font-display text-5xl md:text-6xl font-semibold">
+          Por que a maioria <span class="text-gold-gradient">trava?</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="problem-card stagger-item text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center">
+            <span class="text-3xl">❓</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-empire-gold">"Sobre o que eu falo?"</h3>
+          <p class="text-empire-muted">Paralisia da Ideia</p>
+        </div>
+        <div class="problem-card stagger-item text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center">
+            <span class="text-3xl">😰</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-empire-gold">"E se eu esquecer?"</h3>
+          <p class="text-empire-muted">Medo do Branco</p>
+        </div>
+        <div class="problem-card stagger-item text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center">
+            <span class="text-3xl">😴</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-empire-gold">"E se ficar chato?"</h3>
+          <p class="text-empire-muted">Medo da Retenção</p>
+        </div>
+      </div>
+      <div class="speaker-note max-w-3xl mx-auto text-center">
+        O bloqueio criativo geralmente não é falta de criatividade, é falta de pesquisa. O medo de travar na câmera não é falta de talento, é falta de estrutura.
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: A ESCOLHA DO TEMA (NÍVEL 1) -->
+  <div class="slide" data-slide="3">
+    <div class="slide-content">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge mb-4 inline-block">NÍVEL 1 — O BÁSICO</span>
+          <h2 class="font-display text-5xl font-semibold mb-6">
+            Onde encontrar <span class="text-gold-gradient">boas ideias?</span>
+          </h2>
+          <div class="space-y-6">
+            <div class="stagger-item">
+              <div class="flex items-start gap-4">
+                <div class="number-badge">1</div>
+                <div>
+                  <h3 class="text-xl font-semibold text-empire-gold mb-2">O FAQ da Vida Real</h3>
+                  <p class="text-empire-muted">O que já te perguntam no WhatsApp/Direct?</p>
+                </div>
+              </div>
+            </div>
+            <div class="stagger-item">
+              <div class="flex items-start gap-4">
+                <div class="number-badge">2</div>
+                <div>
+                  <h3 class="text-xl font-semibold text-empire-gold mb-2">A Barra de Pesquisa do YouTube</h3>
+                  <p class="text-empire-muted">O autocompletar não mente.</p>
+                  <div class="mt-3 p-3 bg-empire-surface rounded text-sm text-empire-muted">
+                    Ex: "Como fazer bolo de..." (cenoura, chocolate, pote)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="technique-box stagger-item">
+          <div class="text-center">
+            <div class="text-6xl mb-4">💡</div>
+            <p class="text-lg font-medium text-empire-text">
+              "Não tentem inventar a roda. O melhor vídeo é aquele que responde uma pergunta que já existe."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: A ESCOLHA DO TEMA (NÍVEL 2) -->
+  <div class="slide" data-slide="4">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">NÍVEL 2 — ESPIONAGEM</span>
+        <h2 class="font-display text-5xl md:text-6xl font-semibold">
+          A Técnica do <span class="text-gold-gradient">"Espelho de Sucesso"</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="space-y-4">
+          <div class="stagger-item flex items-start gap-4 p-4 bg-empire-card border border-empire-border rounded">
+            <span class="text-2xl">🔍</span>
+            <div>
+              <h3 class="font-semibold text-empire-text">Passo 1</h3>
+              <p class="text-empire-muted text-sm">Encontre 3 canais referência no seu nicho</p>
+            </div>
+          </div>
+          <div class="stagger-item flex items-start gap-4 p-4 bg-empire-card border border-empire-border rounded">
+            <span class="text-2xl">📈</span>
+            <div>
+              <h3 class="font-semibold text-empire-text">Passo 2</h3>
+              <p class="text-empire-muted text-sm">Filtre por "Em Alta" dos últimos 12 meses</p>
+            </div>
+          </div>
+          <div class="stagger-item flex items-start gap-4 p-4 bg-empire-card border border-empire-border rounded">
+            <span class="text-2xl">🎯</span>
+            <div>
+              <h3 class="font-semibold text-empire-text">Passo 3</h3>
+              <p class="text-empire-muted text-sm">Modele o TEMA e a EMBALAGEM (não copie o roteiro)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-gold-border p-8 flex flex-col justify-center stagger-item">
+          <div class="text-5xl mb-4">💎</div>
+          <h3 class="text-xl font-semibold text-empire-gold mb-3">A Regra de Ouro</h3>
+          <p class="text-empire-text leading-relaxed">
+            Se funcionou para eles, o algoritmo já validou o interesse.
+          </p>
+          <div class="mt-4 pt-4 border-t border-empire-border">
+            <p class="text-sm text-empire-muted italic">
+              "Se um vídeo sobre 'Investimentos para Iniciantes' tem 1 milhão de views, existe demanda. Faça a sua versão."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: FERRAMENTAS AVANÇADAS -->
+  <div class="slide" data-slide="5">
+    <div class="slide-content">
+      <div class="text-center mb-12">
+        <span class="badge mb-4 inline-block">NÍVEL 3 — FERRAMENTAS</span>
+        <h2 class="font-display text-5xl font-semibold">
+          Ferramentas <span class="text-gold-gradient">Avançadas</span> de Pesquisa
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="card-gold-border p-8 stagger-item">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-empire-gold/10 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">🌐</span>
+            </div>
+            <h3 class="text-2xl font-display font-semibold text-empire-gold">AnswerThePublic</h3>
+          </div>
+          <p class="text-empire-muted mb-4">O mapa da curiosidade</p>
+          <ul class="space-y-2 text-empire-text">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+              O quê? Como? Por quê?
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+              Máquina de títulos
+            </li>
+          </ul>
+        </div>
+        <div class="card-gold-border p-8 stagger-item">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-empire-gold/10 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">💬</span>
+            </div>
+            <h3 class="text-2xl font-display font-semibold text-empire-gold">Reddit (Fóruns)</h3>
+          </div>
+          <p class="text-empire-muted mb-4">Onde as pessoas desabafam</p>
+          <div class="bg-empire-surface p-4 rounded text-sm text-empire-muted">
+            <p class="mb-2"><strong class="text-empire-gold">Google:</strong> "como emagrecer"</p>
+            <p><strong class="text-empire-gold">Reddit:</strong> "não consigo emagrecer e me sinto triste"</p>
+          </div>
+          <p class="text-xs text-empire-muted mt-3">
+            💡 Use para criar roteiros que conectam com a emoção
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: ANATOMIA UNIVERSAL -->
+  <div class="slide" data-slide="6">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">ESTRUTURA</span>
+        <h2 class="font-display text-5xl md:text-6xl font-semibold">
+          Todo vídeo precisa de um <span class="text-gold-gradient">Esqueleto</span>
+        </h2>
+      </div>
+      <div class="flex flex-col items-center max-w-4xl mx-auto">
+        <div class="w-full space-y-4">
+          <div class="stagger-item hook-highlight">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-empire-gold rounded-full flex items-center justify-center text-empire-bg font-bold text-xl">1</div>
+              <div>
+                <h3 class="text-xl font-semibold text-empire-gold">HOOK (Gancho)</h3>
+                <p class="text-empire-text">A promessa — Primeiros 0-60 segundos</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item hook-highlight" style="margin-left: 2rem;">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-empire-gold/70 rounded-full flex items-center justify-center text-empire-bg font-bold text-xl">2</div>
+              <div>
+                <h3 class="text-xl font-semibold text-empire-goldLight">CONTEXTO</h3>
+                <p class="text-empire-text">Quem sou eu / Por que isso importa?</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item hook-highlight" style="margin-left: 4rem;">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-empire-gold/50 rounded-full flex items-center justify-center text-empire-bg font-bold text-xl">3</div>
+              <div>
+                <h3 class="text-xl font-semibold text-empire-goldDark">CONTEÚDO</h3>
+                <p class="text-empire-text">A entrega do valor</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item hook-highlight" style="margin-left: 2rem;">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-empire-gold/70 rounded-full flex items-center justify-center text-empire-bg font-bold text-xl">4</div>
+              <div>
+                <h3 class="text-xl font-semibold text-empire-goldLight">CTA (Chamada)</h3>
+                <p class="text-empire-text">O que fazer a seguir?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 text-center stagger-item">
+          <p class="text-lg text-empire-muted">
+            Se faltar o <span class="text-empire-gold">gancho</span>, ninguém assiste. 
+            Se faltar o <span class="text-empire-gold">conteúdo</span>, ninguém fica. 
+            Se faltar o <span class="text-empire-gold">CTA</span>, ninguém se inscreve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: OS 3 ESTILOS DE ROTEIRO -->
+  <div class="slide" data-slide="7">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">PERFIL</span>
+        <h2 class="font-display text-5xl font-semibold">
+          Qual é o seu <span class="text-gold-gradient">perfil?</span>
+        </h2>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <table class="style-comparison stagger-item">
+          <thead>
+            <tr>
+              <th>Estilo</th>
+              <th>Características</th>
+              <th>Ideal Para</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-empire-gold font-semibold">100% Roteirizado</td>
+              <td>Texto corrido • Teleprompter • Controle total</td>
+              <td>Quem quer precisão cirúrgica</td>
+            </tr>
+            <tr>
+              <td class="text-empire-gold font-semibold">Semi-Roteirizado ⭐</td>
+              <td>Tópicos • Conversa guiada • Naturalidade + Estrutura</td>
+              <td>O caminho do meio (recomendado)</td>
+            </tr>
+            <tr>
+              <td class="text-empire-gold font-semibold">0% Roteirizado</td>
+              <td>Improviso total • Apenas uma ideia na cabeça</td>
+              <td>Quem tem carisma de sobra</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mt-8 text-center stagger-item">
+          <p class="text-lg text-empire-muted">
+            O segredo, e o que indico para a maioria de vocês, é o <span class="text-empire-gold font-semibold">caminho do meio</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: FRAMEWORK SEMI-ROTEIRIZADO -->
+  <div class="slide" data-slide="8">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">A TÉCNICA</span>
+        <h2 class="font-display text-5xl font-semibold">
+          A Técnica do <span class="text-gold-gradient">"Sanduíche"</span> 🥪
+        </h2>
+      </div>
+      <div class="sandwich-visual stagger-item">
+        <div class="sandwich-layer sandwich-top">
+          <h3 class="text-xl font-bold">🍞 PÃO DE CIMA (Rígido)</h3>
+          <p class="text-sm mt-2">O Hook/Gancho é escrito <strong>palavra por palavra</strong></p>
+        </div>
+        <div class="sandwich-layer sandwich-middle">
+          <h3 class="text-xl font-semibold text-empire-gold">🥬 RECHEIO (Flexível)</h3>
+          <p class="text-empire-muted mt-2">O Conteúdo é em <strong>Bullet Points (Tópicos)</strong></p>
+        </div>
+        <div class="sandwich-layer sandwich-bottom">
+          <h3 class="text-xl font-bold">🍞 PÃO DE BAIXO (Rígido)</h3>
+          <p class="text-sm mt-2">O CTA/Finalização é escrito <strong>palavra por palavra</strong></p>
+        </div>
+      </div>
+      <div class="max-w-3xl mx-auto mt-8 text-center stagger-item">
+        <div class="technique-box">
+          <p class="text-empire-text">
+            O <strong class="text-empire-gold">início</strong> é onde você ganha ou perde o jogo → perfeito e decorado.<br>
+            O <strong class="text-empire-gold">meio</strong> precisa ser natural → como uma conversa de bar.<br>
+            O <strong class="text-empire-gold">final</strong> precisa ser rápido → antes que fechem o vídeo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 9: DETALHANDO O RECHEIO -->
+  <div class="slide" data-slide="9">
+    <div class="slide-content">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge mb-4 inline-block">TÉCNICA PRÁTICA</span>
+          <h2 class="font-display text-5xl font-semibold mb-6">
+            Como gravar com <span class="text-gold-gradient">Bullet Points?</span>
+          </h2>
+          <div class="technique-box mb-6">
+            <h3 class="text-lg font-semibold text-empire-gold mb-4 text-center">A Técnica Visual</h3>
+            <div class="flex justify-center items-center gap-4 text-empire-text">
+              <span class="text-2xl">👁️</span>
+              <span class="text-empire-muted">→</span>
+              <span class="text-2xl">🧠</span>
+              <span class="text-empire-muted">→</span>
+              <span class="text-2xl">🗣️</span>
+            </div>
+            <div class="flex justify-center gap-8 mt-2 text-sm text-empire-muted">
+              <span>Olhar</span>
+              <span>Processar</span>
+              <span>Falar</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="stagger-item flex items-start gap-3">
+              <span class="text-empire-gold font-bold">1.</span>
+              <p class="text-empire-text">Olhe para o roteiro/tópico</p>
+            </div>
+            <div class="stagger-item flex items-start gap-3">
+              <span class="text-empire-gold font-bold">2.</span>
+              <p class="text-empire-text">Processe a informação mentalmente</p>
+            </div>
+            <div class="stagger-item flex items-start gap-3">
+              <span class="text-empire-gold font-bold">3.</span>
+              <p class="text-empire-text">Olhe para a lente e explique</p>
+            </div>
+          </div>
+          <div class="mt-6 p-4 bg-empire-surface border-l-2 border-empire-gold text-sm text-empire-muted stagger-item">
+            💡 A edição corta os momentos de silêncio/olhada.
+          </div>
+        </div>
+        <div class="stagger-item">
+          <div class="card-gold-border p-8">
+            <div class="text-6xl text-center mb-4">✂️</div>
+            <h3 class="text-xl font-semibold text-center text-empire-gold mb-4">Errou? Sem problema!</h3>
+            <p class="text-empire-text text-center leading-relaxed">
+              Pare, respire e fale de novo. Na edição, a gente tira as pausas e os erros. Isso tira o peso das costas de ter que acertar tudo de primeira.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10: HIERARQUIA DO EQUIPAMENTO -->
+  <div class="slide" data-slide="10">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">EQUIPAMENTO</span>
+        <h2 class="font-display text-5xl font-semibold">
+          O Que <span class="text-gold-gradient">Realmente Importa?</span>
+        </h2>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-3">
+          <div class="stagger-item pyramid-item" style="width: 100%;">
+            <div class="w-12 h-12 bg-empire-gold rounded-lg flex items-center justify-center text-2xl">🔊</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-empire-gold">1. ÁUDIO</h3>
+              <p class="text-empire-muted text-sm">A base — Mais importante</p>
+            </div>
+            <span class="text-empire-gold font-bold text-2xl">#1</span>
+          </div>
+          <div class="stagger-item pyramid-item" style="width: 85%; margin-left: auto; margin-right: auto;">
+            <div class="w-12 h-12 bg-empire-gold/70 rounded-lg flex items-center justify-center text-2xl">💡</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-empire-goldLight">2. ILUMINAÇÃO</h3>
+              <p class="text-empire-muted text-sm">O meio</p>
+            </div>
+            <span class="text-empire-goldLight font-bold text-2xl">#2</span>
+          </div>
+          <div class="stagger-item pyramid-item" style="width: 70%; margin-left: auto; margin-right: auto;">
+            <div class="w-12 h-12 bg-empire-gold/40 rounded-lg flex items-center justify-center text-2xl">📷</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-empire-goldDark">3. CÂMERA</h3>
+              <p class="text-empire-muted text-sm">O topo — Menos crítico no início</p>
+            </div>
+            <span class="text-empire-goldDark font-bold text-2xl">#3</span>
+          </div>
+        </div>
+        <div class="mt-8 text-center stagger-item">
+          <div class="inline-block card-gold-border p-6">
+            <p class="text-lg text-empire-text italic">
+              "O público perdoa uma imagem ruim, mas <span class="text-empire-gold font-semibold">fecha o vídeo</span> se o áudio for ruim."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 11: ILUMINAÇÃO -->
+  <div class="slide" data-slide="11">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">ILUMINAÇÃO</span>
+        <h2 class="font-display text-5xl font-semibold">
+          Luz é <span class="text-gold-gradient">Informação</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="problem-card stagger-item text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center text-3xl">
+            ☀️
+          </div>
+          <h3 class="text-lg font-semibold text-empire-gold mb-2">A Melhor Luz é Grátis</h3>
+          <p class="text-empire-muted text-sm">Fique de <strong>frente</strong> para uma janela</p>
+          <p class="text-empire-gold text-xs mt-2">(nunca de costas)</p>
+        </div>
+        <div class="problem-card stagger-item text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center text-3xl">
+            💡
+          </div>
+          <h3 class="text-lg font-semibold text-empire-gold mb-2">Luz Principal (Key Light)</h3>
+          <p class="text-empire-muted text-sm">Deve iluminar seu rosto a</p>
+          <p class="text-empire-gold text-xl font-bold mt-1">45°</p>
+        </div>
+        <div class="problem-card stagger-item text-center border-red-500/30">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/10 flex items-center justify-center text-3xl">
+            🚫
+          </div>
+          <h3 class="text-lg font-semibold text-red-400 mb-2">O Erro Comum</h3>
+          <p class="text-empire-muted text-sm">Luz de teto cria olheiras</p>
+          <p class="text-red-400 text-xs mt-2">efeito "filme de terror"</p>
+        </div>
+      </div>
+      <div class="max-w-3xl mx-auto mt-8 stagger-item">
+        <div class="technique-box text-center">
+          <p class="text-empire-text">
+            <span class="text-empire-gold">💡 Dica:</span> A melhor luz do mundo é a janela da sua sala entre <strong class="text-empire-gold">8h e 10h da manhã</strong>. 
+            Apague a luz do teto e use a janela ou um abajur na sua frente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 12: DIREÇÃO DE ARTE E CENÁRIO -->
+  <div class="slide" data-slide="12">
+    <div class="slide-content">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge mb-4 inline-block">CENÁRIO</span>
+          <h2 class="font-display text-5xl font-semibold mb-8">
+            O Cenário Conta uma <span class="text-gold-gradient">História</span>
+          </h2>
+          <div class="space-y-6">
+            <div class="stagger-item flex items-start gap-4">
+              <div class="w-14 h-14 bg-empire-gold/10 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
+                📐
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-empire-gold">Profundidade</h3>
+                <p class="text-empire-muted">Descole da parede! Ficar colado deixa a imagem "pobre".</p>
+                <p class="text-sm text-empire-gold mt-1">→ Dê dois passos para frente</p>
+              </div>
+            </div>
+            <div class="stagger-item flex items-start gap-4">
+              <div class="w-14 h-14 bg-empire-gold/10 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
+                🎯
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-empire-gold">Regra dos Terços</h3>
+                <p class="text-empire-muted">Seus olhos devem estar na linha superior da tela.</p>
+              </div>
+            </div>
+            <div class="stagger-item flex items-start gap-4">
+              <div class="w-14 h-14 bg-empire-gold/10 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
+                ✨
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-empire-gold">Cenário Limpo vs. Cheio</h3>
+                <p class="text-empire-muted">Organize a bagunça. Menos é mais.</p>
+                <p class="text-sm text-empire-gold mt-1">O cenário compete pela atenção.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stagger-item">
+          <div class="card-gold-border p-8 text-center">
+            <div class="text-6xl mb-4">🎬</div>
+            <h3 class="text-xl font-semibold text-empire-gold mb-4">Você não precisa de um estúdio</h3>
+            <p class="text-empire-text leading-relaxed">
+              Mas precisa de <strong class="text-empire-gold">Profundidade</strong>. Se você encosta as costas na parede branca, parece <span class="text-red-400">foto de refém</span>.
+            </p>
+            <div class="mt-6 pt-6 border-t border-empire-border">
+              <p class="text-sm text-empire-muted">
+                💡 Deixe o fundo levemente desfocado se puder
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 13: PERFORMANCE E ENERGIA -->
+  <div class="slide" data-slide="13">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge mb-4 inline-block">PERFORMANCE</span>
+        <h2 class="font-display text-5xl font-semibold">
+          A Câmera Rouba <span class="text-gold-gradient">20% da sua Energia</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="card-gold-border p-8 text-center stagger-item">
+          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center">
+            <span class="text-4xl">👁️</span>
+          </div>
+          <h3 class="text-xl font-semibold text-empire-gold mb-3">Olho no Olho</h3>
+          <p class="text-empire-muted text-sm mb-3">Olhe para a <strong class="text-empire-text">LENTE</strong></p>
+          <div class="text-xs text-empire-gold bg-empire-gold/10 py-2 px-3 rounded">
+            Tela = olhar desviado ❌
+          </div>
+        </div>
+        <div class="card-gold-border p-8 text-center stagger-item">
+          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center">
+            <span class="text-4xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-semibold text-empire-gold mb-3">Energia "Extra"</h3>
+          <p class="text-empire-muted text-sm mb-3">Fale <strong class="text-empire-text">20% mais animado</strong></p>
+          <div class="text-xs text-empire-gold bg-empire-gold/10 py-2 px-3 rounded">
+            Sorria mais, gesticule mais
+          </div>
+        </div>
+        <div class="card-gold-border p-8 text-center stagger-item">
+          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-empire-gold/10 flex items-center justify-center">
+            <span class="text-4xl">💪</span>
+          </div>
+          <h3 class="text-xl font-semibold text-empire-gold mb-3">Postura</h3>
+          <p class="text-empire-muted text-sm mb-3"><strong class="text-empire-text">Ombros abertos</strong></p>
+          <div class="text-xs text-empire-gold bg-empire-gold/10 py-2 px-3 rounded">
+            Passam autoridade
+          </div>
+        </div>
+      </div>
+      <div class="max-w-3xl mx-auto mt-8 stagger-item">
+        <div class="technique-box text-center">
+          <p class="text-lg text-empire-text">
+            "O vídeo <span class="text-empire-gold">'achata'</span> sua personalidade. Se você falar como fala na vida real, vai parecer <span class="text-red-400">desanimado</span>."
+          </p>
+          <p class="text-empire-muted mt-4">
+            💡 O olho do espectador é a <strong class="text-empire-gold">lente</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 14: MÃO NA MASSA -->
+  <div class="slide" data-slide="14">
+    <div class="slide-content">
+      <div class="text-center mb-10">
+        <span class="badge badge-pulse mb-4 inline-block">
+          <span class="w-2 h-2 bg-empire-gold rounded-full animate-pulse mr-2"></span>
+          ENCERRAMENTO
+        </span>
+        <h2 class="font-display text-5xl md:text-6xl font-semibold">
+          Exercício <span class="text-gold-gradient">Prático</span> ⚡
+        </h2>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+          <div class="stagger-item card-gold-border p-6 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold flex items-center justify-center text-empire-bg font-bold text-2xl">1</div>
+            <h3 class="text-lg font-semibold text-empire-gold mb-2">Escolha um tema</h3>
+            <p class="text-empire-muted text-sm">Use a técnica do FAQ</p>
+          </div>
+          <div class="stagger-item card-gold-border p-6 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold flex items-center justify-center text-empire-bg font-bold text-2xl">2</div>
+            <h3 class="text-lg font-semibold text-empire-gold mb-2">Defina seu estilo</h3>
+            <p class="text-empire-muted text-sm">Recomendo: Semi-Roteirizado</p>
+          </div>
+          <div class="stagger-item card-gold-border p-6 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-empire-gold flex items-center justify-center text-empire-bg font-bold text-2xl">3</div>
+            <h3 class="text-lg font-semibold text-empire-gold mb-2">Missão</h3>
+            <p class="text-empire-muted text-sm">Escreva o HOOK (3 linhas)</p>
+          </div>
+        </div>
+        <div class="stagger-item technique-box text-center">
+          <div class="text-4xl mb-4">🎯</div>
+          <p class="text-xl text-empire-text mb-2">
+            Escolha <strong class="text-empire-gold">ONDE</strong> você vai gravar
+          </p>
+          <p class="text-empire-muted">
+            "Vou gravar amanhã de manhã, na frente da janela da sala"
+          </p>
+        </div>
+        <div class="mt-8 text-center stagger-item">
+          <p class="text-lg text-empire-gold">
+            Quem tiver coragem, grava um story agora testando esse gancho. Valendo! 🚀
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <div class="nav-controls">
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <span class="slide-counter" id="slideCounter">1 / 14</span>
+    <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 14;
+
+    function updateSlide() {
+      document.querySelectorAll('.slide').forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index + 1 === currentSlide) {
+          slide.classList.add('active');
+        }
+      });
+      
+      document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+      document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+      
+      document.getElementById('prevBtn').disabled = currentSlide === 1;
+      document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+      document.getElementById('prevBtn').style.opacity = currentSlide === 1 ? '0.3' : '1';
+      document.getElementById('nextBtn').style.opacity = currentSlide === totalSlides ? '0.3' : '1';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        currentSlide = 1;
+        updateSlide();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        currentSlide = totalSlides;
+        updateSlide();
+      }
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
