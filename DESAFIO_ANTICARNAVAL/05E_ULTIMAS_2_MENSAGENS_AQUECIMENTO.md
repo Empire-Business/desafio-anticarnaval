@@ -153,7 +153,6 @@ Gente...
 
 AMANHÃ É O DIA.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Sabe o que eu sempre digo?
 
@@ -161,13 +160,11 @@ Sabe o que eu sempre digo?
 de transformar sua autoridade real em
 autoridade digital."
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 E amanhã?
 
 Vamos definir isso JUNTOS.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ⏰ COMO VAI FUNCIONAR AMANHÃ:
 
@@ -184,7 +181,6 @@ O que você vai aprender:
 **17h DA TARDE - RETORNO:**
 Hot seats + Tirando dúvidas
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📋 SEU CHECKLIST PRA AMANHÃ:
 
@@ -196,7 +192,6 @@ Hot seats + Tirando dúvidas
 ✅ 1h de tarde LIVRE (17h)
 ✅ Cérebro ABERTO pra aprender
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎯 O LINK VAI SAIR AQUI NO GRUPO:
 
@@ -204,7 +199,6 @@ Hot seats + Tirando dúvidas
 → 9h30 da manhã de SÁBADO
 → Fica ligado(a)!
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 ÚLTIMA COISA:
 
@@ -214,13 +208,11 @@ Agora.
 
 Neste exato momento.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Escreve aqui no grupo:
 
 "EU VOU ESTAR LÁ SÁBADO 10H!"
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Isso cria COMPROMISSO.
 
@@ -228,7 +220,6 @@ Isso cria RESPONSABILIDADE.
 
 Isso mostra que você está SÉRIO(A).
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Quero ver cada um de vocês comentar! 👇
 
@@ -236,7 +227,6 @@ Não é pra mim. É PRA VOCÊ.
 
 Quando você escreve, você se compromete.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🔥 SÁBADO. 10H. ESTAREI ESPERANDO.
 
@@ -247,7 +237,6 @@ Isso diz TUDO sobre quem você é.
 
 Nos vemos lá! 🚀
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Enquanto o mundo carnavala...
 VOCÊ CONSTRÓI.
