@@ -5,8 +5,10 @@ import { ArrowLeft, Play, ExternalLink, Maximize, Minimize } from 'lucide-react'
 
 const aulas = [
   { id: 'aula01', title: 'Aula 1 - Introdução', path: 'SLIDES_COMPLETOS/aula01/index.html' },
+  { id: 'aula02', title: 'Aula 2 - Manhã', path: 'SLIDES_COMPLETOS/aula02/index.html' },
   { id: 'aula02-tarde', title: 'Aula 2 - Tarde', path: 'SLIDES_COMPLETOS/aula02-tarde/index.html' },
-  { id: 'aula03', title: 'Aula 3 - Conteúdo', path: 'SLIDES_COMPLETOS/aula03/index.html' },
+  { id: 'aula03', title: 'Aula 3 - Manhã', path: 'SLIDES_COMPLETOS/aula03/index.html' },
+  { id: 'aula03-tarde', title: 'Aula 3 - Tarde (Do Zero ao REC)', path: 'SLIDES_COMPLETOS/aula03-tarde/index.html' },
   { id: 'aula04', title: 'Aula 4 - Encerramento', path: 'SLIDES_COMPLETOS/aula04/index.html' },
 ];
 
